@@ -30,14 +30,16 @@ npx playwright install chromium
 node tests/dashboard.e2e.mjs
 ```
 
-On macOS the script uses installed Google Chrome. Other systems use Playwright Chromium.
+The script uses Playwright Chromium. Set `BROWSER_CHANNEL=chrome` to use an installed
+Google Chrome instead.
 Set `PLAYWRIGHT_MODULE` to an existing Playwright module path if using a bundled runtime.
 Set `PYTHON` or `FFMPEG` if their executable names differ.
 
 The exercise opens the real dashboard, saves questionnaire progress via the UI,
-approves the fictional brand, renders five original PNGs and a six-second MP4,
+selects a saved style direction, approves the fictional brand, renders five original PNGs and a six-second MP4,
 creates four content drafts (carousel, image, video, Arabic image), checks order and
-desktop/mobile previews, plays the entire video, and saves rated owner-test feedback.
+desktop/mobile previews, platform caption selection, missing-review approval blocking,
+empty filter results, plays the entire video, and saves rated owner-test feedback.
 It also checks unauthorized and cross-origin requests. The video is intentionally silent.
 Output files, screenshots and RESULT.json remain under `.data/browser-TIMESTAMP/`.
 

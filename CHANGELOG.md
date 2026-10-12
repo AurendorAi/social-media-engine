@@ -1,3 +1,14 @@
+# Version 2.0.0 — 2026-10-12
+
+- Guided setup for existing, partial and missing identities, with optional reference analysis.
+- Saved, hash-bound style proposals and owner selection; selected identity requires review.
+- Today / Review posts / Publishing / Results dashboard with advanced tools under More tools.
+- Five-step brand form, one-post review, ordered slides, platform captions, filters and confirmation.
+- Editorial-depth and production-toolkit references derived from concrete creative failures.
+- Portable root manifest alongside Codex and Claude manifests; corrected repository install URLs.
+- Existing schema and v1 brands remain compatible; separate brand state and release guards retained.
+- New runtime/API and browser coverage for onboarding, styles and review behavior.
+
 # Changelog
 
 ## 1.0.0

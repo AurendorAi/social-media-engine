@@ -17,7 +17,7 @@ import unicodedata
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-VERSION = "1.0.0"
+VERSION = "2.0.0"
 ID = re.compile(r"^[a-z0-9][a-z0-9_-]{0,79}$")
 MAX_JSON = 4 * 1024 * 1024
 MAX_ASSET = 250 * 1024 * 1024
@@ -26,7 +26,7 @@ FIELD_GROUPS = {
     "business": ["name", "description", "industry", "website", "offers", "competitors"],
     "audience": ["audiences", "markets", "languages"],
     "voice": ["voice", "preferred_terms", "forbidden_words", "claims_policy"],
-    "visual": ["colors", "fonts", "logo_policy", "visual_style", "imagery_style", "motion_style", "references", "avoid", "asset_notes"],
+    "visual": ["identity_status", "design_personality", "reference_notes", "style_direction", "colors", "fonts", "logo_policy", "visual_style", "imagery_style", "motion_style", "references", "avoid", "asset_notes"],
     "strategy": ["goals", "platforms", "cadence", "timezone", "approval_owner"],
 }
 LIST_FIELDS = {"offers", "competitors", "audiences", "markets", "languages", "preferred_terms", "forbidden_words", "colors", "fonts", "references", "avoid", "goals", "platforms"}
@@ -194,12 +194,14 @@ class Workspace:
         group = next((g for g, fields in FIELD_GROUPS.items() if any(f in missing for f in fields)), None)
         return {"brand": brand, "state": "READY" if profile["approved"] else "ONBOARDING_REQUIRED" if missing else "BRAND_REVIEW", "missing": missing, "next_group": group, "questions": [f for f in FIELD_GROUPS.get(group, []) if f in missing], "profile": profile}
 
-    def update_brand(self, brand, answers, actor):
+    def update_brand(self, brand, answers, actor, expected_hash=None):
         require(isinstance(answers, dict) and answers, "Provide questionnaire answers as an object.")
         require(not set(answers) - FIELDS, f"Unknown profile fields: {sorted(set(answers) - FIELDS)}")
         cleaned = {}
         for field, value in answers.items():
             cleaned[field] = string_list(value, field, field in REQUIRED) if field in LIST_FIELDS else text(value, field)
+        if "identity_status" in cleaned:
+            require(cleaned["identity_status"] in {"existing", "partial", "new"}, "Identity status must be existing, partial, or new.")
         if "timezone" in cleaned:
             timezone_name(cleaned["timezone"])
         if "colors" in cleaned:
@@ -212,6 +214,8 @@ class Workspace:
 
         def apply():
             old = self.get("brand", brand, "profile", optional=True)
+            if expected_hash is not None:
+                require(old and old["hash"] == expected_hash, "Brand changed since these directions were prepared; refresh the style options.")
             values = {**(old["answers"] if old else {}), **cleaned}
             if old and values == old["answers"]:
                 return old
@@ -221,6 +225,51 @@ class Workspace:
             self.audit(brand, "brand.updated", "profile", {"version": profile["version"], "hash": profile["hash"], "actor": actor})
             return profile
         return self.transaction(apply)
+
+    def propose_styles(self, brand, value, actor):
+        """Store authored directions, never generate or approve an identity implicitly."""
+        require(isinstance(value, dict), "Style board must be an object.")
+        key = identifier(value.get("id"))
+        options = value.get("options")
+        require(isinstance(options, list) and 2 <= len(options) <= 4, "Provide 2-4 distinct style directions.")
+        allowed = {"colors", "fonts", "logo_policy", "visual_style", "imagery_style", "motion_style", "avoid"}
+        cleaned, seen = [], set()
+        for option in options:
+            require(isinstance(option, dict), "Style direction must be an object.")
+            oid = identifier(option.get("id"))
+            require(oid not in seen, "Duplicate style direction.")
+            seen.add(oid)
+            profile = option.get("profile")
+            require(isinstance(profile, dict) and not set(profile) - allowed, "Style profiles may contain only visual identity fields.")
+            require({"colors", "fonts", "logo_policy", "visual_style", "imagery_style"} <= set(profile), "Style direction needs colors, fonts, logo policy, visual style and imagery style.")
+            for field, val in profile.items():
+                if field in LIST_FIELDS:
+                    string_list(val, field, True)
+                else:
+                    text(val, field)
+            require(all(re.fullmatch(r"#[0-9a-fA-F]{6}", c) for c in profile["colors"]), "Use six-digit hex colors.")
+            cleaned.append({"id": oid, "title": text(option.get("title"), "direction title", 200),
+                            "rationale": text(option.get("rationale"), "direction rationale"),
+                            "tradeoff": text(option.get("tradeoff"), "direction tradeoff"), "profile": profile})
+        actor = text(actor, "actor", 200)
+        def apply():
+            profile = self.get("brand", brand, "profile")
+            require(value.get("brand_hash") == profile["hash"], "Style board must bind the current brand hash.")
+            require(not self.get("style", brand, key, optional=True), "Use a new style board ID to preserve history.")
+            board = {"id": key, "brand_hash": profile["hash"], "options": cleaned, "actor": actor, "created": now()}
+            board["hash"] = digest(board)
+            self.put("style", brand, key, board)
+            self.audit(brand, "style.proposed", key, {"actor": actor, "hash": board["hash"]})
+            return board
+        return self.transaction(apply)
+
+    def select_style(self, brand, key, option_id, expected_hash, actor):
+        board = self.get("style", brand, key)
+        require(board["hash"] == expected_hash, "Style board changed; review current directions.")
+        option = next((v for v in board["options"] if v["id"] == option_id), None)
+        require(option is not None, "Choose a direction from this style board.")
+        return self.update_brand(brand, {**option["profile"], "style_direction": key + "/" + option_id + ": " + option["title"]},
+                                 actor, expected_hash=board["brand_hash"])
 
     def approve_brand(self, brand, expected_hash, actor):
         def apply():
@@ -622,6 +671,7 @@ class Workspace:
     def snapshot(self, brand):
         items = self.list("item", brand)
         for item in items:
+            item["required_review_roles"] = sorted(self.review_roles(item))
             item["effective_status"] = item["status"]
             try:
                 current = self.item_context(brand, item, verify_assets=False)
@@ -629,4 +679,4 @@ class Workspace:
             except EngineError as exc:
                 item["effective_status"] = "STALE"
                 item["blocked_reason"] = str(exc)
-        return {"brand": self.status(brand), "plans": self.list("plan", brand), "items": items, "revisions": self.list("revision", brand), "reviews": self.list("review", brand), "assets": self.list("asset", brand), "rules": self.list("rule", brand), "dispatches": self.list("dispatch", brand), "metrics": self.list("metric", brand), "events": [dict(r) for r in self.db.execute("SELECT action,subject,data,created FROM events WHERE brand=? ORDER BY seq DESC LIMIT 100", (brand,))]}
+        return {"styles": self.list("style", brand), "brand": self.status(brand), "plans": self.list("plan", brand), "items": items, "revisions": self.list("revision", brand), "reviews": self.list("review", brand), "assets": self.list("asset", brand), "rules": self.list("rule", brand), "dispatches": self.list("dispatch", brand), "metrics": self.list("metric", brand), "events": [dict(r) for r in self.db.execute("SELECT action,subject,data,created FROM events WHERE brand=? ORDER BY seq DESC LIMIT 100", (brand,))]}

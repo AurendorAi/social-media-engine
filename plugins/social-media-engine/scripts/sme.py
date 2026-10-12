@@ -17,11 +17,16 @@ def parser():
     sub.add_parser("status", help="Get onboarding progress and next missing fields")
     sub.add_parser("questionnaire", help="List questionnaire groups")
     sub.add_parser("snapshot", help="All selected-brand plans, content, reviews, and receipts")
-    for command in ["brand-update", "plan-import", "item-save", "feedback", "metrics-import"]:
+    for command in ["brand-update", "plan-import", "item-save", "feedback", "metrics-import", "style-propose"]:
         c = sub.add_parser(command)
         c.add_argument("--file", required=True)
-        if command in {"brand-update", "plan-import"}:
+        if command in {"brand-update", "plan-import", "style-propose"}:
             c.add_argument("--actor", required=True)
+    c = sub.add_parser("style-select", help="Select an exact proposed direction; brand approval remains separate")
+    c.add_argument("--id", required=True)
+    c.add_argument("--option", required=True)
+    c.add_argument("--hash", required=True)
+    c.add_argument("--actor", required=True)
     c = sub.add_parser("context", help="Read current approved brand context before generation")
     c.add_argument("--item-file", help="Item skeleton containing id, plan_id and platform/language variants")
     c.add_argument("--campaign")
@@ -90,6 +95,8 @@ def main(argv=None):
                 raise EngineError("Select --brand explicitly; use brands to list existing profiles.")
             if cmd == "status": result = ws.status(brand)
             elif cmd == "snapshot": result = ws.snapshot(brand)
+            elif cmd == "style-propose": result = ws.propose_styles(brand, read_json(args.file), args.actor)
+            elif cmd == "style-select": result = ws.select_style(brand, args.id, args.option, args.hash, args.actor)
             elif cmd == "brand-update": result = ws.update_brand(brand, read_json(args.file), args.actor)
             elif cmd == "brand-approve": result = ws.approve_brand(brand, args.hash, args.actor)
             elif cmd == "context":

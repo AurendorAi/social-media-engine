@@ -43,10 +43,14 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(codex["name"], PLUGIN.name)
         self.assertEqual(claude["name"], PLUGIN.name)
         self.assertEqual(codex["version"], claude["version"])
+        portable = json.loads((PLUGIN / "plugin.json").read_text())
+        self.assertEqual(portable["version"], codex["version"])
+        self.assertEqual(portable["name"], codex["name"])
         cm = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text())
         am = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
         self.assertEqual((ROOT / cm["plugins"][0]["source"]["path"]).resolve(), PLUGIN)
         self.assertEqual((ROOT / am["plugins"][0]["source"]).resolve(), PLUGIN)
+        self.assertEqual(am["plugins"][0]["version"], codex["version"])
         self.assertEqual(cm["plugins"][0]["policy"]["installation"], "AVAILABLE")
         self.assertTrue((PLUGIN / codex["skills"]).is_dir())
 
@@ -73,6 +77,7 @@ class ReleaseTests(unittest.TestCase):
         with zipfile.ZipFile(first) as archive:
             self.assertIsNone(archive.testzip())
             names = archive.namelist()
+            self.assertIn("plugin.json", names)
             self.assertIn(".claude-plugin/plugin.json", names)
             self.assertIn(".codex-plugin/plugin.json", names)
             for name in names:

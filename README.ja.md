@@ -1,3 +1,8 @@
+> **v2:** ブランド資料がなくても、短い質問からデザインの方向性を決められます。
+> 既存のブランド資料や参考例も利用できます。ダッシュボードは Today / Review posts /
+> Publishing / Results の4画面に整理されました。UIは英語です。
+> 既存のワークスペースは引き続き利用できます。更新前にバックアップしてください。
+
 <div align="center">
 
 # Social Media Engine
@@ -55,7 +60,7 @@ python -m pip install tzdata
 **Social Media Engine** を有効にします。
 
 ```text
-Muhammed-Jameel/social-media-engine
+AurendorAi/social-media-engine
 ```
 
 組織によっては管理者による許可やインポートが必要です。画面と利用可否は
@@ -66,7 +71,7 @@ Codex 用のマーケットプレイス定義とネイティブマニフェス�
 ### Claude Code
 
 ```text
-/plugin marketplace add Muhammed-Jameel/social-media-engine
+/plugin marketplace add AurendorAi/social-media-engine
 /plugin install social-media-engine@social-media-engine
 ```
 

@@ -17,7 +17,7 @@ a failed mutation succeeded. `--help` on a subcommand lists required switches.
 - `brand-approve --hash HASH --actor "Owner"`: hash is `status.profile.hash`.
 - `context`: approved profile, brand_hash, rules, assets, context_hash.
 - `snapshot`: brand status, plans, items, revisions, reviews, assets, rules, dispatches,
-  metric snapshots and latest audit events.
+  metric snapshots, style proposals and latest audit events.
 - `asset-import --file ABSOLUTE_FILE --role logo --rights owned --note "Owner supplied" --actor "Owner"`.
   Roles: logo/font/guideline/reference/product/output/audio.
   Rights: owned/licensed/reference-only/unknown. Non-output imports invalidate the brief.
@@ -164,3 +164,25 @@ synthetic (explicit boolean), metrics (name:number or null), definitions (name:s
 raw_evidence (source reference). Snapshot IDs are immutable.
 No provider data is fetched implicitly by this command. Real exports/API responses must
 be gathered separately with authorization. Never turn synthetic fixtures into a report.
+
+## Style discovery
+Optional profile fields: identity_status (existing/partial/new), design_personality,
+reference_notes, style_direction. They participate in the brand hash like other answers.
+Existing v1 profiles remain valid; no re-onboarding is required merely to upgrade.
+
+`style-propose --file directions.json --actor "Actual author"` saves 2–4 authored options.
+The brand may still be onboarding. Get `brand_hash` from `status.profile.hash`, not
+`context` (which requires approval). Each option has id, title, rationale, tradeoff and
+a profile containing colors (hex array), fonts (nonempty string array with licensing
+notes), logo_policy, visual_style, imagery_style and optionally motion_style and avoid.
+Only these visual fields are allowed. The outer object has id, brand_hash, options.
+Use a new board ID for a revision. No image generation occurs in this command.
+
+`style-select --id BOARD --option OPTION --hash BOARD_HASH --actor "Owner"`
+records the owner's chosen profile fields. It checks the board and original brand hash,
+preserves business/audience fields, and clears brand approval. Then show the updated
+brief and use normal brand approval. The dashboard offers the same selection.
+
+Optional plan-item `editorial` object: audience_situation, insight, useful_payoff,
+evidence_needed, visual_mechanism, production_dependencies, experiment. These are
+authored context, preserved without being certified as quality by the runtime.

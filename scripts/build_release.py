@@ -7,7 +7,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins/social-media-engine"
-ALLOWED_TOP = {".codex-plugin", ".claude-plugin", "skills", "scripts", "assets", "README.md", "LICENSE"}
+ALLOWED_TOP = {"plugin.json", ".codex-plugin", ".claude-plugin", "skills", "scripts", "assets", "README.md", "LICENSE"}
 ALLOWED_SUFFIXES = {".json", ".md", ".py", ".js", ".css", ".html", ".png", ".svg"}
 FORBIDDEN = [b"/Users/", b"Content OS", b"/home/ubuntu", b"POSTIZ_API_KEY=sk-"]
 
@@ -37,6 +37,9 @@ def build():
     codex = json.loads((PLUGIN / ".codex-plugin/plugin.json").read_text())
     claude = json.loads((PLUGIN / ".claude-plugin/plugin.json").read_text())
     version = codex["version"]
+    portable = json.loads((PLUGIN / "plugin.json").read_text())
+    if portable["name"] != codex["name"] or portable["version"] != version:
+        raise ValueError("Portable manifest disagrees")
     if codex["name"] != PLUGIN.name or claude["name"] != PLUGIN.name or claude["version"] != version:
         raise ValueError("Plugin manifests disagree")
     if not re.fullmatch(r"\d+\.\d+\.\d+", version):

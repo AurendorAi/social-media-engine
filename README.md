@@ -22,9 +22,25 @@ Social Media Engine uses the model and creative tools available in your AI host.
 It combines guided onboarding, persistent brand memory, deliberate creative direction,
 platform-aware writing, review, and controlled delivery.
 
-> **First release:** a local-first agent plugin, not a hosted SaaS app or an autonomous
+> **Version 2:** a local-first agent plugin, not a hosted SaaS app or an autonomous
 > posting bot. Planning and copy use your host's model. Actual media requires available
 > generation/rendering tools. Publishing and account data require your own integrations.
+
+## New in version 2
+
+- **Start with what you have.** Bring a complete identity, a few references, or no brand
+  assets at all. A short conversation develops the missing pieces.
+- **Choose a direction.** Compare 2–4 saved proposals, see palette swatches and tradeoffs,
+  then choose one. Rendered sample designs help calibrate before a full batch.
+- **More thoughtful content.** Research the audience situation, develop a useful argument,
+  show evidence, and vary composition and pacing without losing brand recognition.
+- **A simpler studio.** Today, Review posts, Publishing, Results. Review one post at a
+  time, move through its slides, switch platform captions, and leave specific feedback.
+- **Memory that stays yours.** Keep brand-specific choices and approved preferences;
+  changing identity makes affected approvals stale.
+
+The package is brand-neutral: it does not ship the creator's private brand assets,
+customer data, fonts, accounts or fixed visual style. It uses your host's model and tools.
 
 ## What it does
 
@@ -55,7 +71,7 @@ The bundled runtime is **not** a universal OAuth service or unified social inbox
 - Codex or Claude with plugins/skills, local execution and access to a working folder.
 - Python **3.10+**, with an IANA timezone database. Windows installations without one can
   install `tzdata`: `python -m pip install tzdata`.
-- Your own brand files and a private folder for content and memory.
+- A private folder for content and memory. Brand files and references are optional.
 - Optional: image/video/design tools and your own Postiz cloud or self-hosted account.
 
 There is no required OpenAI API key, bundled model subscription, model credit, or
@@ -72,13 +88,14 @@ and a native plugin manifest inside `plugins/social-media-engine/.codex-plugin/`
 Use your Codex installation's plugin/marketplace management to add this repository:
 
 ```text
-Muhammed-Jameel/social-media-engine
+AurendorAi/social-media-engine
 ```
 
 Select **Social Media Engine** and install/enable it. For workspace-managed installations,
 an administrator may need to import or allow the GitHub marketplace first.
 Host availability and installation UI depend on the current account/app.
-See [OpenAI's plugin import documentation](https://help.openai.com/en/articles/20001504).
+See [OpenAI's plugin packaging and marketplace documentation](https://developers.openai.com/plugins/build/plugins).
+You can also add the marketplace with `codex plugin marketplace add AurendorAi/social-media-engine`.
 
 For a local checkout, point the host's local marketplace loader at the repository root.
 The plugin source itself is `plugins/social-media-engine`, not the old application.
@@ -89,7 +106,7 @@ The plugin source itself is `plugins/social-media-engine`, not the old applicati
 <summary><strong>Claude Code</strong></summary>
 
 ```text
-/plugin marketplace add Muhammed-Jameel/social-media-engine
+/plugin marketplace add AurendorAi/social-media-engine
 /plugin install social-media-engine@social-media-engine
 ```
 
@@ -123,7 +140,8 @@ preview, review exported files in the host instead of claiming the dashboard ope
 ```text
 Use Social Media Engine to set up my brand.
 My working folder is [your private folder].
-Ask me the onboarding questions, review my brand files,
+I may have brand files or references, or I may be starting from scratch.
+Ask only the missing questions, help me find a direction,
 and get my approval before creating content.
 ```
 
@@ -133,11 +151,15 @@ to fill in a giant JSON file. Use a different brand ID for each brand.
 ## Your first session
 
 ```text
-Brand questionnaire + assets
+Existing identity / optional references / guided discovery
+             |
+     Chosen visual direction
              |
        Approved brand brief
              |
      Strategy + monthly plan
+             |
+ Small calibration sample + feedback
              |
    Platform copy + actual media
              |
@@ -155,7 +177,7 @@ Brand questionnaire + assets
 3. **Approve the brief.** Review what the plugin learned before production begins.
 4. **Choose the tools.** Manual delivery is available without Postiz. Connect optional
    creative/social services through their authorized flows, never by sharing passwords.
-5. **Calibrate quality.** Ask for 3-5 samples including a carousel and a video when tools
+5. **Calibrate quality.** Ask for 1-3 samples in your planned formats, including motion only when tools
    permit. Review the actual files and give specific feedback.
 6. **Build a repeatable workflow.** Approve useful scoped rules, revise a sample, then
    move into monthly production.
@@ -174,6 +196,11 @@ Brand questionnaire + assets
 | Learn | "Analyze these real performance exports, flag unavailable metrics, and suggest next month's experiments." |
 
 ## Review dashboard
+
+![The simplified studio](docs/images/studio-today.png)
+
+*Fictional test brand. This preview shows the interface, not a creative-quality benchmark.*
+
 
 Ask the agent to open it, or run:
 
@@ -216,6 +243,14 @@ local cancellation does not remove a remote post.
 
 See the [publishing guide](plugins/social-media-engine/skills/social-media-engine/references/publishing.md)
 and [command contracts](plugins/social-media-engine/skills/social-media-engine/references/runtime.md).
+
+## Upgrade from version 1
+
+Back up the private workspace while commands and the dashboard are stopped, then update
+or reinstall the plugin in your host and reopen the same workspace and brand ID.
+The existing SQLite schema, profiles, items, feedback and approval records are retained.
+Existing approved profiles do not need the new optional discovery fields. Selecting a
+new visual direction is an identity change and requires a fresh brand review.
 
 ## Safety and privacy
 

@@ -1,5 +1,8 @@
 # Strategy and editorial production
 
+Read [editorial depth](editorial-depth.md) when developing or revising a plan, argument,
+carousel or script. It covers research, useful payoffs, voice and variation across a batch.
+
 ## Build a useful plan
 Start from approved context, recent owner feedback, offers, audience needs, seasonal
 timing, capacity, and evidence-backed performance. With no history, label hypotheses,

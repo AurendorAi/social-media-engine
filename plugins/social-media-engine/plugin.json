@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "social-media-engine",
+  "version": "2.0.0",
+  "description": "Brand discovery, content planning, creative production and a local review studio.",
+  "license": "MIT",
+  "repository": "https://github.com/AurendorAi/social-media-engine"
+}

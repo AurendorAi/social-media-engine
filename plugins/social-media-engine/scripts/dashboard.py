@@ -96,8 +96,11 @@ def server_for(workspace, brand, port=0, token=None):
                 route = urlsplit(self.path).path
                 actor = value.get("actor")
                 if route == "/api/brand": result = ws.update_brand(brand, value["answers"], actor)
+                elif route == "/api/style-select": result = ws.select_style(brand, value["id"], value["option"], value["hash"], actor)
                 elif route == "/api/brand-approve": result = ws.approve_brand(brand, value["hash"], actor)
-                elif route == "/api/item-approve": result = ws.approve_item(brand, value["id"], value["hash"], actor)
+                elif route == "/api/item-approve":
+                    require(value.get("confirmed") is True, "Confirm that you reviewed this exact revision before approval.")
+                    result = ws.approve_item(brand, value["id"], value["hash"], actor)
                 elif route == "/api/feedback": result = ws.feedback(brand, value)
                 elif route == "/api/rule-approve": result = ws.approve_rule(brand, value["id"], actor)
                 elif route == "/api/rule-retire": result = ws.retire_rule(brand, value["id"], actor)

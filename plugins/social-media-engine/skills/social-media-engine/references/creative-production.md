@@ -1,12 +1,16 @@
 # Professional creative production
 
 ## Direction before rendering
-Explore four meaningful concepts spanning at least three suitable visual approaches
-unless an established campaign system calls for tighter consistency. Vary the idea,
-hierarchy, composition, imagery, and storytelling, not just colors. Explain a preferred
-direction against the brief. Respect brand constraints; don't force novelty that harms
-recognition. Avoid interchangeable gradient cards, template grids, decorative clutter,
-and a fixed house aesthetic.
+Choose composition from the post's argument. For an established brand, reuse its approved
+visual vocabulary while varying imagery, hierarchy, storytelling and rhythm. For new or
+uncertain identity, use [style discovery](style-discovery.md) before production. Don't
+force four concepts or a new direction for a simple revision.
+
+Use [production toolkit](production-toolkit.md) to select available methods and prove a
+representative render before scaling. A review that says "generic" needs a diagnosis:
+weak argument, irrelevant imagery, repeated composition, buried mechanism, unnatural
+voice or interchangeable pacing. Fix that cause; swapping a surface treatment is not a
+substantive revision.
 
 Use supplied brand typography, palette, logo rules, photography, and reference material.
 Do not redistribute or assume licences for a font. Inspect font coverage for every
