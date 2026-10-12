@@ -20,3 +20,14 @@ uploads, scheduled/public posts, host chat history, or external service records.
 Use those services' controls separately.
 
 Privacy questions: mohammedj@aurendor.io.
+
+## Resource discovery
+
+Explicit resource searches send the search words and normal network metadata to the
+selected library service. Met search also fetches matching public object records.
+Resource downloads contact the selected public file host and validated redirects.
+The built-in downloader sends no API keys, cookies or brand profile. Do not put private
+campaign details in queries or signed/account-specific URLs in provenance.
+Candidate metadata, licence evidence and downloaded files stay in the selected local
+brand workspace. Host browser/search and creative services have their own data policies.
+No discovery or download runs on plugin installation.

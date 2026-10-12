@@ -398,8 +398,91 @@ try {
     "ابدأ بملاحظة بسيطة عن مذاق قهوتك. دوّن إعدادات التحضير، ثم غيّر عاملًا واحدًا في التجربة التالية.",
     "instagram",
   );
+  const resourceFile = path.join(workspace, "fixture-pattern.svg");
+  fs.writeFileSync(
+    resourceFile,
+    '<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="120" height="120" fill="#F6EEDF"/><path d="M0 60h120M60 0v120" stroke="#173C34" stroke-width="2"/></svg>',
+  );
+  let resource = command("resource-add", ["--actor", "Fixture researcher"], {
+    provider: "fixture",
+    kind: "pattern",
+    title: "Original test grid",
+    creator: "Test fixture",
+    source_url: "https://example.com/fixture",
+    download_url: "https://example.com/fixture.svg",
+    license_name: "Fixture only",
+  });
+  resource = command("resource-review", ["--id", resource.id], {
+    resource_hash: resource.hash,
+    commercial_allowed: true,
+    adaptations_allowed: true,
+    attribution_required: false,
+    license_name: "Original synthetic test",
+    license_url: "https://example.com/license",
+    evidence: "Original test fixture only; no real creative review.",
+    intended_use: "Exercise the material gallery",
+    style_fit: "Simple grid with the fictional brand palette",
+    reviewer: "Fixture researcher",
+    attribution: "Original test fixture",
+  });
+  command("resource-import", [
+    "--id",
+    resource.id,
+    "--hash",
+    resource.hash,
+    "--actor",
+    "Fixture producer",
+    "--file",
+    resourceFile,
+  ]);
+  assert.equal(
+    command("status").state,
+    "READY",
+    "Materials must preserve brand approval",
+  );
   await page.reload();
+  await page.locator("#more-tools").evaluate((n) => (n.open = true));
+  await page
+    .getByRole("button", { name: "Design library", exact: true })
+    .click();
+  await page.locator("#library img").waitFor();
+  await page.waitForFunction(
+    () => document.querySelector("#library img")?.naturalWidth > 0,
+  );
+  assert.equal(
+    await page.locator("#library img").getAttribute("alt"),
+    "Original test grid",
+  );
+  await page.route("**/api/resource-search", async (route) => {
+    assert.deepEqual(route.request().postDataJSON(), {
+      query: "fine paper grain",
+      kind: "texture",
+      provider: "commons",
+    });
+    await route.fulfill({ json: { results: [], skipped: 0 } });
+  });
+  await page
+    .getByLabel("What are you looking for?", { exact: true })
+    .fill("fine paper grain");
+  await page
+    .getByLabel("Material type", { exact: true })
+    .selectOption("texture");
+  await page.getByLabel("Search in", { exact: true }).selectOption("commons");
+  await page
+    .getByRole("button", { name: "Search materials", exact: true })
+    .click();
+  await page
+    .locator("#notice")
+    .filter({ hasText: "No materials found" })
+    .waitFor();
+  await page.unroute("**/api/resource-search");
+  await page.screenshot({
+    path: path.join(workspace, "dashboard-library.png"),
+    fullPage: true,
+    animations: "disabled",
+  });
   await page.getByRole("button", { name: /Review posts/i }).click();
+
   await page
     .locator("#content")
     .getByRole("heading", { name: "Change one thing", exact: true })

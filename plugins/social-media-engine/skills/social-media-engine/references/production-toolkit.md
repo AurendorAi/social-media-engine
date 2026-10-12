@@ -60,3 +60,7 @@ The item's `creative` object can contain:
 Planned tools are not tools used. Use actual files and evidence. HTML source is not
 final media; a passed schema is not an aesthetic review. Don't insert unverified model
 output, simulated account data or placeholder artwork into production-ready records.
+
+Before rendering, follow [resource sourcing](resource-sourcing.md) to find, inspect and
+compose suitable real materials. Keep the brief, actual sourced ingredients, editable
+composition and final rendered files distinct. Use AI where it helps the concept.

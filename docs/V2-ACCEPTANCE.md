@@ -38,3 +38,22 @@ Packaging references checked for this upgrade:
 This candidate has not been installed and creatively benchmarked in both end-user hosts,
 and no live social account was connected. The interface is English; brand/content language
 and direction are preserved. Real-brand creative calibration remains essential.
+
+
+## Version 2.1 sourcing checks — 2026-10-12
+
+- 71 offline runtime/API/release tests passed.
+- Chromium desktop/mobile exercise passed, including static SVG material preview,
+  search controls, saved material isolation and the existing content/media flow.
+- Live unauthenticated searches returned results from Openverse, Wikimedia Commons,
+  Iconify and Met v1.1. The Met adapter uses the current paginated search endpoint.
+- A real Commons linen texture was inspected against its source and CC BY 2.0 licence,
+  downloaded through the production acquisition path, and verified in the fictional
+  demo library. Its 3,575,201 bytes and source record were saved without changing
+  approved brand context. Third-party bytes are not included in this repository/package.
+- Claude plugin/marketplace validation, skill validation and deterministic packaging passed.
+
+These checks establish working search and acquisition at the test time. They do not
+certify third-party uptime or legal clearance of future materials. The host performs
+source/style inspection and actual composition; paid/login libraries need authorized
+browsing or manual import. Subjective production quality still needs owner calibration.

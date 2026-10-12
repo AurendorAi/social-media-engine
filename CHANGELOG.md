@@ -1,3 +1,15 @@
+# Version 2.1.0 — 2026-10-12
+
+- Public-library search adapters for Openverse, Commons, Iconify and Met v1.1 search.
+- Curated specialist libraries and host web discovery for textures, patterns, photos,
+  vectors and fonts; post-specific sourcing and composition guidance.
+- Reviewed public HTTPS download and explicit local import with source/licence records,
+  byte checks, private-network protection and conservative static SVG validation.
+- Design library dashboard: search, source links, reviewed download, local previews.
+- Materials stay separate from brand identity; only used materials bind post approval.
+- Per-post material use records, required caption attribution and export credits.
+- Offline resource regression tests and real browser library coverage.
+
 # Version 2.0.0 — 2026-10-12
 
 - Guided setup for existing, partial and missing identities, with optional reference analysis.

@@ -1,6 +1,6 @@
 ---
 name: social-media-engine
-description: Set up a brand-first social media workspace, collect brand guidelines and assets, plan campaigns, create platform-specific copy and visual/video content, review and revise outputs, manage approved publishing through Postiz or manual export, and learn from owner feedback and real analytics. Use when the user invokes Social Media Engine or asks it to manage social media for a brand.
+description: Set up a brand-first social media workspace, collect brand guidelines and assets, plan campaigns, source real design materials from web libraries, create platform-specific copy and visual/video content, review and revise outputs, manage approved publishing through Postiz or manual export, and learn from owner feedback and real analytics. Use when the user invokes Social Media Engine or asks it to manage social media for a brand.
 ---
 
 # Social Media Engine
@@ -34,6 +34,9 @@ platform/language-specific rules are present. Never reuse another brand's cached
    Connect business goals, audience tensions, content pillars, calendar, and platform mix.
    Present the strategy for the owner's agreement before producing a batch.
 2. **Produce.** Discover the actual capabilities using [production toolkit](references/production-toolkit.md).
+   First follow [resource sourcing](references/resource-sourcing.md): find and inspect real
+   imagery, icons, patterns, textures and typography that support the post’s direction.
+   Use source materials and original composition alongside AI tools where appropriate.
    Read [creative production](references/creative-production.md).
    Make actual editable assets with available tools. Use imported brand assets correctly.
    Draft captions separately per platform and language, not one universal caption.
@@ -56,7 +59,7 @@ working infrastructure with proven creative quality.
 
 ## Open the studio
 The dashboard follows Today → Review posts → Publishing → Results. Brand & assets,
-Content plans, Feedback & learning and Activity log are under More tools. Use the
+Design library, Content plans, Feedback & learning and Activity log are under More tools. Use the
 existing workspace and run `dashboard`; open its printed private URL when supported.
 The dashboard reviews saved work. Creation happens in this conversation using the host's
 model and available tools; never imply a dashboard button is generating in the background.

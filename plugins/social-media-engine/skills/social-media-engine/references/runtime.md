@@ -20,7 +20,7 @@ a failed mutation succeeded. `--help` on a subcommand lists required switches.
   metric snapshots, style proposals and latest audit events.
 - `asset-import --file ABSOLUTE_FILE --role logo --rights owned --note "Owner supplied" --actor "Owner"`.
   Roles: logo/font/guideline/reference/product/output/audio.
-  Rights: owned/licensed/reference-only/unknown. Non-output imports invalidate the brief.
+  Rights: owned/licensed/reference-only/unknown. Identity imports invalidate the brief; sourced materials use the separate workflow below.
   Returned asset record includes ID, workspace-relative path, SHA-256, and rights.
 
 Answers are JSON objects. List fields: offers, competitors, audiences, markets, languages,
@@ -186,3 +186,77 @@ brief and use normal brand approval. The dashboard offers the same selection.
 Optional plan-item `editorial` object: audience_situation, insight, useful_payoff,
 evidence_needed, visual_mechanism, production_dependencies, experiment. These are
 authored context, preserved without being certified as quality by the runtime.
+
+## Design materials (v2.1)
+`resource-libraries [--kind texture]` lists bundled sources without a network call.
+Kinds: photo/illustration/icon/texture/pattern/graphic/font.
+`resource-search --provider openverse --query "warm paper grain" --kind texture --limit 8`
+sends only the query to that service and saves candidates. Providers: openverse/commons/
+iconify/met; Iconify accepts kind=icon. Font libraries use host browsing. Limits 1–20;
+Met inspects at most 12 object records and may return fewer results. No API key required.
+
+`resource-add --file candidate.json --actor "Actual researcher"` records a web discovery:
+```json
+{
+  "provider": "web",
+  "kind": "texture",
+  "title": "Actual material title",
+  "creator": "Actual creator",
+  "source_url": "https://example.com/asset-page",
+  "download_url": "https://example.com/actual-material.jpg",
+  "license_name": "Actual source licence",
+  "license_url": "https://example.com/licence",
+  "style_fit": "Specific visual purpose after inspection"
+}
+```
+Use actual URLs, never these placeholders. Source/download URLs must be public HTTPS
+without credentials/fragments. Local imports may use the source page as download_url
+when no stable public file URL exists; provenance identifies the local-import method.
+Candidates deduplicate by source+download URL within each brand. Acquired records are
+immutable; use a distinct source/version URL for a new material revision.
+
+`resource-review --id RESOURCE_ID --file review.json`:
+```json
+{
+  "resource_hash": "CURRENT_CANDIDATE_HASH",
+  "commercial_allowed": true,
+  "adaptations_allowed": true,
+  "attribution_required": true,
+  "license_name": "ACTUAL_VERIFIED_LICENCE",
+  "license_url": "https://example.com/licence",
+  "evidence": "Specific evidence from the source and licence, including restrictions checked",
+  "intended_use": "Background texture in this campaign's social designs",
+  "style_fit": "Why this material supports the composition and brand direction",
+  "reviewer": "ACTUAL_REVIEWER",
+  "attribution": "COMPLETE_REQUIRED_CREDIT_WITH_SOURCE_AND_LICENCE"
+}
+```
+These booleans are evidence-backed declarations, not automatic licence verification.
+`resource-fetch --id RESOURCE_ID --hash REVIEWED_HASH --actor "Actual producer"`
+acquires a public HTTPS file. `resource-import` takes the same switches plus
+`--file ABSOLUTE_FILE` for an authorized manual download. Both require the reviewed hash,
+validate actual file type, and return an asset with role=material and provenance.
+`asset-import --role material` cannot bypass the sourcing workflow.
+`snapshot.resources` contains candidates/reviews; `snapshot.assets` contains acquired files.
+Material records are excluded from brand context. They are available only to their brand.
+
+Optional item additions:
+```json
+{
+  "material_ids": ["ACTUAL_MATERIAL_ASSET_ID"],
+  "creative": {
+    "sourcing": {"purpose": "Authored search brief and selection rationale"},
+    "material_uses": [{
+      "asset_id": "ACTUAL_MATERIAL_ASSET_ID",
+      "purpose": "Subtle tactile background",
+      "edits": "Cropped and tinted; state actual changes",
+      "credit_placement": "Every platform caption"
+    }]
+  }
+}
+```
+Preserve other creative fields. Exactly one use record per material is required. Finished
+variant asset_ids must contain final media, not material assets. Required attribution
+must occur verbatim in every variant caption. Include modification notices as required.
+Item hashes include the selected material bytes and provenance. Export includes material
+records in content.json and CREDITS.md; original materials are not copied to the package.

@@ -61,3 +61,17 @@ the local suite:
 Never use a real production brand's credentials to make these checks implicitly.
 A passing unit/browser suite does not guarantee host availability, third-party uptime,
 social-platform approval, subjective creative quality, or absence of every defect.
+
+## Resource sourcing coverage
+
+Offline tests cover all four adapters, review-before-download, local import, separate
+brands, preserved brand approval, material byte/provenance integrity, required caption
+credit and export records. Downloader tests cover private/mixed DNS, unsafe URL forms,
+redirect rejection, size/incomplete responses and active SVG. Browser tests exercise the
+real SVG material preview and search form with a mocked provider response. No CI request
+requires a third-party account or internet library to be available.
+
+For a live smoke check, explicitly search a public library in a fictional local workspace,
+inspect the original source/licence and actual image, acquire a chosen material, and
+verify its byte hash and source record. Keep downloaded third-party assets under ignored
+`.data/`; never add them to the plugin or use synthetic review evidence for them.

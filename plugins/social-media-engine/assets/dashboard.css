@@ -731,3 +731,26 @@ button:disabled {
     max-width: 140px;
   }
 }
+
+.resource-search {
+  display: grid;
+  gap: 1rem;
+}
+.library-row {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line, #ddd);
+}
+.library-row a {
+  display: block;
+  font-weight: 600;
+}
+.material-grid .media {
+  min-height: 0;
+  max-height: 260px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.material-grid img {
+  max-height: 250px;
+  object-fit: contain;
+}

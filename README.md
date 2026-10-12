@@ -26,7 +26,34 @@ platform-aware writing, review, and controlled delivery.
 > posting bot. Planning and copy use your host's model. Actual media requires available
 > generation/rendering tools. Publishing and account data require your own integrations.
 
-## New in version 2
+## New in version 2.1: real design materials
+
+Find and use real photography, icons, illustrations, textures, patterns and fonts as part
+of an original composition. The assistant starts with the post's visual direction,
+compares actual materials and records why the selected ones fit your brand.
+
+- **Search in the studio:** Openverse, Wikimedia Commons, Iconify and the Met Open Access.
+- **Explore specialist libraries:** ambientCG, Poly Haven, Hero Patterns, unDraw, SVG Repo,
+  Pexels, Unsplash and Google Fonts, plus other sources through the host's web/browser tools.
+- **Download and reuse:** reviewed public HTTPS files or explicit manual imports go into
+  a separate brand-specific Design library. Adding materials keeps brand approval intact.
+- **Keep source records:** creator, licence evidence, intended use and edits follow each
+  post. Required attribution stays in captions; exports include credits and provenance.
+
+The four built-in searches need no API key. Other libraries use the host's browser/tools;
+paid downloads require your own authorization and licence. Search results need actual
+source and licence inspection. The runtime records that inspection; it does not certify
+legal clearance or generate a finished composition on its own. Current material formats:
+PNG, JPEG, WebP, static SVG and TTF/OTF/WOFF/WOFF2; maximum 20 MB (SVG 2 MB).
+
+Try: **"Find real photography and subtle textures that match this post's direction.
+Use them in an editable composition, keep source credits, and show me the finished design."**
+
+![Design library with a fictional test material](docs/images/studio-library.png)
+
+See the [sourcing workflow](plugins/social-media-engine/skills/social-media-engine/references/resource-sourcing.md).
+
+## Brand studio foundations
 
 - **Start with what you have.** Bring a complete identity, a few references, or no brand
   assets at all. A short conversation develops the missing pieces.
@@ -49,6 +76,7 @@ customer data, fonts, accounts or fixed visual style. It uses your host's model 
 | **Understand your brand** | Resumable questionnaire, guidelines, assets, voice, audience, goals and owner approval |
 | **Remember** | Separate brand profiles, source/rights notes, scoped feedback and persistent approved rules |
 | **Plan** | Monthly strategies, content pillars, briefs, dates and timezone-aware calendar records |
+| **Source** | Public-library search, specialist web discovery, reviewed downloads and reusable brand materials |
 | **Create** | Agent workflows for platform-specific copy, images, carousels and video |
 | **Review** | Local dashboard, actual asset previews, revision history, review records and owner approval |
 | **Deliver** | Approved manual exports; optional Postiz account discovery, uploads and dispatch |
@@ -269,7 +297,7 @@ See [privacy](PRIVACY.md) and [security](SECURITY.md).
 ## Deployment and limitations
 
 The MIT licence permits adapting the source for local, team, self-hosted or hosted use.
-The supported v1 runtime is **local, single-owner**. Hosted/multi-user deployments need
+The supported runtime is **local, single-owner**. Hosted/multi-user deployments need
 their own authentication, authorization, encrypted secret storage, isolation, backup
 and operational design. Open source does not mean those protections are already built.
 

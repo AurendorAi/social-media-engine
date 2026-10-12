@@ -46,3 +46,7 @@ obvious overflow, poor contrast, missing glyphs, awkward crops, incorrect logos,
 hierarchy, unnatural pacing, and export artifacts. A source-code review is not visual QA.
 If tools cannot render or display outputs, report what is blocked and offer a supported
 alternative rather than returning mock assets as finished work.
+
+Before rendering, follow [resource sourcing](resource-sourcing.md) to find, inspect and
+compose suitable real materials. Keep the brief, actual sourced ingredients, editable
+composition and final rendered files distinct. Use AI where it helps the concept.

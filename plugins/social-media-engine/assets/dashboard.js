@@ -8,6 +8,9 @@ let state,
   filter = "all",
   search = "";
 let refreshing = false;
+let resourceQuery = "",
+  resourceKind = "photo",
+  resourceProvider = "openverse";
 const blobs = [],
   previewObservers = [];
 const $ = (id) => document.getElementById(id);
@@ -93,7 +96,8 @@ function tab(name) {
     .forEach((n) =>
       n.setAttribute("aria-current", n.dataset.tab === name ? "page" : "false"),
     );
-  if (["brand", "plans", "learning", "activity"].includes(name))
+  if (name === "library") designLibrary();
+  if (["brand", "plans", "learning", "activity", "library"].includes(name))
     $("more-tools").open = true;
 }
 document
@@ -123,6 +127,7 @@ async function refresh() {
     publishing();
     results();
     activity();
+    if (!$("library").hidden) designLibrary();
   } finally {
     refreshing = false;
   }
@@ -500,7 +505,7 @@ function brandForm() {
   const list = $("asset-list");
   list.replaceChildren();
   state.assets
-    .filter((a) => a.role !== "output")
+    .filter((a) => !["output", "material"].includes(a.role))
     .forEach((a) =>
       list.append(node("p", a.name + " · " + a.role + " · " + a.rights)),
     );
@@ -601,7 +606,10 @@ $("upload-form").onsubmit = async (e) => {
 };
 async function preview(asset, container, alt) {
   const ext = asset.path.split(".").pop();
-  if (!["png", "jpg", "jpeg", "webp", "mp4", "webm"].includes(ext)) {
+  if (
+    !["png", "jpg", "jpeg", "webp", "mp4", "webm"].includes(ext) &&
+    !(ext === "svg" && asset.role === "material")
+  ) {
     container.append(
       node("p", asset.name + " — ask your assistant to open this file."),
     );
@@ -742,6 +750,21 @@ function content() {
       "meta",
     ),
   );
+  if (item.material_ids?.length) {
+    const sources = node("details");
+    sources.append(node("summary", "Design materials & credits"));
+    item.material_ids.forEach((id) => {
+      const material = state.assets.find((a) => a.id === id);
+      const p = material?.provenance;
+      if (!p) return;
+      sources.append(
+        node("p", p.title + " · " + p.creator),
+        sourceLink("Original source", p.source_url),
+        node("p", p.rights_review.attribution),
+      );
+    });
+    c.append(sources);
+  }
   if (item.blocked_reason) c.append(node("p", item.blocked_reason, "help"));
   const vl = node("label", "Platform & language");
   const variants = node("select");
@@ -1189,3 +1212,193 @@ $("refresh-work").onclick = async () => {
   }
 };
 refresh().catch((e) => notice(e.message, true));
+
+function sourceLink(label, url) {
+  const a = node("a", label);
+  try {
+    if (new URL(url).protocol !== "https:") return node("span", label);
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+  } catch {
+    return node("span", label);
+  }
+  return a;
+}
+function designLibrary() {
+  const root = $("library");
+  root.replaceChildren(
+    node("h2", "Find the ingredients for your next idea."),
+    node(
+      "p",
+      "Photography, textures, patterns, illustrations and icons. Start with a clear visual direction; your assistant helps choose and compose the right materials.",
+    ),
+  );
+  const form = node("form", undefined, "card resource-search");
+  const queryLabel = node("label", "What are you looking for?");
+  const query = node("input");
+  query.name = "resource-query";
+  query.required = true;
+  query.maxLength = 500;
+  query.placeholder = "Warm paper grain, subtle texture";
+  query.value = resourceQuery;
+  queryLabel.append(query);
+  const kindLabel = node("label", "Material type"),
+    kind = node("select");
+  kind.name = "resource-kind";
+  kind.setAttribute("aria-label", "Material type");
+  ["photo", "illustration", "icon", "texture", "pattern", "graphic"].forEach(
+    (k) => {
+      const o = node("option", k);
+      o.value = k;
+      kind.append(o);
+    },
+  );
+  kind.value = resourceKind;
+  kindLabel.append(kind);
+  const providerLabel = node("label", "Search in"),
+    provider = node("select");
+  provider.name = "resource-provider";
+  provider.setAttribute("aria-label", "Search in");
+  [
+    ["openverse", "Openverse"],
+    ["commons", "Wikimedia Commons"],
+    ["iconify", "Iconify (icons)"],
+    ["met", "The Met Open Access"],
+  ].forEach(([v, t]) => {
+    const o = node("option", t);
+    o.value = v;
+    provider.append(o);
+  });
+  provider.value = resourceProvider;
+  providerLabel.append(provider);
+  provider.onchange = () => {
+    if (provider.value === "iconify") kind.value = "icon";
+  };
+  kind.onchange = () => {
+    if (kind.value !== "icon" && provider.value === "iconify")
+      provider.value = "openverse";
+  };
+  const submit = node("button", "Search materials");
+  submit.type = "submit";
+  submit.disabled = !state.brand.profile;
+  const help = node(
+    "p",
+    "Only your search words are sent to the selected public service. Avoid private information. Results are candidates; your assistant checks the source, licence and style before downloading.",
+    "help",
+  );
+  form.append(queryLabel, kindLabel, providerLabel, help, submit);
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    resourceQuery = query.value;
+    resourceKind = kind.value;
+    resourceProvider = provider.value;
+    submit.disabled = true;
+    submit.textContent = "Searching…";
+    try {
+      const result = await api("/api/resource-search", {
+        query: resourceQuery,
+        kind: resourceKind,
+        provider: resourceProvider,
+      });
+      await refresh();
+      notice(
+        result.results.length
+          ? `${result.results.length} candidates saved. Open their original sources with your assistant to choose materials.${result.skipped ? ` ${result.skipped} unsupported links skipped.` : ""}`
+          : "No materials found. Try a more specific query or another library.",
+      );
+    } catch (e) {
+      notice(e.message, true);
+    } finally {
+      submit.disabled = !state.brand.profile;
+      submit.textContent = "Search materials";
+    }
+  };
+  root.append(form);
+  const libraries = node("details", undefined, "card");
+  libraries.append(node("summary", "Explore specialist libraries & fonts"));
+  (state.resource_libraries || []).forEach((l) => {
+    const row = node("div", undefined, "library-row");
+    row.append(
+      sourceLink(l.name, l.url),
+      node("span", l.kinds.join(" · "), "meta"),
+      node("p", l.notes),
+      node(
+        "p",
+        l.access === "api"
+          ? "Search here or browse with your assistant."
+          : "Browse with your assistant, then add the selected material to this library.",
+        "help",
+      ),
+    );
+    libraries.append(row);
+  });
+  root.append(libraries);
+  const materials = state.assets.filter((a) => a.role === "material");
+  root.append(node("h3", `Your materials (${materials.length})`));
+  const gallery = node("div", undefined, "grid material-grid");
+  materials.forEach((a) => {
+    const p = a.provenance,
+      c = card(p.title, p.style_fit);
+    const image = node("div", undefined, "media");
+    c.append(image);
+    preview(a, image, p.title);
+    c.append(
+      sourceLink("Original source", p.source_url),
+      node("p", p.rights_review.license_name, "meta"),
+    );
+    const credits = node("details");
+    credits.append(
+      node("summary", "Usage & credit"),
+      node("p", p.rights_review.intended_use),
+      node("p", p.rights_review.attribution),
+    );
+    c.append(credits);
+    gallery.append(c);
+  });
+  root.append(gallery);
+  if (!materials.length)
+    root.append(
+      node(
+        "p",
+        "Selected materials will appear here after source review and download. They stay separate from your brand identity files.",
+      ),
+    );
+  const candidates = (state.resources || [])
+    .filter((r) => r.status !== "ACQUIRED")
+    .slice(-24)
+    .reverse();
+  root.append(node("h3", "Recent candidates"));
+  if (!candidates.length)
+    root.append(
+      node(
+        "p",
+        "Search above, or ask your assistant to find materials for a specific post.",
+      ),
+    );
+  candidates.forEach((r) => {
+    const c = card(r.title, r.style_fit);
+    c.append(
+      node("p", `${r.provider} · ${r.kind} · ${r.creator}`, "meta"),
+      sourceLink("Inspect original source", r.source_url),
+      node(
+        "p",
+        r.status === "REVIEWED"
+          ? "Source review recorded. Ready to download."
+          : "Needs source, licence and style review.",
+      ),
+    );
+    if (r.status === "REVIEWED")
+      c.append(
+        action("Download reviewed material", async () => {
+          await api("/api/resource-fetch", {
+            id: r.id,
+            hash: r.hash,
+            actor: actor(),
+          });
+          notice("Material saved to your design library.");
+        }),
+      );
+    root.append(c);
+  });
+}

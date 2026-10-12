@@ -57,3 +57,12 @@ See the bundled skill references for complete workflow and command contracts.
 
 Built by [Aurendor](https://www.instagram.com/aurendor/).
 MIT licensed. Support: [mohammedj@aurendor.io](mailto:mohammedj@aurendor.io).
+
+## Design library (2.1)
+
+Search public libraries for real imagery, icons, textures and patterns. The assistant
+can also browse specialist libraries and import explicitly selected files. Source
+inspection, licence evidence, style rationale and item-level material tracking are part
+of production. Open **More tools → Design library** to search and review saved materials.
+See [resource sourcing](skills/social-media-engine/references/resource-sourcing.md) and
+[CLI contracts](skills/social-media-engine/references/runtime.md).

@@ -49,6 +49,8 @@ def build():
     required = {".codex-plugin/plugin.json", ".claude-plugin/plugin.json",
                 "skills/social-media-engine/SKILL.md", "scripts/sme.py",
                 "scripts/engine.py", "scripts/providers.py", "scripts/dashboard.py",
+                "scripts/resources.py", "scripts/resource_http.py", "assets/resource-libraries.json",
+                "skills/social-media-engine/references/resource-sourcing.md",
                 "assets/dashboard.html", "assets/dashboard.js", "assets/dashboard.css", "LICENSE"}
     if not required <= names:
         raise ValueError("Missing required plugin files: " + str(required - names))
