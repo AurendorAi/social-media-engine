@@ -36,7 +36,8 @@ Content approval is NOT permission to publish. Exact destination/time confirmati
 a separate publishing step.
 
 ## First-run quality calibration
-Generate 3-5 useful brand-specific samples, including a carousel and video when possible.
+Start with 1–3 representative pieces appropriate to the requested scope and tools,
+following [style discovery](style-discovery.md). Include motion only when planned.
 Collect 1-5 ratings for writing, visuals, brand accuracy, creativity, and motion plus
 concrete comments. Distinguish one-post changes from reusable preferences.
 Propose rules with explicit scopes and approve only what the owner confirms.
@@ -45,3 +46,20 @@ Regenerate at least one sample and explain the before/after differences.
 Keep honest status: not reviewed, changes requested, approved for export, prepared for
 publishing, provider accepted, or publication verified. Never substitute test-generated
 scores or fabricated owner feedback for a genuine calibration session.
+
+## Dashboard review
+Open one post, choose each platform/language, inspect every slide and play each video.
+The checkbox records review confirmation; it does not create critic scores or clear
+missing review roles. Required roles come from the runtime, including Arabic when
+applicable. The owner may perform the required reviews in conversation: show the exact
+rubric and artifacts, record only their actual observations and scores, then request
+final approval. Do not invent scores from a simple "looks good".
+
+## Scope and brand-specific rigor
+
+Use [brand quality](brand-quality.md) for the actual-account baseline, creative brief,
+logo-swap test and per-format audit. The 1–3 sample cycle is the default; an explicit
+request for a full private proposal may proceed as unapproved exploratory drafts without
+an extra sample-only pause. This does not waive independent review, brand/content owner
+approval or publishing gates. Read [research findings](research-findings.md) for the
+limited evidence behind conditional style observations; no style guarantees quality.

@@ -1,5 +1,8 @@
 # Strategy and editorial production
 
+Read [editorial depth](editorial-depth.md) when developing or revising a plan, argument,
+carousel or script. It covers research, useful payoffs, voice and variation across a batch.
+
 ## Build a useful plan
 Start from approved context, recent owner feedback, offers, audience needs, seasonal
 timing, capacity, and evidence-backed performance. With no history, label hypotheses,
@@ -42,3 +45,12 @@ format, asset IDs in viewing order, alt text per asset, adaptation rationale, so
 verified claims when present, and a creative brief (idea, art direction, script as needed).
 Use `context --item-file` to bind both brand and scoped rules before saving.
 Never mark content approved just because the JSON saved successfully.
+
+## Apply the same rigor to each brand
+
+Follow [brand quality](brand-quality.md): establish the real baseline, save the selected
+brand's creative brief, and connect audience situation, evidence, mechanism, payoff,
+voice and meaningful materials. Transfer the method, never another brand's identity.
+Check cross-brand layout repetition and repetitive CTA-only ideas before scaling.
+Use [research findings](research-findings.md) as conditional observations, not templates
+or sector-to-style assignments. Owner constraints and actual feedback take precedence.

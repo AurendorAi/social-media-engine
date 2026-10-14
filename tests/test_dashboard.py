@@ -73,3 +73,25 @@ class DashboardTests(RuntimeHarness):
     def test_asset_and_route_traversal_do_not_expose_files(self):
         self.assertEqual(self.request("/api/asset?id=../../state.sqlite3")[0], 400)
         self.assertEqual(self.request("/../../README.md")[0], 404)
+
+    def test_style_selection_uses_exact_board_and_requires_brand_reapproval(self):
+        from test_style_discovery import board
+        proposal = self.call("style-propose", "--actor", "Designer", body=board(self.call("status")["profile"]["hash"]))
+        body = {"id": proposal["id"], "option": "graphic", "hash": proposal["hash"], "actor": "Owner"}
+        self.assertEqual(self.request("/api/style-select", body, authorized=False)[0], 401)
+        status, _, raw = self.request("/api/style-select", body)
+        self.assertEqual(status, 200, raw)
+        self.assertFalse(json.loads(raw)["approved"])
+        self.assertEqual(self.request("/api/style-select", body)[0], 400, "A stale board cannot be selected twice")
+
+    def test_owner_checkbox_and_complete_reviews_required_for_approval(self):
+        item = self.call("item-save", body=self.draft())
+        body = {"id": item["id"], "hash": item["hash"], "actor": "Owner", "confirmed": True}
+        self.assertEqual(self.request("/api/item-approve", body)[0], 400)
+        self.review(item, "editorial")
+        self.review(item, "brand")
+        for confirmation in [False, None, "true", 1]:
+            self.assertEqual(self.request("/api/item-approve", {**body, "confirmed": confirmation})[0], 400)
+        self.assertEqual(self.request("/api/item-approve", body)[0], 200)
+        snapshot = json.loads(self.request("/api/state")[2])
+        self.assertEqual(snapshot["items"][0]["required_review_roles"], ["brand", "editorial"])

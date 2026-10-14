@@ -30,14 +30,16 @@ npx playwright install chromium
 node tests/dashboard.e2e.mjs
 ```
 
-On macOS the script uses installed Google Chrome. Other systems use Playwright Chromium.
+The script uses Playwright Chromium. Set `BROWSER_CHANNEL=chrome` to use an installed
+Google Chrome instead.
 Set `PLAYWRIGHT_MODULE` to an existing Playwright module path if using a bundled runtime.
 Set `PYTHON` or `FFMPEG` if their executable names differ.
 
 The exercise opens the real dashboard, saves questionnaire progress via the UI,
-approves the fictional brand, renders five original PNGs and a six-second MP4,
+selects a saved style direction, approves the fictional brand, renders five original PNGs and a six-second MP4,
 creates four content drafts (carousel, image, video, Arabic image), checks order and
-desktop/mobile previews, plays the entire video, and saves rated owner-test feedback.
+desktop/mobile previews, platform caption selection, missing-review approval blocking,
+empty filter results, plays the entire video, and saves rated owner-test feedback.
 It also checks unauthorized and cross-origin requests. The video is intentionally silent.
 Output files, screenshots and RESULT.json remain under `.data/browser-TIMESTAMP/`.
 
@@ -59,3 +61,17 @@ the local suite:
 Never use a real production brand's credentials to make these checks implicitly.
 A passing unit/browser suite does not guarantee host availability, third-party uptime,
 social-platform approval, subjective creative quality, or absence of every defect.
+
+## Resource sourcing coverage
+
+Offline tests cover all four adapters, review-before-download, local import, separate
+brands, preserved brand approval, material byte/provenance integrity, required caption
+credit and export records. Downloader tests cover private/mixed DNS, unsafe URL forms,
+redirect rejection, size/incomplete responses and active SVG. Browser tests exercise the
+real SVG material preview and search form with a mocked provider response. No CI request
+requires a third-party account or internet library to be available.
+
+For a live smoke check, explicitly search a public library in a fictional local workspace,
+inspect the original source/licence and actual image, acquire a chosen material, and
+verify its byte hash and source record. Keep downloaded third-party assets under ignored
+`.data/`; never add them to the plugin or use synthetic review evidence for them.

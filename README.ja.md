@@ -1,3 +1,14 @@
+> **v2.2:** ブランドごとの承認済みクリエイティブブリーフと実際のサンプル参照を保存します。
+> 対象読者、根拠、文体の例、視覚原則を次回も読み込み、変更時には再確認します。
+> 123件・302ページの部分的な調査から得た独自の知見を収録。スタイル別1,000件の目標は未達です。
+> Canvaの作品や顧客の非公開データは同梱しません。品質は実際の成果物で確認してください。
+> [インストールと互換性](docs/HOST-COMPATIBILITY.md) · [ブランド品質の手順](plugins/social-media-engine/skills/social-media-engine/references/brand-quality.md)
+
+> **v2:** ブランド資料がなくても、短い質問からデザインの方向性を決められます。
+> 既存のブランド資料や参考例も利用できます。ダッシュボードは Today / Review posts /
+> Publishing / Results の4画面に整理されました。UIは英語です。
+> 既存のワークスペースは引き続き利用できます。更新前にバックアップしてください。
+
 <div align="center">
 
 # Social Media Engine
@@ -55,7 +66,7 @@ python -m pip install tzdata
 **Social Media Engine** を有効にします。
 
 ```text
-Muhammed-Jameel/social-media-engine
+AurendorAi/social-media-engine
 ```
 
 組織によっては管理者による許可やインポートが必要です。画面と利用可否は
@@ -66,7 +77,7 @@ Codex 用のマーケットプレイス定義とネイティブマニフェス�
 ### Claude Code
 
 ```text
-/plugin marketplace add Muhammed-Jameel/social-media-engine
+/plugin marketplace add AurendorAi/social-media-engine
 /plugin install social-media-engine@social-media-engine
 ```
 

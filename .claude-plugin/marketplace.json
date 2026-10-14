@@ -9,7 +9,10 @@
       "name": "social-media-engine",
       "source": "./plugins/social-media-engine",
       "description": "Everything social media, in one plugin.",
-      "version": "1.0.0"
+      "version": "2.2.0"
     }
-  ]
+  ],
+  "metadata": {
+    "description": "Brand-aware social content planning, production and review for Codex and Claude."
+  }
 }

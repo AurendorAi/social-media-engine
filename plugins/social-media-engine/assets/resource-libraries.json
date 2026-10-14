@@ -1,0 +1,98 @@
+[
+  {
+    "id": "openverse",
+    "name": "Openverse",
+    "url": "https://openverse.org/",
+    "kinds": ["photo", "illustration", "texture", "pattern", "graphic"],
+    "access": "api",
+    "notes": "Searchable image index. Verify the original creator page and licence; index metadata is only a lead."
+  },
+  {
+    "id": "commons",
+    "name": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/",
+    "kinds": ["photo", "illustration", "texture", "pattern", "graphic"],
+    "access": "api",
+    "notes": "File-level licence and attribution vary. Inspect each source page."
+  },
+  {
+    "id": "iconify",
+    "name": "Iconify",
+    "url": "https://icon-sets.iconify.design/",
+    "kinds": ["icon"],
+    "access": "api",
+    "notes": "Many icon families. Select one coherent family and inspect its own licence."
+  },
+  {
+    "id": "met",
+    "name": "The Met Open Access",
+    "url": "https://www.metmuseum.org/art/collection",
+    "kinds": ["photo", "illustration", "pattern", "graphic"],
+    "access": "api",
+    "notes": "Built-in search returns objects marked public domain with images. Check the object and image rights."
+  },
+  {
+    "id": "ambientcg",
+    "name": "ambientCG",
+    "url": "https://ambientcg.com/",
+    "kinds": ["texture", "pattern"],
+    "access": "browse",
+    "notes": "Texture/material library. Inspect https://docs.ambientcg.com/license/ and the actual asset; download a suitable image map, not an executable or archive."
+  },
+  {
+    "id": "polyhaven",
+    "name": "Poly Haven",
+    "url": "https://polyhaven.com/textures",
+    "kinds": ["texture"],
+    "access": "browse",
+    "notes": "Texture library. Inspect https://polyhaven.com/license and choose a suitable resolution/map for the composition."
+  },
+  {
+    "id": "heropatterns",
+    "name": "Hero Patterns",
+    "url": "https://heropatterns.com/",
+    "kinds": ["pattern"],
+    "access": "browse",
+    "notes": "Repeatable SVG patterns. Review the linked CC BY 4.0 terms and retain attribution."
+  },
+  {
+    "id": "undraw",
+    "name": "unDraw",
+    "url": "https://undraw.co/illustrations",
+    "kinds": ["illustration"],
+    "access": "browse",
+    "notes": "Editable illustrations. Inspect https://undraw.co/license; use only when the visual language fits the brand."
+  },
+  {
+    "id": "svgrepo",
+    "name": "SVG Repo",
+    "url": "https://www.svgrepo.com/",
+    "kinds": ["icon", "illustration", "graphic"],
+    "access": "browse",
+    "notes": "Licences differ by asset/collection. Inspect https://www.svgrepo.com/page/licensing/ and the exact asset licence."
+  },
+  {
+    "id": "pexels",
+    "name": "Pexels",
+    "url": "https://www.pexels.com/",
+    "kinds": ["photo"],
+    "access": "browse",
+    "notes": "Photography. Inspect https://www.pexels.com/license/ and restrictions for people, brands, endorsement and redistribution."
+  },
+  {
+    "id": "unsplash",
+    "name": "Unsplash",
+    "url": "https://unsplash.com/",
+    "kinds": ["photo"],
+    "access": "browse",
+    "notes": "Photography; free and paid assets may have different terms. Inspect the exact asset and https://unsplash.com/license."
+  },
+  {
+    "id": "googlefonts",
+    "name": "Google Fonts",
+    "url": "https://fonts.google.com/",
+    "kinds": ["font"],
+    "access": "browse",
+    "notes": "Check the font family licence, language coverage and embedding terms. Import only the explicitly chosen font files."
+  }
+]

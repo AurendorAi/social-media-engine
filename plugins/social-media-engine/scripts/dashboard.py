@@ -70,11 +70,18 @@ def server_for(workspace, brand, port=0, token=None):
                     return self.reply(200, path.read_bytes(), (mimetypes.guess_type(path)[0] or "text/plain") + "; charset=utf-8")
                 ws = Workspace(workspace)
                 if route.path == "/api/state":
-                    return self.reply(200, {**ws.snapshot(brand), "questionnaire": FIELD_GROUPS, "list_fields": sorted(LIST_FIELDS), "required": sorted(REQUIRED)})
+                    from resources import libraries
+                    return self.reply(200, {**ws.snapshot(brand), "resource_libraries": libraries(), "questionnaire": FIELD_GROUPS, "list_fields": sorted(LIST_FIELDS), "required": sorted(REQUIRED)})
+                if route.path == "/api/resource-libraries":
+                    from resources import libraries
+                    return self.reply(200, libraries())
                 if route.path == "/api/asset":
                     key = parse_qs(route.query).get("id", [""])[0]
                     asset, raw = ws.asset_bytes(brand, key)
                     ext = Path(asset["path"]).suffix
+                    if ext == ".svg" and asset["role"] == "material":
+                        from resources import safe_svg
+                        return self.reply(200, safe_svg(raw), "image/svg+xml")
                     require(ext in {".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm", ".mp3", ".wav"}, "This asset is available locally but cannot be previewed inline.")
                     return self.reply(200, raw, mimetypes.guess_type(asset["path"])[0] or "application/octet-stream")
                 self.reply(404, {"error": "Not found"})
@@ -96,12 +103,21 @@ def server_for(workspace, brand, port=0, token=None):
                 route = urlsplit(self.path).path
                 actor = value.get("actor")
                 if route == "/api/brand": result = ws.update_brand(brand, value["answers"], actor)
+                elif route == "/api/style-select": result = ws.select_style(brand, value["id"], value["option"], value["hash"], actor)
                 elif route == "/api/brand-approve": result = ws.approve_brand(brand, value["hash"], actor)
-                elif route == "/api/item-approve": result = ws.approve_item(brand, value["id"], value["hash"], actor)
+                elif route == "/api/item-approve":
+                    require(value.get("confirmed") is True, "Confirm that you reviewed this exact revision before approval.")
+                    result = ws.approve_item(brand, value["id"], value["hash"], actor)
                 elif route == "/api/feedback": result = ws.feedback(brand, value)
                 elif route == "/api/rule-approve": result = ws.approve_rule(brand, value["id"], actor)
                 elif route == "/api/rule-retire": result = ws.retire_rule(brand, value["id"], actor)
                 elif route == "/api/export": result = ws.export_item(brand, value["id"])
+                elif route == "/api/resource-search":
+                    from resources import search
+                    result = search(ws, brand, value["provider"], value["query"], value["kind"], 8)
+                elif route == "/api/resource-fetch":
+                    from resources import acquire
+                    result = acquire(ws, brand, value["id"], value["hash"], actor)
                 elif route == "/api/asset":
                     require(isinstance(value.get("name"), str) and Path(value["name"]).name == value["name"], "Invalid upload filename.")
                     raw = base64.b64decode(value["base64"], validate=True)

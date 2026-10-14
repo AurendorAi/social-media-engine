@@ -1,13 +1,13 @@
 {
   "name": "social-media-engine",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "Brand-first social strategy, content production, review, and controlled publishing.",
   "author": {
     "name": "Aurendor",
     "email": "mohammedj@aurendor.io"
   },
-  "homepage": "https://github.com/Muhammed-Jameel/social-media-engine",
-  "repository": "https://github.com/Muhammed-Jameel/social-media-engine",
+  "homepage": "https://github.com/AurendorAi/social-media-engine",
+  "repository": "https://github.com/AurendorAi/social-media-engine",
   "license": "MIT",
   "keywords": [
     "social-media",
@@ -26,7 +26,7 @@
       "Interactive",
       "Write"
     ],
-    "websiteURL": "https://github.com/Muhammed-Jameel/social-media-engine",
+    "websiteURL": "https://github.com/AurendorAi/social-media-engine",
     "defaultPrompt": [
       "Set up Social Media Engine for my brand.",
       "Plan and produce my next social campaign.",

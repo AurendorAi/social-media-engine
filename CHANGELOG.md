@@ -1,3 +1,42 @@
+# Version 2.2.0 — 2026-10-14
+
+- Brand-scoped creative briefs with exact owner approval, source notes, good/avoid voice
+  examples, visual principles and integrity-bound reference/output samples.
+- Current approved creative memory joins production context; changes invalidate affected
+  work. Unapproved proposals remain inactive; legacy brands need no forced re-onboarding.
+- Brand-neutral baseline research, calibration, idea development and per-format review
+  guidance addresses interchangeable designs and generic writing for unfamiliar brands.
+- Original attributed synthesis of an incomplete Canva study: 123 qualifying templates,
+  302 pages, 31 excluded candidates, 2 partial items, zero complete video reviews.
+- Dashboard shows creative readiness and the approved brief in plain language.
+- Codex/Claude install instructions, other-host capability limits, marketplace validation
+  and genuinely external extracted-package smoke tests.
+- No private brand assets or Canva template artwork included. Local checks validate
+  workflow and packaging, not equal creative quality across brands or live host acceptance.
+
+# Version 2.1.0 — 2026-10-12
+
+- Public-library search adapters for Openverse, Commons, Iconify and Met v1.1 search.
+- Curated specialist libraries and host web discovery for textures, patterns, photos,
+  vectors and fonts; post-specific sourcing and composition guidance.
+- Reviewed public HTTPS download and explicit local import with source/licence records,
+  byte checks, private-network protection and conservative static SVG validation.
+- Design library dashboard: search, source links, reviewed download, local previews.
+- Materials stay separate from brand identity; only used materials bind post approval.
+- Per-post material use records, required caption attribution and export credits.
+- Offline resource regression tests and real browser library coverage.
+
+# Version 2.0.0 — 2026-10-12
+
+- Guided setup for existing, partial and missing identities, with optional reference analysis.
+- Saved, hash-bound style proposals and owner selection; selected identity requires review.
+- Today / Review posts / Publishing / Results dashboard with advanced tools under More tools.
+- Five-step brand form, one-post review, ordered slides, platform captions, filters and confirmation.
+- Editorial-depth and production-toolkit references derived from concrete creative failures.
+- Portable root manifest alongside Codex and Claude manifests; corrected repository install URLs.
+- Existing schema and v1 brands remain compatible; separate brand state and release guards retained.
+- New runtime/API and browser coverage for onboarding, styles and review behavior.
+
 # Changelog
 
 ## 1.0.0
