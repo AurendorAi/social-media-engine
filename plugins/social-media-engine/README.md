@@ -66,3 +66,19 @@ inspection, licence evidence, style rationale and item-level material tracking a
 of production. Open **More tools → Design library** to search and review saved materials.
 See [resource sourcing](skills/social-media-engine/references/resource-sourcing.md) and
 [CLI contracts](skills/social-media-engine/references/runtime.md).
+
+## Creative memory (2.2)
+
+Ask: “Study my existing content and audience. Propose a distinct creative brief and
+show me three actual samples before scaling.” Review the proposed direction with your
+assistant. Approved briefs and sample references persist separately for each brand;
+profile, feedback and sample changes can require a fresh review. Today and Brand & assets
+show the current status. New proposals never replace approved direction automatically.
+
+Read the [brand-quality workflow](skills/social-media-engine/references/brand-quality.md)
+and [original research findings](skills/social-media-engine/references/research-findings.md).
+The research is a partial study, not completed style quotas or model training. This plugin
+ships original guidance, not Canva artwork or the author's private brand identity.
+
+Other capable assistants can read `skills/social-media-engine/SKILL.md` and run the bundled
+Python runtime. Preserve the package folder structure; native plugin support is host-specific.

@@ -120,6 +120,7 @@ async function refresh() {
     $("state").textContent = readable(state.brand.state);
     overview();
     brandForm();
+    creativeMemory();
     styleOptions();
     content();
     plans();
@@ -198,6 +199,16 @@ function overview() {
     grid.append(c);
   });
   root.append(grid);
+  if (ready && state.creative_memory && state.creative_memory.state !== "CALIBRATED") {
+    const calibration = card(
+      "Give this brand its own creative direction",
+      state.creative_memory.state === "STALE"
+        ? "Your brand, feedback or sample files changed. Ask your assistant to refresh your creative brief before the next batch."
+        : "Ask your assistant to develop a creative brief and show you a few actual samples. Your approved choices will guide future content for this brand.",
+    );
+    calibration.append(button("See creative direction", () => tab("brand"), true));
+    root.append(calibration);
+  }
   const recent = card("On your desk");
   if (!state.items.length)
     recent.append(
@@ -228,6 +239,50 @@ function overview() {
     "Try: “Use Social Media Engine to plan next week from my saved brand. Give each post a clear idea, useful payoff and a distinct visual concept.”",
   );
   root.append(prompt);
+}
+function creativeMemory() {
+  const root = $("creative-memory");
+  root.replaceChildren();
+  const memory = state.creative_memory;
+  if (!memory) return;
+  const labels = {
+    MISSING: "Let's find your creative direction",
+    PROPOSED: "Creative direction awaiting your review",
+    APPROVED: "Creative brief approved · samples still needed",
+    CALIBRATED: "Creative brief and sample references approved",
+    STALE: "Creative direction needs a fresh review",
+  };
+  const panel = card(labels[memory.state] || "Your creative direction",
+    "Work with your assistant to save the audience situation, proof, voice examples and visual principles that make this brand distinct. Review the actual samples before approving the direction.");
+  const active = memory.active;
+  if (active) {
+    const brief = active.brief;
+    const details = node("details");
+    details.append(node("summary", "Read your approved creative brief"));
+    [["Audience situation", brief.audience_situation], ["Brand promise", brief.brand_promise],
+      ["Asset approach", brief.asset_strategy]].forEach(([label, value]) => {
+      details.append(node("h4", label), node("p", value));
+    });
+    [["Proof", brief.proof_points], ["Visual principles", brief.visual_principles],
+      ["Content pillars", brief.content_pillars], ["Avoid", brief.anti_patterns],
+      ["Success criteria", brief.success_criteria], ["Sources and limits", brief.source_notes]].forEach(([label, values]) => {
+      details.append(node("h4", label));
+      const list = node("ul");
+      values.forEach(value => list.append(node("li", value)));
+      details.append(list);
+    });
+    for (const [category, rows] of Object.entries(brief.voice_examples)) {
+      details.append(node("h4", category === "good" ? "Voice to use" : "Voice to avoid"));
+      rows.forEach(row => details.append(node("blockquote", row.text), node("p", row.why)));
+    }
+    details.append(node("p", `${active.sample_asset_ids.length} approved sample reference(s). Each new post still needs its own review.`, "meta"));
+    panel.append(details);
+  }
+  if (memory.state === "PROPOSED")
+    panel.append(node("p", "Ask your assistant to show the proposed brief and its samples so you can review the exact version together."));
+  if (memory.state === "STALE")
+    panel.append(node("p", "The previous direction is kept in history but will not guide new content until a refreshed version is approved."));
+  root.append(panel);
 }
 const fieldInfo = {
   name: ["What's your brand called?", "Your business or creator name"],

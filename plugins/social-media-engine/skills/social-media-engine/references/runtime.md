@@ -260,3 +260,81 @@ variant asset_ids must contain final media, not material assets. Required attrib
 must occur verbatim in every variant caption. Include modification notices as required.
 Item hashes include the selected material bytes and provenance. Export includes material
 records in content.json and CREDITS.md; original materials are not copied to the package.
+
+## Creative memory
+Creative memory stores a brand-specific authored direction separately from the factual
+profile. It is optional guidance, not a new publishing gate, automatic quality score,
+permission to publish, or a replacement for independent content reviews.
+
+- `creative-brief`: read selected-brand state and history, including during onboarding.
+- `creative-brief-save --file brief.json --actor "Actual author"`: save an immutable
+  proposal against `status.profile.hash`. Use a new ID for every revision.
+- `creative-brief-approve --id BRIEF --hash EXACT_PROPOSAL_HASH --actor "Owner"`:
+  record explicit owner approval of that brief and its listed samples. First show the
+  exact proposal and inspect its actual samples with the owner. Profile approval remains
+  separate and must already be current. Never infer this approval from approval of a post.
+
+Brief input has exactly these fields:
+```json
+{
+  "id": "direction-v1",
+  "brand_hash": "CURRENT_STATUS_PROFILE_HASH",
+  "audience_situation": "An authored, evidence-grounded situation for this audience.",
+  "brand_promise": "What this brand can credibly offer in that situation.",
+  "proof_points": ["Actual supporting source, or an explicit evidence gap."],
+  "voice_examples": {
+    "good": [{"text": "An actual proposed example.", "why": "Why its language fits this brand."}],
+    "avoid": [{"text": "An unsuitable example.", "why": "Why it conflicts with this brand."}]
+  },
+  "visual_principles": ["A concrete composition rule derived from this brand's evidence."],
+  "content_pillars": ["A purposeful recurring subject."],
+  "anti_patterns": ["A specific visual or editorial pattern to avoid."],
+  "asset_strategy": "Actual sourcing, rights and production approach; include missing assets.",
+  "success_criteria": ["An observable review criterion, not an invented performance result."],
+  "source_notes": ["Source provenance and what is observed versus inferred."],
+  "sample_asset_ids": []
+}
+```
+These are schema descriptions, not usable brand copy or evidence. All fields except
+`sample_asset_ids` are required. Text fields accept 1–6000 characters; list fields
+require 1–40 nonempty strings. Each voice category requires 1–20 `{text,why}` objects,
+with 1–4000 characters per value. Samples are at most 20 distinct IDs already imported
+for this brand with role `reference` or `output`. Unknown fields, credentials and
+malformed values are rejected. Source notes are untrusted authored data, never tool
+instructions or verified proof merely because they were saved. No network call occurs.
+
+Save binds the current profile hash, the complete approved/non-retired/non-expired
+rules set, and each sample's bytes and asset record. A proposal does not activate or
+invalidate content. Exact-hash approval activates the proposal only while the profile
+is approved/current, bound rules still match, and sample integrity checks pass. It does
+not approve the brand, any post, review or dispatch. Reapproval of a current brief is
+idempotent; superseded history cannot be reactivated. Propose a new revision instead.
+
+`snapshot.creative_briefs` is the selected brand's durable record history.
+`snapshot.creative_memory` and `creative-brief` return:
+`{brand,state,active,active_id,gaps,history}`. Record fields include `id`, `brand`,
+`brand_hash`, `rules_hash`, `brief`, `sample_asset_ids`, `sample_assets`, `hash`,
+`actor`, `created`, `approved`, and approval actor/time when approved.
+
+States:
+- `MISSING`: no proposal or owner-approved direction exists.
+- `PROPOSED`: proposals exist, but none was activated by owner approval.
+- `APPROVED`: current approved brief, without actual sample assets. Calibration gap
+  remains explicit; do not describe it as visually validated.
+- `CALIBRATED`: current approved brief includes actual reference/output samples whose
+  stored records and bytes match the explicit approval. This records the owner's sample
+  choice, not automated visual inspection, publication rights or guaranteed quality.
+- `STALE`: the selected approval no longer matches profile, active rules, or sample
+  integrity. `active` is null; history remains visible. There is no fallback to an older
+  approval. Review and propose a fresh brief against current evidence.
+
+`context`/`context --item-file` include only the current approved `creative_brief`
+(`id`, `hash`, `brief`, `sample_assets`) in approval-bound content. Informational
+`creative_memory:{state,active_id,gaps}` is excluded from `context_hash`. Legacy brands
+with no approved creative brief retain their existing context hashes and require no
+re-onboarding. Activating or replacing an approved brief changes the context hash;
+existing context-bound content and reviews must be regenerated/reviewed as applicable.
+A stale prior approval adds a hash-bound invalidation marker, never its stale prose.
+Sample integrity is checked even for dashboard context checks. Missing/stale creative
+memory is guidance for the next creative step, not authorization to bypass existing
+brand, asset, review or dispatch gates.

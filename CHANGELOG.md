@@ -1,3 +1,19 @@
+# Version 2.2.0 — 2026-10-14
+
+- Brand-scoped creative briefs with exact owner approval, source notes, good/avoid voice
+  examples, visual principles and integrity-bound reference/output samples.
+- Current approved creative memory joins production context; changes invalidate affected
+  work. Unapproved proposals remain inactive; legacy brands need no forced re-onboarding.
+- Brand-neutral baseline research, calibration, idea development and per-format review
+  guidance addresses interchangeable designs and generic writing for unfamiliar brands.
+- Original attributed synthesis of an incomplete Canva study: 123 qualifying templates,
+  302 pages, 31 excluded candidates, 2 partial items, zero complete video reviews.
+- Dashboard shows creative readiness and the approved brief in plain language.
+- Codex/Claude install instructions, other-host capability limits, marketplace validation
+  and genuinely external extracted-package smoke tests.
+- No private brand assets or Canva template artwork included. Local checks validate
+  workflow and packaging, not equal creative quality across brands or live host acceptance.
+
 # Version 2.1.0 — 2026-10-12
 
 - Public-library search adapters for Openverse, Commons, Iconify and Met v1.1 search.

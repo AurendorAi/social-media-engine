@@ -33,6 +33,29 @@ def source_files():
     return files
 
 
+def validate_marketplaces(name, version):
+    """A valid ZIP is not installable by name if repository discovery is stale."""
+    for relative, host in ((".agents/plugins/marketplace.json", "Codex"),
+                           (".claude-plugin/marketplace.json", "Claude")):
+        marketplace = json.loads((ROOT / relative).read_text(encoding="utf-8"))
+        entries = [entry for entry in marketplace.get("plugins", [])
+                   if entry.get("name") == name]
+        if len(entries) != 1:
+            raise ValueError(host + " marketplace must contain exactly one matching plugin")
+        entry = entries[0]
+        source = entry.get("source")
+        if host == "Codex":
+            if not isinstance(source, dict) or source.get("source") != "local":
+                raise ValueError("Codex marketplace must use the local packaged source")
+            source = source.get("path")
+        if not isinstance(source, str) or not source.startswith("./"):
+            raise ValueError(host + " marketplace source must be repository-relative")
+        if (ROOT / source).resolve() != PLUGIN.resolve():
+            raise ValueError(host + " marketplace source disagrees with packaged plugin")
+        if "version" in entry and entry["version"] != version:
+            raise ValueError(host + " marketplace version disagrees with plugin")
+
+
 def build():
     codex = json.loads((PLUGIN / ".codex-plugin/plugin.json").read_text())
     claude = json.loads((PLUGIN / ".claude-plugin/plugin.json").read_text())
@@ -44,11 +67,12 @@ def build():
         raise ValueError("Plugin manifests disagree")
     if not re.fullmatch(r"\d+\.\d+\.\d+", version):
         raise ValueError("Invalid version")
+    validate_marketplaces(codex["name"], version)
     files = source_files()
     names = {name for name, _ in files}
-    required = {".codex-plugin/plugin.json", ".claude-plugin/plugin.json",
+    required = {"plugin.json", "README.md", ".codex-plugin/plugin.json", ".claude-plugin/plugin.json",
                 "skills/social-media-engine/SKILL.md", "scripts/sme.py",
-                "scripts/engine.py", "scripts/providers.py", "scripts/dashboard.py",
+                "scripts/engine.py", "scripts/creative_memory.py", "scripts/providers.py", "scripts/dashboard.py",
                 "scripts/resources.py", "scripts/resource_http.py", "assets/resource-libraries.json",
                 "skills/social-media-engine/references/resource-sourcing.md",
                 "assets/dashboard.html", "assets/dashboard.js", "assets/dashboard.css", "LICENSE"}

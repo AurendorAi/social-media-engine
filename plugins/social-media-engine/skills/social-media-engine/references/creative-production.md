@@ -50,3 +50,12 @@ alternative rather than returning mock assets as finished work.
 Before rendering, follow [resource sourcing](resource-sourcing.md) to find, inspect and
 compose suitable real materials. Keep the brief, actual sourced ingredients, editable
 composition and final rendered files distinct. Use AI where it helps the concept.
+
+## Apply the same rigor to each brand
+
+Follow [brand quality](brand-quality.md): establish the real baseline, save the selected
+brand's creative brief, and connect audience situation, evidence, mechanism, payoff,
+voice and meaningful materials. Transfer the method, never another brand's identity.
+Check cross-brand layout repetition and repetitive CTA-only ideas before scaling.
+Use [research findings](research-findings.md) as conditional observations, not templates
+or sector-to-style assignments. Owner constraints and actual feedback take precedence.

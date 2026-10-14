@@ -60,3 +60,12 @@ Record the selected direction in the profile and approved preferences as scoped 
 Keep actual sample files and reference analysis in the private brand workspace, linked
 from the creative record. Reload them on later runs. Do not re-onboard an unchanged
 approved brand or force a new direction for every campaign.
+
+## Scope and brand-specific rigor
+
+Use [brand quality](brand-quality.md) for the actual-account baseline, creative brief,
+logo-swap test and per-format audit. The 1–3 sample cycle is the default; an explicit
+request for a full private proposal may proceed as unapproved exploratory drafts without
+an extra sample-only pause. This does not waive independent review, brand/content owner
+approval or publishing gates. Read [research findings](research-findings.md) for the
+limited evidence behind conditional style observations; no style guarantees quality.

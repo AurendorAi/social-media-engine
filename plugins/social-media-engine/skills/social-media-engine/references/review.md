@@ -54,3 +54,12 @@ missing review roles. Required roles come from the runtime, including Arabic whe
 applicable. The owner may perform the required reviews in conversation: show the exact
 rubric and artifacts, record only their actual observations and scores, then request
 final approval. Do not invent scores from a simple "looks good".
+
+## Scope and brand-specific rigor
+
+Use [brand quality](brand-quality.md) for the actual-account baseline, creative brief,
+logo-swap test and per-format audit. The 1–3 sample cycle is the default; an explicit
+request for a full private proposal may proceed as unapproved exploratory drafts without
+an extra sample-only pause. This does not waive independent review, brand/content owner
+approval or publishing gates. Read [research findings](research-findings.md) for the
+limited evidence behind conditional style observations; no style guarantees quality.

@@ -26,6 +26,31 @@ platform-aware writing, review, and controlled delivery.
 > posting bot. Planning and copy use your host's model. Actual media requires available
 > generation/rendering tools. Publishing and account data require your own integrations.
 
+## New in version 2.2: a creative memory for every brand
+
+A familiar brand benefits from months of context and feedback. New brands need that
+context made explicit. The plugin now develops and saves an **owner-approved creative
+brief**: the audience's situation, supported promise, proof, voice examples, visual
+principles, content pillars, anti-patterns and success criteria.
+
+- Compare the brand's actual existing work, identify what should improve, and develop
+  distinct ideas before choosing a style. Avoid interchangeable layouts and repetitive CTAs.
+- Review 1–3 actual samples and save their approved direction. Each brand keeps its own
+  brief and sample references; future sessions reload the current approved version.
+- Profile, approved feedback or sample changes make affected creative memory stale.
+  New proposals stay inactive until explicitly approved. Existing workspaces remain usable.
+- **Today → Brand & assets** shows creative readiness and the approved brief.
+
+The release includes original, attributed [research findings](plugins/social-media-engine/skills/social-media-engine/references/research-findings.md)
+from **123 complete qualifying Canva templates / 302 inspected pages**, with 31 excluded
+style candidates and 2 partial items. Research stopped at the owner's request before the
+1,000-per-style targets; no videos qualified. The notes distinguish observations from
+interpretations and unstudied styles. Canva artwork and private customer content are not bundled.
+
+This adds a repeatable process for new brands; it does not guarantee identical creative
+quality across models or brands. Actual outputs and owner feedback remain the test.
+See the [brand-quality workflow](plugins/social-media-engine/skills/social-media-engine/references/brand-quality.md).
+
 ## New in version 2.1: real design materials
 
 Find and use real photography, icons, illustrations, textures, patterns and fonts as part
@@ -123,7 +148,14 @@ Select **Social Media Engine** and install/enable it. For workspace-managed inst
 an administrator may need to import or allow the GitHub marketplace first.
 Host availability and installation UI depend on the current account/app.
 See [OpenAI's plugin packaging and marketplace documentation](https://developers.openai.com/plugins/build/plugins).
-You can also add the marketplace with `codex plugin marketplace add AurendorAi/social-media-engine`.
+For Codex CLI versions with plugin support:
+
+```sh
+codex plugin marketplace add AurendorAi/social-media-engine
+codex plugin add social-media-engine@social-media-engine
+```
+
+Ask Codex to use **Social Media Engine**. See the [tested host compatibility notes](docs/HOST-COMPATIBILITY.md).
 
 For a local checkout, point the host's local marketplace loader at the repository root.
 The plugin source itself is `plugins/social-media-engine`, not the old application.
@@ -160,6 +192,17 @@ the project's releases. The ZIP must contain the plugin's `.claude-plugin/`, `sk
 Give Cowork access to the intended working folder. Its execution environment must have
 Python and a writable local workspace. If the host does not support a loopback browser
 preview, review exported files in the host instead of claiming the dashboard opened.
+
+</details>
+
+<details>
+<summary><strong>Other AI assistants</strong></summary>
+
+Use the release ZIP as a portable skill/runtime folder if your assistant can read local
+Markdown, run Python and access your chosen workspace. Keep `skills/`, `scripts/` and
+`assets/` together, and point the assistant to `skills/social-media-engine/SKILL.md`.
+Native installation and creative tools depend on that host. A chat-only service cannot
+run the local dashboard or persist the workspace by itself.
 
 </details>
 

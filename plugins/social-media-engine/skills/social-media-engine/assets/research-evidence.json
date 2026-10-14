@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-14",
+  "research_status": "incomplete; stopped for release synthesis",
+  "qualifying_templates": 123,
+  "qualifying_pages": 302,
+  "fully_reviewed_excluded_candidates": 31,
+  "partial_reviews": 2,
+  "fully_reviewed_videos": 0,
+  "counting_rule": "One distinct ID counted once in its credited study category; full advertised pages and alternatives required. Exclusions and partials are not qualifying. Categories are not universal provider taxonomy.",
+  "priority_coverage": [
+    {
+      "style": "Anthropomorphic",
+      "qualifying_templates": 2
+    },
+    {
+      "style": "Mixed Media",
+      "qualifying_templates": 3
+    },
+    {
+      "style": "Bento grid",
+      "qualifying_templates": 2
+    },
+    {
+      "style": "Aurora",
+      "qualifying_templates": 3
+    },
+    {
+      "style": "Ethereal",
+      "qualifying_templates": 3
+    },
+    {
+      "style": "Cybercore",
+      "qualifying_templates": 4
+    },
+    {
+      "style": "Neoclassical",
+      "qualifying_templates": 1
+    },
+    {
+      "style": "Bauhaus",
+      "qualifying_templates": 5
+    },
+    {
+      "style": "Pixel art (8-bit, bitmap)",
+      "qualifying_templates": 4
+    },
+    {
+      "style": "Farmhouse or cottage-core",
+      "qualifying_templates": 4
+    },
+    {
+      "style": "Japandi",
+      "qualifying_templates": 1
+    },
+    {
+      "style": "Memphis",
+      "qualifying_templates": 3
+    },
+    {
+      "style": "Kitsch",
+      "qualifying_templates": 2
+    },
+    {
+      "style": "Luxury Typography",
+      "qualifying_templates": 5
+    },
+    {
+      "style": "Biomorphic",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Brutalism",
+      "qualifying_templates": 1
+    },
+    {
+      "style": "Chinoiserie",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Minimalism",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Conceptual sketch (doodle art)",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Risograph",
+      "qualifying_templates": 1
+    },
+    {
+      "style": "Rubberhose",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Steampunk",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Synthwave",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Tenebrism",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Type-collage",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Vaporwave",
+      "qualifying_templates": 0
+    },
+    {
+      "style": "Y2K design",
+      "qualifying_templates": 0
+    }
+  ],
+  "all_credited_category_counts": {
+    "Monochrome": 5,
+    "Classic": 5,
+    "Modern": 3,
+    "Playful": 13,
+    "Digital": 6,
+    "Professional": 4,
+    "Bold": 15,
+    "Vintage": 4,
+    "Collage": 2,
+    "Retro": 6,
+    "Minimalist": 4,
+    "Elegant": 12,
+    "Bento grid": 2,
+    "Neoclassical": 1,
+    "Bauhaus": 5,
+    "Cybercore": 4,
+    "Anthropomorphic": 2,
+    "Mixed Media": 3,
+    "Aurora": 3,
+    "Ethereal": 3,
+    "Pixel art (8-bit, bitmap)": 4,
+    "Farmhouse or cottage-core": 4,
+    "Japandi": 1,
+    "Memphis": 3,
+    "Kitsch": 2,
+    "Luxury Typography": 5,
+    "Brutalism": 1,
+    "Risograph": 1
+  },
+  "curated_attributions": [
+    {
+      "template_id": "EAHAKsQyrH0",
+      "title": "Black and White Modern Geometric About Us Instagram Carousel",
+      "creator": "MyTeamplates",
+      "credited_study_category": "Monochrome",
+      "source_search": "https://www.canva.com/s/templates?query=social+media&adj=eyJEIjp7IkIiOiJTVFlMRV9NT05PQ0hST01FIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "When a restrained value range suits the identity, change the location and scale of the main content between narrative turns. A limited palette does not require a repeated page."
+    },
+    {
+      "template_id": "EAHDa-XNFWk",
+      "title": "Brown and Cream Vintage Collage Books Review Carousel Instagram Post",
+      "creator": "syxnplatestudio",
+      "credited_study_category": "Classic",
+      "source_search": "https://www.canva.com/s/templates?query=social+media&adj=eyJEIjp7IkIiOiJTVFlMRV9DTEFTU0lDIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Use material or subject cues that belong to the actual occasion; separate expressive display text from practical information. A historical-looking surface alone adds no credibility."
+    },
+    {
+      "template_id": "EAE8AQ0nazE",
+      "title": "Real Estate Listing for Social Media",
+      "creator": "Rose Lindo",
+      "credited_study_category": "Modern",
+      "source_search": "https://www.canva.com/s/templates?query=social+media&adj=eyJEIjp7IkIiOiJTVFlMRV9NT0RFUk4ifX0",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Let the geometry and empty regions of the actual photograph inform placement. Search labels cover unlike treatments, so choose from observed traits rather than the label."
+    },
+    {
+      "template_id": "EAHEM9OQQJ4",
+      "title": "Pink Scrapbook Collage Media Diary Carousel Instagram Post",
+      "creator": "Lazy & Busy Lab",
+      "credited_study_category": "Playful",
+      "source_search": "https://www.canva.com/s/templates?query=social+media&adj=eyJEIjp7IkIiOiJTVFlMRV9QTEFZRlVMIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "A stable reading structure can coexist with expressive marks. Let the expression respond to the specific subject; arbitrary stickers do not create a recognizable voice."
+    },
+    {
+      "template_id": "EAGlCqZQajw",
+      "title": "Blue and Green Retro Digital Motivational Instagram Post",
+      "creator": "Angkalimabelas Std.",
+      "credited_study_category": "Digital",
+      "source_search": "https://www.canva.com/s/templates?query=digital+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9ESUdJVEFMIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Use interface imagery only to demonstrate a real interaction or an explicitly identified metaphor. Decorative controls and unverified numbers must not masquerade as product proof."
+    },
+    {
+      "template_id": "EAEbw-voW0A",
+      "title": "Modern Luxury Restaurant Promotion Instagram Post",
+      "creator": "Crevo Studio",
+      "credited_study_category": "Professional",
+      "source_search": "https://www.canva.com/s/templates?query=restaurant+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9QUk9GRVNTSU9OQUwifX0",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Relevant photographs can make a sensory or place-based offer specific. Protect the factual details even when the dominant image supplies most of the atmosphere."
+    },
+    {
+      "template_id": "EAHCxril2fQ",
+      "title": "Blue Bold Scrapbook Indie Music Instagram Post",
+      "creator": "Graphicook",
+      "credited_study_category": "Bold",
+      "source_search": "https://www.canva.com/s/templates?query=music+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9CT0xEIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Give an assertive headline and a relevant object distinct jobs; leave quiet space for practical information. Size cannot repair an unsupported promise."
+    },
+    {
+      "template_id": "EAGO8Sq-Qik",
+      "title": "Vintage Fashion Carousel Instagram Post",
+      "creator": "Salbine B. | Amaré Creative",
+      "credited_study_category": "Vintage",
+      "source_search": "https://www.canva.com/s/templates?query=vintage+fashion+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9WSU5UQUdFIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "A coherent photographic series can support identity and atmosphere. Use current, verified garment or event details; aged texture is neither heritage nor evidence."
+    },
+    {
+      "template_id": "EAHG7F128U0",
+      "title": "Modern Travel Photo Collage Carousel Instagram Post",
+      "creator": "Olha Hladii",
+      "credited_study_category": "Collage",
+      "source_search": "https://www.canva.com/s/templates?query=travel+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9DT0xMQUdFIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Assemble related, authorized evidence at different scales. The relationship among the images should reveal more than a pile of attractive scraps."
+    },
+    {
+      "template_id": "EAHJVW9EQ_o",
+      "title": "Red & Beige Bold Retro Sandwich Restaurant Food Menu Instagram Post",
+      "creator": "The Good Store",
+      "credited_study_category": "Retro",
+      "source_search": "https://www.canva.com/s/templates?query=retro+food+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9SRVRSTyJ9fQ",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Choose a consistent illustrative or print vocabulary when the occasion benefits from it. Keep product facts and logistics current rather than borrowing the template’s implied era."
+    },
+    {
+      "template_id": "EAGkJt6yJcg",
+      "title": "Black and Beige Simple Architecture Trends Instagram Post",
+      "creator": "mooncang",
+      "credited_study_category": "Minimalist",
+      "source_search": "https://www.canva.com/s/templates?query=architecture+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9NSU5JTUFMSVNUIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Reduce competing signals around a meaningful subject. Quietness must preserve the decisive detail and an intelligible reading order; empty space is not a substitute for content."
+    },
+    {
+      "template_id": "EAG287KcBGk",
+      "title": "Brown and White Elegant Simple Gallery Instagram Post Carousel",
+      "creator": "Baba Creative",
+      "credited_study_category": "Elegant",
+      "source_search": "https://www.canva.com/s/templates?query=museum+instagram+post&adj=eyJEIjp7IkIiOiJTVFlMRV9FTEVHQU5UIn19",
+      "source_filter": "Native selected style recorded in search context",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Restraint and scale contrast can establish hierarchy, but fine text and delicate decoration must survive the actual viewing size. Use elegance only when it matches the intended feeling."
+    },
+    {
+      "template_id": "EAG8ZosIrto",
+      "title": "Light Blue Clean Bento Grid SaaS Product Showcase Presentation",
+      "creator": "SlideFactory",
+      "credited_study_category": "Bento grid",
+      "source_search": "https://www.canva.com/s/templates?query=tech+bento+grid",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Different-sized modules are useful when information has different roles. Put real evidence in the largest relevant module; omit fake navigation and reflow for the destination."
+    },
+    {
+      "template_id": "EAGjUrWA_Ik",
+      "title": "Dark Elegant Neoclassical Album Cover",
+      "creator": "barsrsind",
+      "credited_study_category": "Neoclassical",
+      "source_search": "https://www.canva.com/s/templates?query=neoclassical+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "One qualified contemporary hybrid paired a classical reference with other textures. Borrow a contextual reference only when continuity or reinterpretation is the actual idea; do not infer historical authenticity."
+    },
+    {
+      "template_id": "EAHFbefw5EM",
+      "title": "Orange Blue and Yellow Colorful Playful Bauhaus Mosaic Geometric Creative Designer Business Card",
+      "creator": "Fontherapy Studio",
+      "credited_study_category": "Bauhaus",
+      "source_search": "https://www.canva.com/s/templates?query=bauhaus+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "A small geometric vocabulary can unify paired assets while leaving a clear information area. Select original shapes and relationships rather than reproducing the specimen’s arrangement."
+    },
+    {
+      "template_id": "EAGj7H-eS60",
+      "title": "Black & Red Cyber Core Retro Music Record Store Instagram Portrait Post",
+      "creator": "The Good Store",
+      "credited_study_category": "Cybercore",
+      "source_search": "https://www.canva.com/s/templates?query=cyber+core+creative&adj=eyJGIjp0cnVlfQ",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Coordinate type, lighting and digital motifs when a futuristic tone is deliberate. Distinguish decorative status marks from measured progress or functional interface states."
+    },
+    {
+      "template_id": "EAGwDla_lUU",
+      "title": "Pink Brown and White Retro Brain Cartoon Circle Sticker",
+      "creator": "Deenara Lab",
+      "credited_study_category": "Anthropomorphic",
+      "source_search": "https://www.canva.com/s/templates?query=anthropomorphic+technology&adj=eyJGIjp0cnVlfQ",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Give a recognizable nonhuman object an expression or gesture related to its function. Original character construction and a clear emotional point matter more than adding eyes."
+    },
+    {
+      "template_id": "EAHNvvF0J3Y",
+      "title": "Blue Y2K Mixed Media Pixel Retro Graphic Designer Creative Resume",
+      "creator": "Kreative Studio",
+      "credited_study_category": "Mixed Media",
+      "source_search": "https://www.canva.com/s/templates?query=mixed+media+creative&adj=eyJGIjp0cnVlfQ",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Different materials can communicate different kinds of evidence: a photograph, an annotation, a document. Keep their roles and physical treatment coherent instead of adding layers without meaning."
+    },
+    {
+      "template_id": "EAFbxVtGCJc",
+      "title": "Violet Aurora Retro Twitch Panel",
+      "creator": "Stratify",
+      "credited_study_category": "Aurora",
+      "source_search": "https://www.canva.com/s/templates?query=aurora+technology&adj=eyJGIjp0cnVlfQ",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Shape a luminous field around stable reading regions when atmosphere serves the message. Light effects must not displace actual product information or imply scientific explanation."
+    },
+    {
+      "template_id": "EAHNd3N39pQ",
+      "title": "Blue Green and Purple Ethereal Art Exhibition Document",
+      "creator": "Miss Jello",
+      "credited_study_category": "Ethereal",
+      "source_search": "https://www.canva.com/s/templates?query=ethereal+creative&adj=eyJGIjp0cnVlfQ",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "One coherent light-driven interaction can carry a mood-led launch. Pair metaphorical imagery with truthful practical context; dreamlike imagery cannot substantiate capabilities."
+    },
+    {
+      "template_id": "EAFB_-D9950",
+      "title": "Purple Pixel Futuristic AI Technology Instagram Post",
+      "creator": "Seyma Korkmaz",
+      "credited_study_category": "Pixel art (8-bit, bitmap)",
+      "source_search": "https://www.canva.com/s/templates?query=pixel+art+technology",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Use a consistent stepped vocabulary for a few purposeful elements. Preserve readable script and real information; pixel treatment does not demonstrate technical sophistication."
+    },
+    {
+      "template_id": "EAGd7pFYsuU",
+      "title": "Beige Brown Cute Vintage Cottagecore Creative Portfolio Presentation",
+      "creator": "Xaviera",
+      "credited_study_category": "Farmhouse or cottage-core",
+      "source_search": "https://www.canva.com/s/templates?query=cottagecore+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Natural materials and domestic motifs can make a relevant craft context tangible. Keep source images meaningful and avoid treating rustic styling as proof of origin or hand production."
+    },
+    {
+      "template_id": "EAFGIFTVZcw",
+      "title": "White Beige Brown Japandi Interior Design Mood Board Photo Collage",
+      "creator": "Lyresh Designs",
+      "credited_study_category": "Japandi",
+      "source_search": "https://www.canva.com/s/templates?query=japandi+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "The single qualified moodboard used multiple material scales and calm spacing. Apply that evidence relationship when appropriate, not an automatic beige palette or an assumed cultural provenance."
+    },
+    {
+      "template_id": "EAFyMg9mA2E",
+      "title": "Colorful Creative Memphis Web Programmer CV Resume",
+      "creator": "Sigmund Creatus",
+      "credited_study_category": "Memphis",
+      "source_search": "https://www.canva.com/s/templates?query=memphis+creative+technology",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Playful geometry can differentiate sections when each has a clear role. Decorative meters, percentages and controls must be removed unless they communicate supported information."
+    },
+    {
+      "template_id": "EAGSYu1zO_I",
+      "title": "Motivational Business Appreciation Meme in Pink Purple Hyper Kitsch Style",
+      "creator": "Canva Creative Studio",
+      "credited_study_category": "Kitsch",
+      "source_search": "https://www.canva.com/s/templates?query=kitsch+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Deliberate excess can make an affectionate or humorous message legible to its community. Protect the expressive subject and give the sentiment real context; do not invent praise."
+    },
+    {
+      "template_id": "EAGtUw1RdYY",
+      "title": "White and Black Minimalist Modern Elegant Classic Typography Creative Studio Brand Logo",
+      "creator": "Hanna Akavitaya",
+      "credited_study_category": "Luxury Typography",
+      "source_search": "https://www.canva.com/s/templates?query=luxury+typography+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-13",
+      "conditional_principle": "Pair an expressive typographic voice with simpler functional text when identity allows it. Test recognition and fine strokes; a luxury label establishes neither ownership nor quality."
+    },
+    {
+      "template_id": "EAHHi47NbQU",
+      "title": "Blue White Brutalist Futuristic Virtual Reality Presentation",
+      "creator": "Prospera Creative",
+      "credited_study_category": "Brutalism",
+      "source_search": "https://www.canva.com/s/templates?query=brutalist+creative+technology",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-14",
+      "conditional_principle": "The single qualified hybrid used exposed rectangular divisions and heavy headings. Make each division explain something real; strong style fit can coexist with empty explanatory content."
+    },
+    {
+      "template_id": "EAGuI12OPPo",
+      "title": "Blue Risograph Illustrative Creative Events Poster",
+      "creator": "Dirtyspace",
+      "credited_study_category": "Risograph",
+      "source_search": "https://www.canva.com/s/templates?query=risograph+creative",
+      "source_filter": "All Styles",
+      "review_date": "2026-10-14",
+      "conditional_principle": "Layered color and rough original contours can express making. Keep important text clear and select relevant objects; a digital print-like effect does not prove physical printing."
+    }
+  ],
+  "rights": "Bibliographic attribution and original principles only. No template assets, source preview files, customer material, template body copy or licenses are distributed. Access to a public preview is not permission to reuse assets.",
+  "limitations": [
+    "Not a completed 1000-per-style study; no catalogue exhaustion.",
+    "No underlying model training or fine-tuning occurred.",
+    "Static observations do not establish motion or audio expertise.",
+    "No performance tests or audience-effect measurements.",
+    "Search result bias, small category samples and mixed source formats limit generalization.",
+    "Native filters, query terms, visual fit and historical authenticity are separate."
+  ]
+}

@@ -64,3 +64,12 @@ Read the actual draft and ask:
 If the underlying thought is weak, choose rewrite/research/replace. Don't merely
 paraphrase weak copy or swap a background. Keep/polish/redesign are appropriate when
 the idea works and the problem is execution. Record the concrete failure and repair.
+
+## Apply the same rigor to each brand
+
+Follow [brand quality](brand-quality.md): establish the real baseline, save the selected
+brand's creative brief, and connect audience situation, evidence, mechanism, payoff,
+voice and meaningful materials. Transfer the method, never another brand's identity.
+Check cross-brand layout repetition and repetitive CTA-only ideas before scaling.
+Use [research findings](research-findings.md) as conditional observations, not templates
+or sector-to-style assignments. Owner constraints and actual feedback take precedence.
