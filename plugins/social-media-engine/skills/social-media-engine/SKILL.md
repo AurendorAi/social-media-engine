@@ -18,6 +18,27 @@ description: Set up a brand-first social media workspace, collect brand guidelin
    Exploratory style previews are allowed during onboarding; label them as proposals.
    Partial answers must be saved before asking the next small group of questions.
 
+## Production boundary: no newly created vector graphics
+
+Never author or generate vector artwork, SVG paths, vector illustrations or icons,
+procedural shape drawings, or vectorizations. Do not bypass this by rasterizing
+model-authored vectors or drawing objects with CSS, canvas or other code. This applies
+regardless of tool or final export format. Do not create artwork automatically to
+replace the owner's rejected designs.
+
+Existing owner-supplied or legitimately sourced vectors may be ingredients: preserve
+provenance and license conditions for placement, transforms, cropping and recoloring.
+Raster image generation/editing, real photography, text layout, raster compositing and
+asset-based motion remain allowed. Canva, HyperFrames, Remotion, HTML/CSS and other
+layout tools may arrange text and existing media; they may not be used to generate
+prohibited code-drawn objects. Ordinary layout backgrounds and text containers are not
+an illustration workflow. Discover actual tools and obtain required asset/service rights.
+
+The owner will provide the curated study dataset. Do not substitute an internet dataset,
+claim it has arrived, or treat old synthetic fixtures as that dataset. Owner feedback
+that a design fails takes precedence over internal quality labels or rubric scores;
+those scores are judgments, never certification. Preserve historical evidence honestly.
+
 ## Working contract
 The host model does the reasoning and creation; the bundled Python runtime provides
 durable records and safety checks. Do not claim tools, skills, accounts, renderers, or
@@ -28,6 +49,17 @@ Read [runtime contracts](references/runtime.md) before writing records.
 For approved brands, load `context` and `snapshot` before planning.
 For an individual item, resolve context with `context --item-file FILE` so all
 platform/language-specific rules are present. Never reuse another brand's cached context.
+
+## Creative quality is the default
+For every new content concept, follow [creative defaults](references/creative-defaults.md)
+without waiting for the user to say “be creative” or “make it professional.” Develop
+distinct ideas, select one for this audience and brand, make imagery and writing work
+together, and inspect the actual output. A generic layout that merely fits the text is
+not the default deliverable. Use meaningful sourced materials or permitted raster
+generation; do not substitute decorative code-drawn artwork. For narrow revisions and
+approved series, preserve the established direction and apply the relevant checks.
+Keep concept selection within the authorized brief; it creates no extra approval pause.
+This is a working method, not a guarantee that every host model has equal design ability.
 
 ## Production sequence
 1. **Brief and plan.** Read [brand quality](references/brand-quality.md) and
@@ -41,11 +73,16 @@ platform/language-specific rules are present. Never reuse another brand's cached
    First follow [resource sourcing](references/resource-sourcing.md): find and inspect real
    imagery, icons, patterns, textures and typography that support the post’s direction.
    Use source materials and original composition alongside AI tools where appropriate.
-   Read [creative production](references/creative-production.md).
+   Read [creative production](references/creative-production.md) and select conditional
+   [composition guidance](references/design-patterns.md) from the actual message and materials.
+   Apply the default concept-selection and image/copy process above, then write the compact
+   composition contract before rendering; patterns do not override identity.
    Make actual editable assets with available tools. Use imported brand assets correctly.
    Draft captions separately per platform and language, not one universal caption.
 3. **Critique and revise.** Read [review](references/review.md).
-   Review actual pixels and full video playback, not just source code or prompts.
+   Use the [producer revision loop](references/producer-revision-loop.md) to inspect and repair
+   actual pixels and full video playback, not just source code or prompts.
+   Producer inspection precedes, and does not replace, independent review.
    Record truthful observations. No fabricated independent reviewers, scores, or evidence.
 4. **Owner approval.** Open the dashboard or present exact copy and actual media.
    Approval must explicitly cover the current content hash. Changes invalidate approval.

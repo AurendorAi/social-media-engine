@@ -18,10 +18,29 @@ CTA, intended date, and expected audience response. Separate confirmed campaign 
 from proposals. Import the agreed plan; produce drafts linked to the plan ID.
 
 ## Writing quality
+For a new concept, use [creative defaults](creative-defaults.md) to develop the headline
+and visual together. The caption should add substance, not repeat the artwork. This is
+the normal production process; it does not require a special creativity request.
 Develop a substantive idea before writing a hook. Research factual claims using primary
 sources when available; retain URLs and relevant context. Do not fabricate statistics,
 quotes, testimonials, results, product features, prices, certifications, or urgency.
-Keep claims bounded to the evidence and the brand's claim policy.
+Keep claims bounded to the evidence and the brand's claim policy. Audit the finished
+caption as well as artwork: persuasive wording can quietly introduce a factual claim.
+“Most common friction point” asserts a frequency ranking; “thirty seconds instead of a
+week of catch-up” asserts measured time savings. Neither is harmless flourish. Without
+support, narrow the first to the specific friction actually demonstrated and replace
+the second with the observed workflow change, without invented durations or savings.
+Likewise, “faster,” “safer” and “more reliable” need a supported comparison even without
+numbers. Keep expressive mood where appropriate, but do not turn mood into a claim
+about prevalence, capability or results. Preserve useful verified specificity; do not
+replace every unsupported promise with vague praise.
+
+Lock contact details to verified brief or account facts: CTA URLs/domains, phone numbers
+and social handles are factual content, including small footers. A fictional brand named
+“Northline” does not authorize inventing `northline.example` as its real website or
+`@northline` as its account. If a destination is missing, omit it or use a platform-native
+save/message action only when the brief supports that action; obtain the actual destination
+when it is required. Do not fill visual whitespace with a plausible contact detail.
 
 Make copy specific, useful, natural, and readable. Avoid generic motivational padding,
 empty superlatives, repeated hooks, and default emoji/hashtag formulas. Show why the

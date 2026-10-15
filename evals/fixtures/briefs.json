@@ -1,0 +1,35 @@
+[
+  {
+    "id": "fieldnote-coffee",
+    "sector": "specialty food",
+    "brand": "Fieldnote Coffee (fictional)",
+    "language": "en",
+    "audience": "Home brewers who want a calmer morning routine",
+    "objective": "Save-worthy Instagram educational post about changing one brewing variable at a time",
+    "facts": ["Change grind size while keeping dose and water amount the same", "Compare taste before making another adjustment"],
+    "identity": {"colors": ["#F4EBDD", "#263F31", "#D65A36"], "type": "Editorial serif headline with restrained sans-serif support", "mood": "Tactile, quiet, spacious; small original line illustration of a coffee dripper"},
+    "constraints": ["No invented taste guarantees, certifications, testimonials or product photography", "No discounts", "Clear save CTA", "Use concise copy on the artwork"]
+  },
+  {
+    "id": "nabta-workshop",
+    "sector": "creative education",
+    "brand": "نبتة (fictional)",
+    "language": "ar",
+    "audience": "Arabic-speaking adults curious about a beginner pottery workshop",
+    "objective": "Instagram workshop announcement encouraging direct-message enquiries",
+    "facts": ["ورشة فخار للمبتدئين", "السبت، من ٤ إلى ٦ مساءً", "الأدوات متوفرة", "الحجز برسالة خاصة"],
+    "identity": {"colors": ["#1E2259", "#F6C759", "#F9F4EB"], "type": "Clear Arabic sans-serif; right-to-left composition", "mood": "Playful modern cultural studio; original abstract clay-vessel shapes"},
+    "constraints": ["Arabic artwork and caption; natural Arabic, correct shaping and RTL reading order", "Do not invent location, price, availability or instructor credentials", "Make time and booking method legible", "No photographic placeholders"]
+  },
+  {
+    "id": "orbitdesk-software",
+    "sector": "B2B software",
+    "brand": "Orbitdesk (fictional)",
+    "language": "en",
+    "audience": "Small remote teams losing context between project handoffs",
+    "objective": "LinkedIn educational post showing a three-part handoff checklist",
+    "facts": ["Record the decision", "Name the next owner", "Link the working file"],
+    "identity": {"colors": ["#101820", "#BAF361", "#FFFFFF"], "type": "Precise sans-serif with monospaced labels", "mood": "Structured, technical, confident; diagram-led rather than decorative"},
+    "constraints": ["No invented software capabilities, customer logos or productivity statistics", "Three distinct steps with a clear reading order", "Ask readers to save the checklist", "Avoid generic AI slogans"]
+  }
+]

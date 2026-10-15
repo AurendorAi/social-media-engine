@@ -1,5 +1,10 @@
 # Bounded research findings
 
+Historical observations below are not permission to create vector artwork. Apply the
+[current production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics): use permitted existing assets or raster methods only.
+The owner-provided curated study dataset is still pending; do not replace it with
+internet references or equate this incomplete historical study with it.
+
 This release turns an **incomplete** visual study into original conditional production guidance. The 14 October 2026 checkpoint contains **123 distinct qualifying templates / 302 inspected pages**, **31 fully inspected candidates excluded from style credit**, **2 partial reviews**, and **0 fully reviewed videos**. Research was stopped for synthesis. This is not a completed 1,000-per-style study, a representative catalogue survey, a licensing audit, a performance test, or model training/fine-tuning. The underlying model has not been trained by installing these files.
 
 ## Evidence boundaries
@@ -134,7 +139,7 @@ Attribution: **Dark Elegant Neoclassical Album Cover**, barsrsind, template `EAG
 
 ### Bauhaus — 5 qualifying templates
 
-A small geometric vocabulary can unify paired assets while leaving a clear information area. Select original shapes and relationships rather than reproducing the specimen’s arrangement.
+A small geometric vocabulary can unify paired assets while leaving a clear information area. Use licensed existing geometric assets in an original composition; do not author new vector shapes or reproduce the specimen’s arrangement.
 
 Attribution: **Orange Blue and Yellow Colorful Playful Bauhaus Mosaic Geometric Creative Designer Business Card**, Fontherapy Studio, template `EAHFbefw5EM`; [recorded search context](https://www.canva.com/s/templates?query=bauhaus+creative).
 

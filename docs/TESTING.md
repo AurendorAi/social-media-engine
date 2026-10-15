@@ -75,3 +75,15 @@ For a live smoke check, explicitly search a public library in a fictional local 
 inspect the original source/licence and actual image, acquire a chosen material, and
 verify its byte hash and source record. Keep downloaded third-party assets under ignored
 `.data/`; never add them to the plugin or use synthetic review evidence for them.
+
+## Creative outcome experiments
+
+The [paired evaluation harness](../evals/README.md) is a retired SVG-only historical experiment.
+New preparation is unconditionally blocked; there is no developer opt-out. Existing
+ingest, blind, salvage and reprocess commands audit saved historical evidence only.
+Unit tests build inert metadata fixtures locally, without generating provider prompts.
+This retired experiment is not a production workflow or an accepted quality benchmark.
+Exact snapshots, raw responses, failures, normalized exploratory artifacts and independent
+rendered review must remain auditable. External calls need their own explicit scope, current
+pricing check and bounded budget. Do not use real account credentials or customer assets in CI.
+A live model API test is not proof that the native Codex or Claude plugin installation works.

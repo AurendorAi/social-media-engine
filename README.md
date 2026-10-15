@@ -26,7 +26,38 @@ platform-aware writing, review, and controlled delivery.
 > posting bot. Planning and copy use your host's model. Actual media requires available
 > generation/rendering tools. Publishing and account data require your own integrations.
 
-## New in version 2.2: a creative memory for every brand
+## Production policy and free design resources
+
+**Never create new vector graphics.** Use sourced/owner-supplied assets, permitted raster
+image generation/editing, typography and compositing in capable tools. Do not substitute
+SVG drawings, procedural shapes, vectorization or rasterized code-drawn artwork. Existing
+licensed vectors may be used as ingredients with their provenance and licence intact.
+
+The plugin includes a searchable directory of free production-resource sources, with
+source-specific free scope, licence links, search routes, attribution and restrictions.
+See the [resource guide](docs/research/FREE-DESIGN-RESOURCE-LIBRARY.md). No third-party assets
+are bundled and no source is contacted on installation.
+
+The owner will supply the [professional-design study dataset](docs/research/REFERENCE-DATASET-PLAN.md).
+The source directory is for production ingredients, not a substitute training dataset.
+The previous SVG-only benchmark is retired and its professional-quality labels were
+rejected by the owner; [historical results](docs/research/MULTI-MODEL-PILOT-RESULTS.md)
+remain available as failure evidence. Agent scores do not overrule owner feedback.
+
+## New in version 2.2.1: creative direction by default
+
+You do not need to append “be more creative” to a content request. The shared Codex and
+Claude workflow now develops distinct concepts, selects one for the audience and brand,
+composes writing and meaningful imagery together, and reviews actual native and phone
+exports. Narrow edits preserve the approved direction. See the portable
+[creative defaults](plugins/social-media-engine/skills/social-media-engine/references/creative-defaults.md).
+
+The update carries the process behind an owner-liked local demonstration, not its private
+artwork or fixed layouts. Different brands keep their own identities. Results still depend
+on the host model, available production tools and actual review; equal quality across
+models is not guaranteed. No new approval gates or workspace migrations are introduced.
+
+## Version 2.2: a creative memory for every brand
 
 A familiar brand benefits from months of context and feedback. New brands need that
 context made explicit. The plugin now develops and saves an **owner-approved creative
@@ -58,8 +89,8 @@ of an original composition. The assistant starts with the post's visual directio
 compares actual materials and records why the selected ones fit your brand.
 
 - **Search in the studio:** Openverse, Wikimedia Commons, Iconify and the Met Open Access.
-- **Explore specialist libraries:** ambientCG, Poly Haven, Hero Patterns, unDraw, SVG Repo,
-  Pexels, Unsplash and Google Fonts, plus other sources through the host's web/browser tools.
+- **Explore specialist libraries:** 23 curated sources including ambientCG, Poly Haven, Hero Patterns,
+  Pexels, Unsplash, Google Fonts and Collletttivo, with free scopes and licence evidence.
 - **Download and reuse:** reviewed public HTTPS files or explicit manual imports go into
   a separate brand-specific Design library. Adding materials keeps brand approval intact.
 - **Keep source records:** creator, licence evidence, intended use and edits follow each

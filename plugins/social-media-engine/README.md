@@ -9,6 +9,13 @@ few relevant questions, can save 2–4 visual directions for you to compare, and
 to approve the brand brief before generating content. Later runs resume that brand's
 workspace. Use a separate brand identifier for each brand.
 
+## Creative direction is included
+An ordinary content request activates concept development, meaningful imagery, writing
+designed with the visual, and review of real native and phone-sized exports. You do not
+need an extra “be creative” prompt. The [shared workflow](skills/social-media-engine/references/creative-defaults.md)
+adapts to each brand and preserves approved directions for narrow revisions. It uses
+your host's actual tools; it does not guarantee equal results from every model.
+
 ## Requirements
 - Codex or Claude with local skill execution and access to your chosen working folder.
 - Python 3.10 or newer; `python3` on macOS/Linux, `python` on Windows.
@@ -25,6 +32,21 @@ The agent performs creative work using your host's model and available tools.
 The runtime stores and checks the workflow. It does not generate media by itself.
 Remote accounts, real publishing, analytics permissions, and inbox access require your
 own authorized providers. No provider or platform is silently connected.
+
+## Production materials and boundaries
+Never create new vector artwork, SVG illustrations, icons, procedural drawings or
+vectorizations, including code-drawn artwork later rasterized. Existing licensed or
+owner-supplied vectors are allowed ingredients. Use real sourced materials, raster image
+generation/editing, typography and composition with available tools.
+
+The searchable Design library directory contains 23 sources for free photography,
+textures, patterns, fonts, archival imagery and existing graphics. Each entry records
+free scope, terms and access limitations; mixed-license indexes require individual
+asset verification. Four native search adapters are included; other sources use the
+host's browser and explicit import. No third-party asset files are bundled.
+
+Study references will come from the owner-provided dataset, not a substitute internet
+dataset. Owner rejection overrides internal quality scores.
 
 ## Creative workflow
 Research the audience's actual situation, develop an argument and useful payoff, then
