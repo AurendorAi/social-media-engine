@@ -1,98 +1,1016 @@
 [
   {
-    "id": "openverse",
-    "name": "Openverse",
-    "url": "https://openverse.org/",
-    "kinds": ["photo", "illustration", "texture", "pattern", "graphic"],
-    "access": "api",
-    "notes": "Searchable image index. Verify the original creator page and licence; index metadata is only a lead."
-  },
-  {
-    "id": "commons",
-    "name": "Wikimedia Commons",
-    "url": "https://commons.wikimedia.org/",
-    "kinds": ["photo", "illustration", "texture", "pattern", "graphic"],
-    "access": "api",
-    "notes": "File-level licence and attribution vary. Inspect each source page."
-  },
-  {
-    "id": "iconify",
-    "name": "Iconify",
-    "url": "https://icon-sets.iconify.design/",
-    "kinds": ["icon"],
-    "access": "api",
-    "notes": "Many icon families. Select one coherent family and inspect its own licence."
-  },
-  {
-    "id": "met",
-    "name": "The Met Open Access",
-    "url": "https://www.metmuseum.org/art/collection",
-    "kinds": ["photo", "illustration", "pattern", "graphic"],
-    "access": "api",
-    "notes": "Built-in search returns objects marked public domain with images. Check the object and image rights."
-  },
-  {
     "id": "ambientcg",
     "name": "ambientCG",
     "url": "https://ambientcg.com/",
-    "kinds": ["texture", "pattern"],
+    "license_url": "https://docs.ambientcg.com/license/",
+    "kinds": [
+      "texture",
+      "pattern"
+    ],
+    "formats": [
+      "JPG/PNG map ZIPs; other asset-specific formats"
+    ],
+    "free_scope": "Published asset collection; supporter early access is separate.",
+    "commercial_use": "CC0 permits commercial use and modification.",
+    "attribution": "Not required.",
+    "restrictions": "CC0 covers downloadable files and material previews; preserve source metadata.",
+    "search_method": "Site search/type filters; documented API.",
+    "use_when": "Paper/material surfaces or 3D renders.",
+    "style_terms": [
+      "paper",
+      "grain",
+      "fabric",
+      "stone",
+      "metal",
+      "textures",
+      "patterns"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://docs.ambientcg.com/license/",
+        "observed": "All assets and material preview renders CC0; modification, commercial use and raw-file inclusion permitted."
+      },
+      {
+        "url": "https://ambientcg.com/view?id=Paper001",
+        "observed": "Paper001 exposes1K/2K/4K JPG and PNG ZIP links."
+      },
+      {
+        "url": "https://ambientcg.com/",
+        "observed": "All assets free; supporter perks include early access."
+      }
+    ],
+    "access_notes": "Public item download links; no login gate shown for Paper001.",
     "access": "browse",
-    "notes": "Texture/material library. Inspect https://docs.ambientcg.com/license/ and the actual asset; download a suitable image map, not an executable or archive."
+    "notes": "Paper/material surfaces or 3D renders. Published asset collection; supporter early access is separate. For 2D composition choose the base-color image or a finished render; normal/roughness maps are not finished artwork. Inspect free resolution before use.",
+    "scope_type": "free_collection"
   },
   {
     "id": "polyhaven",
     "name": "Poly Haven",
-    "url": "https://polyhaven.com/textures",
-    "kinds": ["texture"],
+    "url": "https://polyhaven.com/",
+    "license_url": "https://polyhaven.com/license",
+    "kinds": [
+      "texture"
+    ],
+    "formats": [
+      "JPG",
+      "PNG",
+      "EXR",
+      "Blend",
+      "glTF",
+      "MaterialX",
+      "ZIP"
+    ],
+    "free_scope": "Public asset library; optional commercial services/add-ons are separate.",
+    "commercial_use": "CC0 permits commercial use, adaptation and redistribution.",
+    "attribution": "Assets: none required. Live API integration: visible Poly Haven credit required.",
+    "restrictions": "Website scraping requires permission; API has separate terms. Example/user renders, site text and logos are not covered as assets.",
+    "search_method": "Use official API /assets and per-asset files endpoints; category/tag browse.",
+    "use_when": "Photoreal material surfaces and lighting for original scenes.",
+    "style_terms": [
+      "plaster",
+      "weathered",
+      "photoreal",
+      "wood",
+      "studio lighting",
+      "textures"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://polyhaven.com/license",
+        "observed": "CC0 assets; separately protected example renders/site content; website scraping restricted."
+      },
+      {
+        "url": "https://polyhaven.com/our-api",
+        "observed": "July2026 policy: free commercial API, attribution and unique User-Agent required."
+      },
+      {
+        "url": "https://polyhaven.com/a/painted_plaster_wall",
+        "observed": "Download choices show resolution/maps and JPG/PNG/EXR plus scene packages."
+      }
+    ],
+    "access_notes": "No registration for assets; default API has no login/key and requires unique User-Agent.",
     "access": "browse",
-    "notes": "Texture library. Inspect https://polyhaven.com/license and choose a suitable resolution/map for the composition."
+    "notes": "Photoreal material surfaces and lighting for original scenes. Public asset library; optional commercial services/add-ons are separate. For 2D composition choose the base-color image or a finished render; normal/roughness maps are not finished artwork. Inspect free resolution before use.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "open-doodles",
+    "name": "Open Doodles",
+    "url": "https://www.opendoodles.com/",
+    "license_url": "https://www.opendoodles.com/about",
+    "kinds": [
+      "illustration"
+    ],
+    "formats": [
+      "SVG",
+      "PNG",
+      "selected GIF"
+    ],
+    "free_scope": "Entire Open Doodles illustration set; external Blush service is separate.",
+    "commercial_use": "CC0 permits copying, editing, remixing and commercial use.",
+    "attribution": "Not required.",
+    "restrictions": "Do not assume external editor offerings share the same access terms.",
+    "search_method": "Browse existing subject illustrations and compositions; download a chosen published asset.",
+    "use_when": "Editable hand-drawn human scenes.",
+    "style_terms": [
+      "doodle",
+      "organic",
+      "playful",
+      "line illustration",
+      "illustrations"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.opendoodles.com/about",
+        "observed": "Set released underCC0, including edit/remix/redraw."
+      },
+      {
+        "url": "https://www.opendoodles.com/",
+        "observed": "SVG/PNG and selectedGIF links; commercial/personal use without credit."
+      }
+    ],
+    "access_notes": "Direct per-image links visible without signup.",
+    "access": "browse",
+    "notes": "Editable hand-drawn human scenes. Entire Open Doodles illustration set; external Blush service is separate. Use only when the actual brand calls for this language; a generic illustration is not a substitute for art direction. Do not draw new vector scenes.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "smithsonian-open-access",
+    "name": "Smithsonian Open Access",
+    "url": "https://www.si.edu/OpenAccess",
+    "license_url": "https://www.si.edu/openaccess/faq",
+    "kinds": [
+      "photo",
+      "illustration",
+      "graphic",
+      "pattern"
+    ],
+    "formats": [
+      "JPG",
+      "TIFF when available",
+      "glTF",
+      "GLB",
+      "OBJ"
+    ],
+    "free_scope": "Only CC0-designated items; not the whole Smithsonian.",
+    "commercial_use": "CC0-designated assets may be transformed and used commercially.",
+    "attribution": "Not required; source/title/creator/link recommended.",
+    "restrictions": "Third-party rights may remain; trademarks and usage-conditions items excluded.",
+    "search_method": "Portal keyword search; collection filters; official API metadata/media URLs.",
+    "use_when": "Historic objects, scientific/botanical or cultural imagery.",
+    "style_terms": [
+      "archive",
+      "botanical",
+      "historic",
+      "specimen",
+      "craft",
+      "photography",
+      "photos",
+      "illustrations",
+      "graphics",
+      "patterns"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.si.edu/openaccess/faq",
+        "observed": "CC0 subset, commercial rights, attribution, formats, API-key requirement and exclusions explicitly documented."
+      },
+      {
+        "url": "https://www.si.edu/OpenAccess",
+        "observed": "Public search portal for Open Access media."
+      }
+    ],
+    "access_notes": "Portal downloads; API registration/key required; GitHub metadata alternative. FAQ retrieved through official indexed result after direct fetch404.",
+    "access": "browse",
+    "notes": "Historic objects, scientific/botanical or cultural imagery. Only CC0-designated items; not the whole Smithsonian.",
+    "scope_type": "free_subset"
+  },
+  {
+    "id": "met",
+    "name": "The Met Open Access",
+    "url": "https://www.metmuseum.org/hubs/open-access",
+    "license_url": "https://www.metmuseum.org/policies/image-resources",
+    "kinds": [
+      "photo",
+      "illustration",
+      "pattern",
+      "graphic"
+    ],
+    "formats": [
+      "JPEG images",
+      "JSON API metadata",
+      "CSV metadata"
+    ],
+    "free_scope": "Images marked Open Access; other collection images may be restricted or fee-based.",
+    "commercial_use": "CC0 images can be shared and remixed without charge.",
+    "attribution": "No CC0 attribution requirement; retain artwork identity/source as provenance.",
+    "restrictions": "Check OA icon per image; collection metadata availability does not grant image rights.",
+    "search_method": "Collection search/OA filter; official API linked from hub.",
+    "use_when": "Historic art, textile pattern references and cultural collage.",
+    "style_terms": [
+      "painting",
+      "engraving",
+      "textile",
+      "ornament",
+      "ceramics",
+      "photography",
+      "photos",
+      "illustrations",
+      "patterns",
+      "graphics"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.metmuseum.org/policies/image-resources",
+        "observed": "OA icon identifies unrestricted images; restricted-image requests separate."
+      },
+      {
+        "url": "https://www.metmuseum.org/hubs/open-access",
+        "observed": "Public-domain JPEGs available via official API and collection browser."
+      }
+    ],
+    "access_notes": "Public collection download/API paths; no account mentioned for OA access.",
+    "access": "api",
+    "notes": "Historic art, textile pattern references and cultural collage. Images marked Open Access; other collection images may be restricted or fee-based.",
+    "scope_type": "free_subset"
+  },
+  {
+    "id": "rawpixel-public-domain",
+    "name": "rawpixel Public Domain collection",
+    "url": "https://www.rawpixel.com/public-domain",
+    "license_url": "https://www.rawpixel.com/services/licenses",
+    "kinds": [
+      "photo",
+      "illustration",
+      "graphic"
+    ],
+    "formats": [
+      "Image format varies per selected asset; not confirmed globally"
+    ],
+    "free_scope": "Public Domain subset only; free/premium/editorial collections use different terms.",
+    "commercial_use": "CC0-marked public-domain images free for commercial use/modification.",
+    "attribution": "Not required for CC0 subset.",
+    "restrictions": "Verify individual CC0 label; jurisdiction/third-party rights remain user responsibility. Do not substitute ordinary free license. A public-domain source or URL does not establish CC0 for a downloadable derivative. Cutouts can use a different paid or personal/business license; verify the exact file.",
+    "search_method": "Public Domain collection search and sources filter.",
+    "use_when": "Vintage/botanical artwork and scanned historic material.",
+    "style_terms": [
+      "vintage",
+      "botanical",
+      "archival",
+      "engraving",
+      "cutout",
+      "collage",
+      "photography",
+      "photos",
+      "illustrations",
+      "graphics"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.rawpixel.com/public-domain",
+        "observed": "Dedicated collection linksCC0."
+      },
+      {
+        "url": "https://www.rawpixel.com/pricing-and-plans?destination=%2F",
+        "observed": "Free plan lists unlimited Public Domain downloads and distinguishes other licenses."
+      },
+      {
+        "url": "https://www.rawpixel.com/services/licenses",
+        "observed": "CC0 public-domain conditions separate from commercial stock licenses."
+      },
+      {
+        "url": "https://www.rawpixel.com/image/6483181/png-sticker-public-domain",
+        "observed": "Transparent bird silhouette offers PNG/SVG and says free personal/business use, but links personal/business license; not verified CC0 despite URL."
+      }
+    ],
+    "access_notes": "Free membership plan offers unlimited public-domain downloads; signup may be required; no trial needed.",
+    "access": "browse",
+    "notes": "Vintage/botanical artwork and scanned historic material. Public Domain subset only; free/premium/editorial collections use different terms.",
+    "scope_type": "free_subset"
   },
   {
     "id": "heropatterns",
     "name": "Hero Patterns",
     "url": "https://heropatterns.com/",
-    "kinds": ["pattern"],
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "kinds": [
+      "pattern"
+    ],
+    "formats": [
+      "SVG",
+      "generated CSS"
+    ],
+    "free_scope": "Entire free pattern collection.",
+    "commercial_use": "CC BY4.0 permits commercial use and adaptation.",
+    "attribution": "Credit Steve Schoger/Hero Patterns, link license and identify changes.",
+    "restrictions": "No additional restrictions or implied endorsement; preserve attribution.",
+    "search_method": "Pattern browser; color and opacity controls.",
+    "use_when": "Editable repeating graphic patterns.",
+    "style_terms": [
+      "geometric",
+      "repeat",
+      "monochrome",
+      "tessellation",
+      "patterns"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://heropatterns.com/",
+        "observed": "Creator identifies free collection, linksCC BY4.0, offers unstyledSVG and CSS."
+      },
+      {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "observed": "Commercial adaptation allowed with credit/license/change notice."
+      }
+    ],
+    "access_notes": "Public SVG download/color-opacity controls; no signup gate shown.",
     "access": "browse",
-    "notes": "Repeatable SVG patterns. Review the linked CC BY 4.0 terms and retain attribution."
+    "notes": "Editable repeating graphic patterns. Entire free pattern collection.",
+    "scope_type": "free_collection"
   },
   {
-    "id": "undraw",
-    "name": "unDraw",
-    "url": "https://undraw.co/illustrations",
-    "kinds": ["illustration"],
+    "id": "kenney",
+    "name": "Kenney assets",
+    "url": "https://kenney.nl/assets",
+    "license_url": "https://kenney.nl/support",
+    "kinds": [
+      "icon",
+      "illustration",
+      "graphic"
+    ],
+    "formats": [
+      "Asset-specific; Input Prompts verified PNG/SVG"
+    ],
+    "free_scope": "Individual asset-page downloads free; paid tools/all-in-one convenience bundle separate.",
+    "commercial_use": "Asset-page packs CC0, commercial use allowed.",
+    "attribution": "Not required.",
+    "restrictions": "Kenney logo reserved for official studio projects; branded symbols may involve other rights.",
+    "search_method": "Asset categories/tags; inspect pack license.",
+    "use_when": "Simple graphic objects, interaction diagrams and stylized scenes.",
+    "style_terms": [
+      "flat",
+      "game",
+      "isometric",
+      "icons",
+      "low-poly",
+      "illustrations",
+      "graphics"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://kenney.nl/support",
+        "observed": "All asset-page game assets CC0/commercial; no attribution; logo restriction."
+      },
+      {
+        "url": "https://kenney.nl/assets/input-prompts",
+        "observed": "CC0 pack; free download/skip-donation path."
+      },
+      {
+        "url": "https://kenney.nl/knowledge-base/game-assets-2d/using-input-prompts",
+        "observed": "PNG and SVG formats documented."
+      }
+    ],
+    "access_notes": "Download with optional donation; Continue without donating path visible.",
     "access": "browse",
-    "notes": "Editable illustrations. Inspect https://undraw.co/license; use only when the visual language fits the brand."
+    "notes": "Simple graphic objects, interaction diagrams and stylized scenes. Individual asset-page downloads free; paid tools/all-in-one convenience bundle separate.",
+    "scope_type": "free_collection"
   },
   {
-    "id": "svgrepo",
-    "name": "SVG Repo",
-    "url": "https://www.svgrepo.com/",
-    "kinds": ["icon", "illustration", "graphic"],
+    "id": "cgbookcase",
+    "name": "cgbookcase",
+    "url": "https://www.cgbookcase.com/textures",
+    "license_url": "https://www.cgbookcase.com/textures",
+    "kinds": [
+      "texture"
+    ],
+    "formats": [
+      "PBR map package; encoding must be checked per download"
+    ],
+    "free_scope": "Public texture collection free; patron bulk-folder access separate.",
+    "commercial_use": "CC0 allows commercial use and adaptation.",
+    "attribution": "Not required.",
+    "restrictions": "Asset license does not imply all website content is reusable.",
+    "search_method": "Keyword/category/type/color/minimum-resolution filters.",
+    "use_when": "Photoreal surface maps and material detail.",
+    "style_terms": [
+      "photoscanned",
+      "rock",
+      "brick",
+      "fabric",
+      "decal",
+      "textures"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.cgbookcase.com/textures",
+        "observed": "CC0 license section, search/filter controls and free textures."
+      },
+      {
+        "url": "https://www.cgbookcase.com/textures/manhole-cover-16",
+        "observed": "Individual download and basecolor/height/mask/metallic/normal/roughness maps; patron bulk access separate."
+      }
+    ],
+    "access_notes": "Public individual download pages; no signup gate shown; bulk-folder patron benefit.",
     "access": "browse",
-    "notes": "Licences differ by asset/collection. Inspect https://www.svgrepo.com/page/licensing/ and the exact asset licence."
+    "notes": "Photoreal surface maps and material detail. Public texture collection free; patron bulk-folder access separate. For 2D composition choose the base-color image or a finished render; normal/roughness maps are not finished artwork. Inspect free resolution before use.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "3dtextures",
+    "name": "3DTextures.me",
+    "url": "https://3dtextures.me/",
+    "license_url": "https://3dtextures.me/about/",
+    "kinds": [
+      "texture",
+      "pattern"
+    ],
+    "formats": [
+      "Free1024x1024 map set;4K PNG/Substance source paid on checked asset"
+    ],
+    "free_scope": "Individual free1K downloads; higher-resolution/source files and bulk access supporter-gated.",
+    "commercial_use": "CC0 textures permit commercial use, modification and redistribution.",
+    "attribution": "Not required.",
+    "restrictions": "Do not claim original authorship; inspect resolution/format before selection.",
+    "search_method": "Site categories/tags/search.",
+    "use_when": "Seamless surface detail where1K resolution suffices.",
+    "style_terms": [
+      "wood",
+      "brick",
+      "fabric",
+      "tileable",
+      "procedural",
+      "textures",
+      "patterns"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://3dtextures.me/about/",
+        "observed": "All texturesCC0; commercial/redistribution allowed without credit; individual vs paid bulk access."
+      },
+      {
+        "url": "https://3dtextures.me/2026/03/23/wood-floor-parquet-walnut-016-free-seamless-pbr-texture/",
+        "observed": "Free1K versus patron4KPNG/Substance distinction explicitly stated."
+      }
+    ],
+    "access_notes": "Individual downloads free; bulk folder supporter-only. Signup requirement for hosting not verified.",
+    "access": "browse",
+    "notes": "Seamless surface detail where1K resolution suffices. Individual free1K downloads; higher-resolution/source files and bulk access supporter-gated. For 2D composition choose the base-color image or a finished render; normal/roughness maps are not finished artwork. Inspect free resolution before use.",
+    "scope_type": "free_subset"
+  },
+  {
+    "id": "googlefonts",
+    "name": "Google Fonts — including Noto Sans Arabic",
+    "url": "https://fonts.google.com/",
+    "license_url": "https://github.com/google/fonts/blob/main/ofl/notosansarabic/OFL.txt",
+    "kinds": [
+      "font"
+    ],
+    "formats": [
+      "TTF; individual family files in official repository"
+    ],
+    "free_scope": "Free font families; license differs by family. Noto Sans Arabic specifically verified OFL 1.1.",
+    "commercial_use": "Yes; modification and embedding allowed under verified OFL.",
+    "attribution": "No on-art credit required by OFL; retain copyright and license with redistributed fonts.",
+    "restrictions": "No standalone font sale under OFL; modified fonts obey reserved names and remain OFL. Do not extend one family license or Arabic coverage to the whole catalog.",
+    "search_method": "Search family/script in catalog; locate exact family directory and bundled license.",
+    "use_when": "Arabic/Latin body and headline typography; test actual selected family shaping.",
+    "style_terms": [
+      "Arabic",
+      "sans",
+      "serif",
+      "variable",
+      "multilingual",
+      "fonts",
+      "typography"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://github.com/google/fonts/blob/main/README.md",
+        "observed": "Family directories contain TTFs and individual licenses; most OFL, some Apache or Ubuntu."
+      },
+      {
+        "url": "https://github.com/google/fonts/blob/main/ofl/notosansarabic/OFL.txt",
+        "observed": "Noto Sans Arabic explicitly uses OFL 1.1 with embedding, modification and redistribution rights."
+      }
+    ],
+    "access_notes": "Public catalog and repository; raw font files available without repository account.",
+    "access": "browse",
+    "notes": "Arabic/Latin body and headline typography; test actual selected family shaping. Free font families; license differs by family. Noto Sans Arabic specifically verified OFL 1.1.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "fontshare",
+    "name": "Fontshare — OFL subset for adaptable font assets",
+    "url": "https://www.fontshare.com/",
+    "license_url": "https://fontshare.com/licenses/sil-ofl",
+    "kinds": [
+      "font"
+    ],
+    "formats": [
+      "Family font bundles; exact extensions not verified"
+    ],
+    "free_scope": "Catalog advertises personal/commercial free fonts; open-source subset uses OFL, closed-source uses proprietary FFL.",
+    "commercial_use": "Yes; adaptation/redistribution here verified only for OFL-labelled families.",
+    "attribution": "OFL requires font copyright/license preservation, no on-art credit.",
+    "restrictions": "Do not assume closed-source FFL fonts permit the same modifications. OFL font sale/name/redistribution restrictions apply.",
+    "search_method": "Filter categories, styles and personality; verify family license before download.",
+    "use_when": "Curated Latin display/body families and pairing exploration.",
+    "style_terms": [
+      "display",
+      "clean",
+      "elegant",
+      "geometric",
+      "variable",
+      "fonts",
+      "typography"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://fontshare.com/licenses/sil-ofl",
+        "observed": "Official licensing text distinguishes proprietary freeware FFL from open-source OFL."
+      },
+      {
+        "url": "https://www.fontshare.com/?categories=Display",
+        "observed": "Catalog exposes categories, properties, personality filters and static/variable styles."
+      }
+    ],
+    "access_notes": "Public catalog; signup and final download flow not tested.",
+    "access": "browse",
+    "notes": "Curated Latin display/body families and pairing exploration. Catalog advertises personal/commercial free fonts; open-source subset uses OFL, closed-source uses proprietary FFL.",
+    "scope_type": "free_subset"
+  },
+  {
+    "id": "collletttivo",
+    "name": "Collletttivo",
+    "url": "https://www.collletttivo.it/",
+    "license_url": "https://www.collletttivo.it/licensing",
+    "kinds": [
+      "font"
+    ],
+    "formats": [
+      "Downloadable font families; extensions not verified"
+    ],
+    "free_scope": "All fonts described as free under bundled OFL.",
+    "commercial_use": "Yes, printed/digital use; modify and redistribute under OFL.",
+    "attribution": "Site requests designer/foundry credit; preserve bundled copyright/license when redistributing fonts.",
+    "restrictions": "No standalone font sale, removal of license, or claiming full authorship. Check bundled license and reserved names.",
+    "search_method": "Browse typeface categories and family specimens.",
+    "use_when": "Distinctive editorial typography and open-source display families.",
+    "style_terms": [
+      "playful",
+      "editorial",
+      "geometric",
+      "monospaced",
+      "display",
+      "fonts",
+      "typography"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.collletttivo.it/licensing",
+        "observed": "Official page explicitly permits personal/commercial use, studying, modification and redistribution under OFL."
+      },
+      {
+        "url": "https://www.collletttivo.it/typefaces",
+        "observed": "Catalog presents categories and named typeface families."
+      }
+    ],
+    "access_notes": "Public family catalog; signup/download completion not tested.",
+    "access": "browse",
+    "notes": "Distinctive editorial typography and open-source display families. All fonts described as free under bundled OFL.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "lucide",
+    "name": "Lucide",
+    "url": "https://lucide.dev/",
+    "license_url": "https://lucide.dev/license",
+    "kinds": [
+      "icon"
+    ],
+    "formats": [
+      "SVG; framework packages"
+    ],
+    "free_scope": "Free open-source icons.",
+    "commercial_use": "Yes; copying, modification and distribution permitted.",
+    "attribution": "Keep copyright/permission notice; inherited Feather icons also carry MIT terms.",
+    "restrictions": "Preserve applicable ISC/MIT notices in redistributed assets.",
+    "search_method": "Search icon catalog by object/action; use one consistent stroke treatment.",
+    "use_when": "Supporting functional symbols and coherent icon families.",
+    "style_terms": [
+      "outline",
+      "rounded",
+      "minimal",
+      "consistent stroke",
+      "icons"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://lucide.dev/license",
+        "observed": "Official page contains ISC permission and inherited Feather MIT notice."
+      },
+      {
+        "url": "https://lucide.dev/guide/",
+        "observed": "Official guide documents SVG icon library and integrations."
+      }
+    ],
+    "access_notes": "Public catalog/repository; no paid license needed.",
+    "access": "browse",
+    "notes": "Supporting functional symbols and coherent icon families. Free open-source icons.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "phosphor",
+    "name": "Phosphor Icons",
+    "url": "https://phosphoricons.com/",
+    "license_url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+    "kinds": [
+      "icon"
+    ],
+    "formats": [
+      "SVG; framework/design-tool integrations"
+    ],
+    "free_scope": "Free MIT icon family.",
+    "commercial_use": "Yes; modification and redistribution allowed.",
+    "attribution": "Include copyright and permission notice with copies/substantial portions.",
+    "restrictions": "MIT notice preservation; no warranty.",
+    "search_method": "Fuzzy-search catalog; select a weight; SVG assets grouped by weight.",
+    "use_when": "Consistent supporting icons with weight/duotone choices.",
+    "style_terms": [
+      "duotone",
+      "weight variants",
+      "friendly",
+      "geometric",
+      "icons"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://github.com/phosphor-icons/core/blob/main/LICENSE",
+        "observed": "Official core repository includes MIT license."
+      },
+      {
+        "url": "https://github.com/phosphor-icons/core",
+        "observed": "Documents raw SVG assets, weight directories, tags/categories and search tooling."
+      }
+    ],
+    "access_notes": "Public raw SVG repository and catalog; no signup needed for repository assets.",
+    "access": "browse",
+    "notes": "Consistent supporting icons with weight/duotone choices. Free MIT icon family.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "tabler",
+    "name": "Tabler Icons",
+    "url": "https://tabler.io/icons",
+    "license_url": "https://github.com/tabler/tabler-icons/blob/main/LICENSE",
+    "kinds": [
+      "icon"
+    ],
+    "formats": [
+      "SVG",
+      "HTML/sprite",
+      "React"
+    ],
+    "free_scope": "Free icon library; separate paid Tabler products excluded.",
+    "commercial_use": "Yes; modification and distribution under MIT.",
+    "attribution": "Preserve MIT copyright/permission notice.",
+    "restrictions": "Free icons do not imply paid bundles/templates are free.",
+    "search_method": "Search/filter category; select outline or filled; adjust stroke/size/color.",
+    "use_when": "Coherent utility icons in information-led layouts.",
+    "style_terms": [
+      "outline",
+      "filled",
+      "consistent stroke",
+      "icons"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://github.com/tabler/tabler-icons/blob/main/LICENSE",
+        "observed": "Official repository MIT license permits commercial adaptation."
+      },
+      {
+        "url": "https://tabler.io/icons",
+        "observed": "Catalog provides outline/filled styles and export/customization controls."
+      }
+    ],
+    "access_notes": "Public catalog and repository.",
+    "access": "browse",
+    "notes": "Coherent utility icons in information-led layouts. Free icon library; separate paid Tabler products excluded.",
+    "scope_type": "free_collection"
+  },
+  {
+    "id": "iconoir",
+    "name": "Iconoir",
+    "url": "https://iconoir.com/",
+    "license_url": "https://github.com/iconoir-icons/iconoir/blob/main/LICENSE",
+    "kinds": [
+      "icon"
+    ],
+    "formats": [
+      "SVG",
+      "icon font",
+      "React",
+      "React Native",
+      "Flutter",
+      "Figma",
+      "Framer"
+    ],
+    "free_scope": "Free open-source icon library.",
+    "commercial_use": "Yes; modification and distribution under MIT.",
+    "attribution": "Preserve MIT copyright/permission notice.",
+    "restrictions": "MIT notice preservation; no warranty.",
+    "search_method": "Search names/subjects; use catalog size, color and stroke controls.",
+    "use_when": "Consistent thin-line supporting symbols.",
+    "style_terms": [
+      "line",
+      "minimal",
+      "24px grid",
+      "1.5 stroke",
+      "icons"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://iconoir.com/",
+        "observed": "Official page lists free library, formats/integrations and search/customization."
+      },
+      {
+        "url": "https://github.com/iconoir-icons/iconoir/blob/main/LICENSE",
+        "observed": "MIT license copyright Luca Burgio permits use, modification and redistribution."
+      }
+    ],
+    "access_notes": "Public catalog and repository.",
+    "access": "browse",
+    "notes": "Consistent thin-line supporting symbols. Free open-source icon library.",
+    "scope_type": "free_collection"
   },
   {
     "id": "pexels",
     "name": "Pexels",
     "url": "https://www.pexels.com/",
-    "kinds": ["photo"],
+    "license_url": "https://www.pexels.com/license/",
+    "kinds": [
+      "photo"
+    ],
+    "formats": [
+      "Raster photo/video downloads; exact format varies and was not download-tested"
+    ],
+    "free_scope": "Free Pexels photos/videos under Pexels License.",
+    "commercial_use": "Yes; modification allowed, including compositing/background removal.",
+    "attribution": "Not required; appreciated.",
+    "restrictions": "No unaltered resale, competing stock redistribution, endorsement implication, trademark use, or offensive portrayal of identifiable people. Depicted brands/people may need separate permissions.",
+    "search_method": "Search subject, setting, lighting and composition; choose asset with needed crop room.",
+    "use_when": "Real photographic subjects, environments and source images for edited cutouts.",
+    "style_terms": [
+      "lifestyle",
+      "product context",
+      "natural light",
+      "negative space",
+      "photography",
+      "photos"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://www.pexels.com/license/",
+        "observed": "Official license permits free commercial use and modification, with named restrictions."
+      },
+      {
+        "url": "https://help.pexels.com/hc/en-us/articles/360042295214-Can-I-use-the-photos-and-videos-for-a-commercial-project",
+        "observed": "Official help distinguishes copyright license from depicted trademarks, privacy and endorsement rights."
+      }
+    ],
+    "access_notes": "Public search; final download/signup behavior not tested. API has separate access requirements.",
     "access": "browse",
-    "notes": "Photography. Inspect https://www.pexels.com/license/ and restrictions for people, brands, endorsement and redistribution."
+    "notes": "Real photographic subjects, environments and source images for edited cutouts. Free Pexels photos/videos under Pexels License.",
+    "scope_type": "free_collection"
   },
   {
     "id": "unsplash",
-    "name": "Unsplash",
+    "name": "Unsplash — free collection",
     "url": "https://unsplash.com/",
-    "kinds": ["photo"],
+    "license_url": "https://unsplash.com/license",
+    "kinds": [
+      "photo"
+    ],
+    "formats": [
+      "Raster photographs; per-file format not verified"
+    ],
+    "free_scope": "Free Unsplash-licensed images; paid products excluded.",
+    "commercial_use": "Yes; download, modify and use commercially.",
+    "attribution": "Not required under ordinary image license; API rules are separate.",
+    "restrictions": "No unmodified resale or compiling a competing service. Copyright license does not clear every depicted person, property or trademark right.",
+    "search_method": "Search subject, color, setting and composition; check current asset license/free status.",
+    "use_when": "Photographic subjects and environment images for licensed compositing.",
+    "style_terms": [
+      "editorial photography",
+      "architecture",
+      "nature",
+      "lifestyle",
+      "photography",
+      "photos"
+    ],
+    "verified_date": "2026-10-15",
+    "evidence": [
+      {
+        "url": "https://unsplash.com/license",
+        "observed": "Official license permits free commercial copying, modification and distribution; excludes unmodified resale and competing service."
+      },
+      {
+        "url": "https://unsplash.com/terms",
+        "observed": "Official terms define the image license and additional rights limitations."
+      }
+    ],
+    "access_notes": "Public search; download path/account requirement not tested. API requires developer access.",
     "access": "browse",
-    "notes": "Photography; free and paid assets may have different terms. Inspect the exact asset and https://unsplash.com/license."
+    "notes": "Photographic subjects and environment images for licensed compositing. Free Unsplash-licensed images; paid products excluded.",
+    "scope_type": "free_subset"
   },
   {
-    "id": "googlefonts",
-    "name": "Google Fonts",
-    "url": "https://fonts.google.com/",
-    "kinds": ["font"],
+    "id": "openverse",
+    "name": "Openverse",
+    "url": "https://openverse.org/",
+    "kinds": [
+      "photo",
+      "illustration",
+      "texture",
+      "pattern",
+      "graphic"
+    ],
+    "access": "api",
+    "notes": "Searchable image index. Verify the original creator page and licence; index metadata is only a lead.",
+    "license_url": "https://github.com/WordPress/openverse/blob/main/documentation/terms_of_service.md",
+    "free_scope": "Mixed-license search index; choose only individually verified free assets suitable for commercial adaptation.",
+    "commercial_use": "Not cleared by search results. Verify original creator terms for the chosen image.",
+    "attribution": "Varies by exact source and license.",
+    "restrictions": "Metadata is a lead, not a grant. Exclude noncommercial/non-derivative assets for this workflow; retain required credits.",
+    "access_notes": "Built-in API adapter; public result metadata. Original download availability varies.",
+    "search_method": "Built-in resource-search --provider openverse; use specific subject/material queries and verify the original page.",
+    "use_when": "Find photographs, scanned textures and illustrations across collections.",
+    "style_terms": [
+      "photography",
+      "paper",
+      "collage",
+      "archive",
+      "material",
+      "photos",
+      "illustrations",
+      "textures",
+      "patterns",
+      "graphics"
+    ],
+    "formats": [
+      "Image formats vary by original asset"
+    ],
+    "evidence": [
+      {
+        "url": "https://api.openverse.org/v1/",
+        "observed": "Image search API exposes source/license metadata and commercial/modification filters; these do not replace original-file verification."
+      }
+    ],
+    "scope_type": "discovery_only",
+    "verified_date": "2026-10-15"
+  },
+  {
+    "id": "commons",
+    "name": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/",
+    "kinds": [
+      "photo",
+      "illustration",
+      "texture",
+      "pattern",
+      "graphic"
+    ],
+    "access": "api",
+    "notes": "File-level licence and attribution vary. Inspect each source page.",
+    "license_url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+    "free_scope": "Public-domain and freely licensed files with individual conditions; verify each file.",
+    "commercial_use": "File-specific rights and restrictions must be checked.",
+    "attribution": "Often required; reproduce creator, source, license and changes as applicable.",
+    "restrictions": "Share-alike and third-party rights may apply; Commons metadata does not waive them.",
+    "access_notes": "Built-in API adapter; public file-description and media pages.",
+    "search_method": "Built-in resource-search --provider commons; inspect file description and full-resolution original.",
+    "use_when": "Documentary photography, diagrams already drawn by their creators, archival imagery and cultural objects.",
+    "style_terms": [
+      "archive",
+      "photography",
+      "botanical",
+      "historic",
+      "collage",
+      "photos",
+      "illustrations",
+      "textures",
+      "patterns",
+      "graphics"
+    ],
+    "formats": [
+      "Per-file image formats; SVG may be an existing sourced vector"
+    ],
+    "evidence": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+        "observed": "Reuse guidance requires checking individual licenses, attribution and other restrictions."
+      }
+    ],
+    "scope_type": "discovery_only",
+    "verified_date": "2026-10-15"
+  },
+  {
+    "id": "iconify",
+    "name": "Iconify",
+    "url": "https://icon-sets.iconify.design/",
+    "kinds": [
+      "icon"
+    ],
+    "access": "api",
+    "notes": "Many icon families. Select one coherent family and inspect its own licence.",
+    "license_url": "https://iconify.design/getting-started/",
+    "free_scope": "Index of independently licensed icon sets; select a verified free compatible family.",
+    "commercial_use": "Depends on the icon set; engine license does not license every icon.",
+    "attribution": "Preserve notices required by the chosen family.",
+    "restrictions": "Do not infer image rights from Iconify software MIT license; brand icons can involve trademarks.",
+    "access_notes": "Built-in API adapter; collection metadata includes license information.",
+    "search_method": "Built-in resource-search --provider iconify; use one coherent collection and verify its license.",
+    "use_when": "Locate a consistent family of supporting functional icons.",
+    "style_terms": [
+      "icons",
+      "outline",
+      "duotone",
+      "filled",
+      "tech"
+    ],
+    "formats": [
+      "Existing SVG icons"
+    ],
+    "evidence": [
+      {
+        "url": "https://iconify.design/getting-started/",
+        "observed": "Icon sets retain their own licensing."
+      },
+      {
+        "url": "https://iconify.design/docs/api/search.html",
+        "observed": "Search response documents icon sets and license metadata."
+      }
+    ],
+    "scope_type": "discovery_only",
+    "verified_date": "2026-10-15"
+  },
+  {
+    "id": "svgrepo",
+    "name": "SVG Repo",
+    "url": "https://www.svgrepo.com/",
+    "kinds": [
+      "icon",
+      "illustration",
+      "graphic"
+    ],
     "access": "browse",
-    "notes": "Check the font family licence, language coverage and embedding terms. Import only the explicitly chosen font files."
+    "notes": "Licences differ by asset/collection. Inspect https://www.svgrepo.com/page/licensing/ and the exact asset licence.",
+    "license_url": "https://www.svgrepo.com/page/licensing/",
+    "free_scope": "Mixed-license index; only individually verified free commercially adaptable assets qualify.",
+    "commercial_use": "Varies; some listings have noncommercial or other incompatible terms.",
+    "attribution": "Varies by exact asset and collection.",
+    "restrictions": "No blanket commercial-use clearance. Verify source, license and trademark implications before download.",
+    "access_notes": "Browser discovery; no native search adapter supplied.",
+    "search_method": "Search subjects and collections; open the individual asset licensing link.",
+    "use_when": "Find existing vector graphics or icon families when a direct creator library does not cover the subject.",
+    "style_terms": [
+      "icons",
+      "sourced vectors",
+      "illustration",
+      "graphic",
+      "illustrations",
+      "graphics"
+    ],
+    "formats": [
+      "Existing SVG"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.svgrepo.com/page/licensing/",
+        "observed": "Official licensing page distinguishes multiple license types; individual asset terms govern."
+      }
+    ],
+    "scope_type": "discovery_only",
+    "verified_date": "2026-10-15"
   }
 ]

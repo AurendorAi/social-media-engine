@@ -1,5 +1,9 @@
 # Compose from the message
 
+Apply the [no-new-vector production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics)
+to every pattern, including examples mentioning illustration or geometry. Use existing
+licensed assets, real photography or permitted raster generation; never code-draw objects.
+
 Read only the relevant entries in [original pattern guidance](../assets/design-patterns.json).
 These eight patterns are original working hypotheses, not proven recipes or a new tranche
 of the visual study. Upstream provenance describes workflow influences; it does not imply

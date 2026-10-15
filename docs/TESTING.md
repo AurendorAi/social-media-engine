@@ -78,8 +78,11 @@ verify its byte hash and source record. Keep downloaded third-party assets under
 
 ## Creative outcome experiments
 
-Use the opt-in [paired evaluation harness](../evals/README.md) for synthetic production-only
-API experiments. It is separate from the offline unit suite and does not call providers itself.
+The [paired evaluation harness](../evals/README.md) is a retired SVG-only historical experiment.
+New preparation is unconditionally blocked; there is no developer opt-out. Existing
+ingest, blind, salvage and reprocess commands audit saved historical evidence only.
+Unit tests build inert metadata fixtures locally, without generating provider prompts.
+This retired experiment is not a production workflow or an accepted quality benchmark.
 Exact snapshots, raw responses, failures, normalized exploratory artifacts and independent
 rendered review must remain auditable. External calls need their own explicit scope, current
 pricing check and bounded budget. Do not use real account credentials or customer assets in CI.

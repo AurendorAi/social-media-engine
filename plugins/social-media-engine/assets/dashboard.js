@@ -1371,7 +1371,13 @@ function designLibrary() {
   };
   root.append(form);
   const libraries = node("details", undefined, "card");
-  libraries.append(node("summary", "Explore specialist libraries & fonts"));
+  libraries.append(node("summary", "Find free design resources & fonts"));
+  const sourceFilter = node("input");
+  sourceFilter.type = "search";
+  sourceFilter.placeholder = "Find a source: paper, Arabic, photography, icons…";
+  sourceFilter.setAttribute("aria-label", "Filter design resource sources");
+  libraries.append(sourceFilter);
+  const sourceRows = [];
   (state.resource_libraries || []).forEach((l) => {
     const row = node("div", undefined, "library-row");
     row.append(
@@ -1386,8 +1392,28 @@ function designLibrary() {
         "help",
       ),
     );
+    if (l.free_scope) row.append(node("p", `Free scope: ${l.free_scope}`, "help"));
+    if (l.use_when) row.append(node("p", l.use_when));
+    if (l.search_method) row.append(node("p", `Find assets: ${l.search_method}`, "help"));
+    if (l.license_url) row.append(sourceLink("Source licence / terms", l.license_url));
+    if (l.attribution) row.append(node("p", `Credit: ${l.attribution}`, "help"));
+    if (l.restrictions) row.append(node("p", l.restrictions, "help"));
+    if (l.verified_date) row.append(node("p", `Source checked ${l.verified_date}; verify the selected asset before use.`, "help"));
+    sourceRows.push({row, text: [l.name, ...l.kinds, l.use_when || "", ...(l.style_terms || [])].join(" ").toLowerCase()});
     libraries.append(row);
   });
+  const sourceEmpty = node("p", "No matching sources. Try another material or style term.", "help");
+  sourceEmpty.hidden = true;
+  libraries.append(sourceEmpty);
+  sourceFilter.oninput = () => {
+    const words = sourceFilter.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    let visible = 0;
+    sourceRows.forEach(({row, text}) => {
+      row.hidden = !words.every((word) => text.includes(word));
+      if (!row.hidden) visible++;
+    });
+    sourceEmpty.hidden = visible > 0;
+  };
   root.append(libraries);
   const materials = state.assets.filter((a) => a.role === "material");
   root.append(node("h3", `Your materials (${materials.length})`));

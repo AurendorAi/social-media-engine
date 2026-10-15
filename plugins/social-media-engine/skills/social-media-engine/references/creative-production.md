@@ -1,5 +1,26 @@
 # Professional creative production
 
+## Production boundary: no newly created vector graphics
+
+Never author or generate vector artwork, SVG paths, vector illustrations or icons,
+procedural shape drawings, or vectorizations. Do not bypass this by rasterizing
+model-authored vectors or drawing objects with CSS, canvas or other code. This applies
+regardless of tool or final export format. Do not create artwork automatically to
+replace the owner's rejected designs.
+
+Existing owner-supplied or legitimately sourced vectors may be ingredients: preserve
+provenance and license conditions for placement, transforms, cropping and recoloring.
+Raster image generation/editing, real photography, text layout, raster compositing and
+asset-based motion remain allowed. Canva, HyperFrames, Remotion, HTML/CSS and other
+layout tools may arrange text and existing media; they may not be used to generate
+prohibited code-drawn objects. Ordinary layout backgrounds and text containers are not
+an illustration workflow. Discover actual tools and obtain required asset/service rights.
+
+The owner will provide the curated study dataset. Do not substitute an internet dataset,
+claim it has arrived, or treat old synthetic fixtures as that dataset. Owner feedback
+that a design fails takes precedence over internal quality labels or rubric scores;
+those scores are judgments, never certification. Preserve historical evidence honestly.
+
 ## Direction before rendering
 Choose composition from the post's argument. For an established brand, reuse its approved
 visual vocabulary while varying imagery, hierarchy, storytelling and rhythm. For new or
@@ -24,7 +45,7 @@ contrasts diagnose specific failures; they are not style assignments or tested r
 
 ## Execution
 Discover native tools and connectors in the current host. Possible backends include
-image generation/editing, Canva, video generation, HTML/SVG rendering, or Remotion.
+image generation/editing, Canva, video generation, text layout and raster compositing, or Remotion.
 Use their applicable instructions. These are optional capabilities, not bundled services.
 Do not claim to have called a backend that is unavailable.
 
@@ -57,9 +78,8 @@ Record unavailable measurement honestly; do not claim a bounds check from source
 
 Check the subject against an authorized reference, including its identifying silhouette
 and functional details. For example, a generic cone or stacked circles labeled “dripper”
-does not necessarily depict a recognizable coffee dripper. Draw its actual relevant
-structure, use a suitable authorized photograph, or present an explicitly abstract
-illustration without claiming it demonstrates the real object. A label cannot repair a
+does not necessarily depict a recognizable coffee dripper. Use a suitable authorized photograph or existing sourced illustration, or generate a
+raster image when appropriate, without claiming it demonstrates an unverified real object. A label cannot repair a
 misleading depiction. Stylization is allowed; verify that it preserves what this message
 needs viewers to recognize rather than requiring photorealism for every brand. Check
 orientation and functional geometry, not only silhouette: a vessel must read as having
@@ -67,62 +87,15 @@ a plausible opening, body and base; a pouring/filtering object must have a coher
 flow direction. Compare these parts with the actual reference before labeling the image.
 If the geometry is uncertain, obtain a reference or use an honest alternative.
 
-## SVG Arabic placement: direction and anchor together
+## Text rendering and script checks
 
-In horizontal SVG text, `text-anchor` is relative to the text direction. With
-`direction="rtl"`, `start` anchors the right side of the text chunk at `x`; `end`
-anchors its left side. Thus `direction="rtl" text-anchor="end" x="1008"` can push
-Arabic text off the right edge of a 1080-wide canvas. Use `start` for a right-edge
-anchor; for a centered line, use `middle` at the intended center. This follows
-[SVG text alignment](https://www.w3.org/TR/SVG2/text.html#TextAnchorProperty).
-
-Minimal placement example, with an illustrative 72-unit inset (not a platform safe-zone
-specification). Replace the demonstration font with the approved, loaded Arabic font:
-
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350"
-     viewBox="0 0 1080 1350">
-  <rect width="1080" height="1350" fill="white"/>
-  <text x="1008" y="180" direction="rtl" text-anchor="start"
-        font-family="sans-serif" font-size="56" fill="black"
-        lang="ar">ورشة فخار</text>
-  <text x="540" y="280" direction="rtl" text-anchor="middle"
-        font-family="sans-serif" font-size="40" fill="black"
-        lang="ar">تجربة تبدأ من الطين</text>
-</svg>
-```
-
-This demonstrates anchor placement, not automatic fitting or a recommended brand style.
-Set explicit `x` on each separately positioned line or `tspan`, preserve normal Unicode
-Arabic character order, and let a capable renderer perform shaping and bidi layout.
-Do not reverse characters or use bidi override to repair alignment. Check mixed Latin,
-numerals and punctuation in the actual sentence; handle runs deliberately when needed.
-
-Before measuring, wait for fonts to load and verify the actual rendered font covers the
-required script; a declared family or successful font request does not prove glyph
-coverage. Generic `sans-serif` here is only a demonstration fallback. If the approved
-font lacks Arabic, request an approved compatible alternative rather than silently
-changing identity. If the export renderer cannot shape Arabic, use a capable available
-renderer or report the capability block; do not treat disconnected letters as finished.
-
-When available, harvest every text element's rendered bounds and compare them with its
-intended safe region. For SVG, `getBBox()` uses local coordinates: transform its corners
-to canvas coordinates before comparing transformed elements. In a browser,
-`getBoundingClientRect()` values must be compared in the same viewport coordinates as
-the SVG and safe region. Check both left/right and top/bottom overflow after fonts load,
-including each multiline chunk. Repair wrapping, scale or placement, then re-export.
-Bounding boxes do not prove correct shaping, readability or absence of clipping/masking.
-Inspect the actual export at native and phone sizes, including all glyphs and diacritics.
-If bidi placement fails again, simplify the affected line before adding more positioning
-rules: use normal logical-order text in one plain SVG `text` element, `direction="rtl"`,
-`text-anchor="middle"`, and `x` at the center of its allocated region. Remove inherited
-transforms and per-character offsets from that trial; isolate mixed-script runs if needed.
-This is a diagnostic fallback, not proof of correctness or a universal layout preference.
-Render it with the actual font and inspect the whole line and measured bounds; preserve
-brand constraints when integrating a verified repair. If even the simplified render fails,
-use a capable available text renderer or report the block rather than certifying it.
-Do not copy this SVG anchor recipe into HTML/CSS blindly: use that layout system's
-`dir`, alignment and bidi rules and inspect its actual result.
+Use a capable text-layout tool with the approved fonts. Preserve logical Unicode order;
+never reverse Arabic characters. Check actual font coverage, shaping, mixed-script runs,
+numerals, punctuation and line breaks in the rendered export. Measure text against its
+container and canvas safe area when tools expose bounds, using consistent coordinates.
+If placement repeatedly fails, rebuild the text region in a supported layout tool and
+inspect the actual result. Report missing capabilities honestly; do not create SVG text
+or vector artwork as a workaround. Native and phone-size visual proof remains required.
 
 ## Handoff
 Import finished files with role `output` and accurate rights. Keep reference images out

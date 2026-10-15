@@ -9,7 +9,7 @@ runtime enum values. Self-inspection cannot satisfy independent review roles.
    the proposed headline against sources and the planned image against available assets.
    Catch a false premise before rendering. Preserve the approved brand constraints.
 2. **Make the actual output.** Discover available tools, compose with real copy and
-   approved materials, export the requested format and preserve editable source. A prompt,
+   approved materials within the [no-new-vector production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics), export the requested format and preserve editable source. A prompt,
    storyboard or source file alone is not a finished rendered deliverable.
 3. **Inspect the current artifact.** View native resolution and a phone-sized presentation;
    inspect every carousel frame in order and full video playback with sound. Record the
@@ -21,8 +21,8 @@ runtime enum values. Self-inspection cannot satisfy independent review roles.
    padded content area in the same coordinate system. Record the tool result and exact
    revision; if measurement is unavailable, state that limitation instead of inferring
    a pass from coordinates, font sizes or planned placement.
-   Record overflow and repair it before review; follow the [SVG Arabic placement
-   guidance](creative-production.md#svg-arabic-placement-direction-and-anchor-together)
+   Record overflow and repair it before review; follow the [text rendering
+   guidance](creative-production.md#text-rendering-and-script-checks)
    where applicable. Bounds are a diagnostic, not a substitute for inspecting actual
    exports at native and phone sizes; they cannot certify shaping or visible clipping.
 4. **Repair the cause.** Pair each observation with an edit and expected visible effect.

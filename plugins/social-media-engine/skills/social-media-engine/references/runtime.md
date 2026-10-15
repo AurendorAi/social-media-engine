@@ -188,7 +188,15 @@ evidence_needed, visual_mechanism, production_dependencies, experiment. These ar
 authored context, preserved without being certified as quality by the runtime.
 
 ## Design materials (v2.1)
-`resource-libraries [--kind texture]` lists bundled sources without a network call.
+`resource-libraries` lists bundled source metadata without a network call.
+Examples: `resource-libraries --query 'paper'`,
+`resource-libraries --kind font --query Arabic`, and
+`resource-libraries --id googlefonts`. These are local catalogue filters, not web/asset
+search or live availability checks. Only Openverse, Wikimedia Commons, Iconify and the
+Met have native `resource-search` adapters; other catalogue entries require host browsing
+and manual candidate recording/import. Default to source-first, zero asset acquisition
+cost materials; that does not promise free production tools or subscriptions. Follow
+[resource sourcing](resource-sourcing.md) for actual inspection, rights and composition.
 Kinds: photo/illustration/icon/texture/pattern/graphic/font.
 `resource-search --provider openverse --query "warm paper grain" --kind texture --limit 8`
 sends only the query to that service and saves candidates. Providers: openverse/commons/

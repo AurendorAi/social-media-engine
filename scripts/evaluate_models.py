@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline, paired social-design evaluation. Never calls providers or reads credentials."""
+"""LEGACY SVG-only research harness, retired for production. Never calls providers or reads credentials."""
 import argparse
 import hashlib
 import json
@@ -13,16 +13,9 @@ import io
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTRACT = {
-    "caption": "Finished publishable caption in the brief's language",
-    "alt_text": "Accessible description of the finished design",
-    "design": {"format": "svg", "width": 1080, "height": 1350,
-               "svg": "Complete editable standalone SVG with viewBox='0 0 1080 1350'. Use shapes, paths and editable text. No scripts, CSS/style elements, images, links, foreignObject or external references. Inline presentation attributes only; internal gradient references allowed. Root width/height must be 1080/1350 respectively or omitted."},
-    "source_notes": ["Sources or supplied facts used; disclose unavailable assets"]}
 PREAMBLE = "This is an isolated production-only evaluation with limited instruction context. The supplied synthetic brief is an approved evaluation fixture. No workspace or tools are available. Apply creative production guidance only; do not request onboarding, tool execution, or runtime approvals. Do not claim real owner approval or publishing. Return the requested finished artifact.\n\n"
 SELECTED = ["SKILL.md", "references/brand-quality.md", "references/strategy-writing.md", "references/creative-production.md", "references/editorial-depth.md", "references/review.md", "references/design-patterns.md", "references/producer-revision-loop.md", "assets/design-patterns.json"]
 OPTIONAL = set(SELECTED[-3:])
-COMMON = "Create one finished professional social post from the supplied synthetic brief. Return only a JSON object matching this contract. The SVG itself must be the actual finished design, not a design plan. Do not include evaluator commentary or scores.\n"
 TAGS = {"svg", "g", "defs", "rect", "circle", "ellipse", "line", "polyline", "polygon", "path", "text", "tspan", "linearGradient", "radialGradient", "stop", "clipPath", "title", "desc"}
 ATTRS = set("id x y x1 y1 x2 y2 cx cy r rx ry width height viewBox d points fill stroke stroke-width stroke-linecap stroke-linejoin stroke-dasharray opacity fill-opacity stroke-opacity transform font-family font-size font-weight font-style letter-spacing text-anchor dominant-baseline direction unicode-bidi dx dy rotate gradientUnits gradientTransform offset stop-color stop-opacity clip-path fill-rule clip-rule preserveAspectRatio role aria-label aria-labelledby aria-describedby".split())
 
@@ -116,34 +109,8 @@ def instructions(path):
 
 
 def prepare(args):
-    out = Path(args.out)
-    briefs = json.loads(Path(args.briefs).read_text(encoding="utf-8"))[:args.brief_count]
-    if len(briefs) != args.brief_count or not briefs:
-        raise ValueError("Requested brief count unavailable")
-    if len(args.models) != len(set(args.models)):
-        raise ValueError("Duplicate model IDs would create request ID collisions")
-    brief_ids = [brief["id"] for brief in briefs]
-    if len(brief_ids) != len(set(brief_ids)):
-        raise ValueError("Duplicate brief IDs would create request ID collisions")
-    out.mkdir(parents=True, exist_ok=False)
-    write_json(out / "briefs.json", briefs)
-    write_json(out / "contract.json", CONTRACT)
-    requests = []
-    manifest = {"scope": "limited-production-only", "preamble": PREAMBLE, "conditions": {}}
-    for condition, source in (("baseline", args.baseline), ("candidate", args.candidate)):
-        system, selected = instruction_bundle(source)
-        manifest["conditions"][condition] = {"selected_files": selected, "instruction_sha256": digest(system)}
-        (out / (condition + "-instructions.txt")).write_text(system, encoding="utf-8")
-        for brief in briefs:
-            user = COMMON + json.dumps(CONTRACT, ensure_ascii=False) + "\nSVG allowed elements: " + ", ".join(sorted(TAGS)) + ". Allowed attributes: " + ", ".join(sorted(ATTRS)) + ". Other elements and attributes are rejected. Accessibility ID references must be local tokens.\nBRIEF:\n" + json.dumps(brief, ensure_ascii=False)
-            for model in args.models:
-                rid = digest(json.dumps([condition, brief["id"], model, args.seed]))[:20]
-                requests.append({"request_id": rid, "condition": condition, "brief_id": brief["id"], "model": model, "seed": args.seed,
-                                 "instruction_sha256": digest(system), "prompt_sha256": digest(user),
-                                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]})
-    write_json(out / "instruction-manifest.json", manifest)
-    (out / "requests.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in requests), encoding="utf-8")
-    print(json.dumps({"requests": len(requests), "out": str(out)}))
+    raise ValueError("SVG-only evaluation is retired: preparing new vector-generation requests is prohibited. "
+                     "No override is available. Audit existing evidence with ingest, blind, salvage or reprocess.")
 
 
 def ingest(args):
@@ -341,14 +308,7 @@ def blind(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    p = sub.add_parser("prepare")
-    p.add_argument("--baseline", required=True)
-    p.add_argument("--candidate", required=True)
-    p.add_argument("--models", nargs="+", required=True)
-    p.add_argument("--seed", type=int, default=41)
-    p.add_argument("--brief-count", type=int, default=2)
-    p.add_argument("--briefs", default=str(ROOT / "evals/fixtures/briefs.json"))
-    p.add_argument("--out", required=True)
+    p = sub.add_parser("prepare", help="Retired; always refuses new vector-generation requests")
     p.set_defaults(func=prepare)
     p = sub.add_parser("ingest")
     p.add_argument("--run", required=True)

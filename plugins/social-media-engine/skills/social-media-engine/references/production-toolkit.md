@@ -4,6 +4,10 @@ The plugin bundles brand memory, workflows and the review studio. It does not bu
 paid services, fonts, external skills or a renderer. Discover the host's actual tools
 before promising a medium. Read the relevant installed tool/skill instructions.
 
+All methods follow the [no-new-vector production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics).
+Layout and compositing tools remain available for text and existing assets; none is an
+exception permitting model-authored vector art, code-drawn objects or rasterized vectors.
+
 ## Capability check
 
 Before the first production batch, save a short capability note in the brand workspace:
@@ -17,15 +21,15 @@ when a specific missing capability is the cause. Propose a feasible alternative.
 | Job | Appropriate methods | Evidence required |
 | --- | --- | --- |
 | Research and copy | Host model, source browsing, supplied research, language editing | Claim/source notes and edited argument |
-| Brand typography and layouts | Editable HTML/SVG with a renderer, Canva, Figma or a local design tool | Final pixels, editable source, real font identity |
-| Original imagery | Available image generation/editing, licensed photography, owner assets | Output file, rights, reference usage, generation provenance |
+| Brand typography and layouts | Text layout and raster compositing with a renderer, Canva, Figma or a local design tool | Final pixels, editable source, real font identity |
+| Original imagery | Available raster image generation/editing, licensed photography, owner assets | Output file, rights, reference usage, generation provenance |
 | Product demonstration | Capture an authorized actual interface with a suitable screen recorder | Capture source, date, environment, demo-data disclosure |
 | Motion explanation | Available motion compositor such as Remotion, HyperFrames or an editor | Storyboard, editable project, timing, native renders |
 | Narration/music | Available voice tool or real recording; licensed music/sound | Consent where needed, audio files, rights, timing |
 | Captions and delivery | Transcription/caption tools, media probing/encoding | Proofread captions, actual decode and playback |
 
-These are examples, not mandatory providers. Code renders can be excellent when art
-direction is intentional; generation alone does not establish quality. Encoding a
+These are examples, not mandatory providers. Text/media composition in code must respect the production boundary; generation alone
+does not establish quality. Encoding a
 slideshow does not automatically create a well-directed film.
 
 ## Prove one piece before scaling

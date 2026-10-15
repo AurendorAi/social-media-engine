@@ -26,21 +26,23 @@ platform-aware writing, review, and controlled delivery.
 > posting bot. Planning and copy use your host's model. Actual media requires available
 > generation/rendering tools. Publishing and account data require your own integrations.
 
-## Development: design patterns and outcome evaluation
+## Production policy and free design resources
 
-The source now includes eight original, conditional composition patterns with brand-adaptation
-checks and a bounded render–inspect–repair workflow. These are working guidance, not copied
-professional templates or a trained model. Retrieve only relevant patterns through the bundled
-`design_patterns.py` helper or read its JSON directly.
+**Never create new vector graphics.** Use sourced/owner-supplied assets, permitted raster
+image generation/editing, typography and compositing in capable tools. Do not substitute
+SVG drawings, procedural shapes, vectorization or rasterized code-drawn artwork. Existing
+licensed vectors may be used as ingredients with their provenance and licence intact.
 
-We also added a [paired evaluation harness](evals/README.md) that compares frozen instruction
-versions, validates editable vector outputs and prepares anonymous review packets. It keeps
-API/format failures separate from judgments about actual rendered quality. This experiment
-covers synthetic static posts, not full host installation, photo/video production or every model.
-See the [implementation study](docs/research/PROFESSIONAL-PLUGIN-RESEARCH.md) and
-[reference dataset plan](docs/research/REFERENCE-DATASET-PLAN.md), with measured limitations
-in the [multi-model pilot results](docs/research/MULTI-MODEL-PILOT-RESULTS.md). Published release version
-and experimental evidence must be reported separately; no universal-quality claim is made.
+The plugin includes a searchable directory of free production-resource sources, with
+source-specific free scope, licence links, search routes, attribution and restrictions.
+See the [resource guide](docs/research/FREE-DESIGN-RESOURCE-LIBRARY.md). No third-party assets
+are bundled and no source is contacted on installation.
+
+The owner will supply the [professional-design study dataset](docs/research/REFERENCE-DATASET-PLAN.md).
+The source directory is for production ingredients, not a substitute training dataset.
+The previous SVG-only benchmark is retired and its professional-quality labels were
+rejected by the owner; [historical results](docs/research/MULTI-MODEL-PILOT-RESULTS.md)
+remain available as failure evidence. Agent scores do not overrule owner feedback.
 
 ## New in version 2.2: a creative memory for every brand
 
@@ -74,8 +76,8 @@ of an original composition. The assistant starts with the post's visual directio
 compares actual materials and records why the selected ones fit your brand.
 
 - **Search in the studio:** Openverse, Wikimedia Commons, Iconify and the Met Open Access.
-- **Explore specialist libraries:** ambientCG, Poly Haven, Hero Patterns, unDraw, SVG Repo,
-  Pexels, Unsplash and Google Fonts, plus other sources through the host's web/browser tools.
+- **Explore specialist libraries:** 23 curated sources including ambientCG, Poly Haven, Hero Patterns,
+  Pexels, Unsplash, Google Fonts and Collletttivo, with free scopes and licence evidence.
 - **Download and reuse:** reviewed public HTTPS files or explicit manual imports go into
   a separate brand-specific Design library. Adding materials keeps brand approval intact.
 - **Keep source records:** creator, licence evidence, intended use and edits follow each

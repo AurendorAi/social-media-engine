@@ -1,5 +1,11 @@
 # Independent agent quality evaluation
 
+> **Owner correction — 2026-10-15:** The owner rejected the displayed designs as
+> unacceptable. Earlier agent descriptions of them as “professionally usable” are
+> withdrawn as quality claims. Numerical scores remain historical observations, not
+> evidence of acceptance. The SVG-only experiment is retired; new vector creation is
+> prohibited. Future evaluation must be calibrated against the owner-provided references.
+
 Local evidence is durably archived under the ignored
 `.data/model-evaluations/2026-10-14/` directory. Historical `/tmp/<name>/...` references
 below map to `<archive>/<name>/...`; original evidence bytes and hashes are preserved.

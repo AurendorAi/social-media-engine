@@ -56,6 +56,8 @@ def parser():
     c.add_argument("--actor", required=True)
     c = sub.add_parser("resource-libraries", help="List curated design libraries; no network request")
     c.add_argument("--kind")
+    c.add_argument("--query", help="Filter local source names, material/style terms and intended uses")
+    c.add_argument("--id", help="Show one source's access, free scope and licence evidence")
     c = sub.add_parser("resource-search", help="Search public libraries; only the query goes to the selected provider")
     c.add_argument("--provider", required=True, choices=["openverse", "commons", "iconify", "met"])
     c.add_argument("--query", required=True)
@@ -118,7 +120,7 @@ def main(argv=None):
             result = ws.brands()
         elif cmd == "resource-libraries":
             import resources
-            result = resources.libraries(args.kind)
+            result = resources.libraries(args.kind, args.query, args.id)
         elif cmd == "questionnaire":
             result = FIELD_GROUPS
         else:

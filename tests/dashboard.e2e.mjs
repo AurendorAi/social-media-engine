@@ -55,7 +55,7 @@ const profile = {
   logo_policy: "Use the name as text only; no invented logo.",
   visual_style:
     "Calm editorial typography with tactile paper and forest-green contrast.",
-  imagery_style: "Original instructional diagrams and honest product images.",
+  imagery_style: "Reviewed sourced imagery, tactile textures and honest product images; diagrams only when the lesson benefits.",
   goals: ["Build trust through useful brewing education"],
   platforms: ["instagram", "facebook", "tiktok"],
   cadence: "Three useful posts per week",
@@ -141,7 +141,7 @@ try {
     fonts: ["Owner-approved editorial serif"],
     logo_policy: "Typeset the brand name; no invented logo.",
     visual_style: "Clear editorial hierarchy.",
-    imagery_style: "Honest product photography and useful diagrams.",
+    imagery_style: "Reviewed sourced product photography, tactile materials and useful diagrams when appropriate.",
   };
   command("style-propose", ["--actor", "Demo Designer"], {
     id: "calibration-directions",
@@ -453,6 +453,46 @@ try {
     await page.locator("#library img").getAttribute("alt"),
     "Original test grid",
   );
+  // The source catalogue is an offline discovery aid, not asset rights clearance.
+  const sourceDetails = page.locator("#library details").filter({
+    has: page.locator("summary", { hasText: "Find free design resources & fonts" }),
+  });
+  await sourceDetails.locator("summary").click();
+  const catalogue = command("resource-libraries");
+  const sourceRows = sourceDetails.locator(".library-row");
+  assert.equal(await sourceRows.count(), catalogue.length);
+  const sourceInput = page.getByLabel("Filter design resource sources", { exact: true });
+  await sourceInput.fill("AMBIENTCG");
+  assert.equal(await sourceDetails.locator(".library-row:visible").count(), 1);
+  const ambientSource = sourceRows.filter({ has: page.getByRole("link", { name: "ambientCG", exact: true }) });
+  assert.equal(await ambientSource.isVisible(), true);
+  const ambientEntry = catalogue.find((entry) => entry.id === "ambientcg");
+  const licenceLink = ambientSource.getByRole("link", { name: "Source licence / terms", exact: true });
+  assert.equal(await licenceLink.getAttribute("href"), ambientEntry.license_url);
+  assert.ok((await ambientSource.innerText()).includes(ambientEntry.free_scope));
+  assert.ok((await ambientSource.innerText()).includes(ambientEntry.attribution));
+  assert.ok((await ambientSource.innerText()).includes("verify the selected asset before use"));
+  // Both words must match, and an impossible second word must produce a real empty state.
+  await sourceInput.fill("photography");
+  for (const name of ["Pexels", "Unsplash — free collection"]) {
+    assert.equal(await sourceRows.filter({ has: page.getByRole("link", { name, exact: true }) }).isVisible(), true);
+  }
+  await sourceInput.fill("icons");
+  for (const name of ["Lucide", "Iconoir"]) {
+    assert.equal(await sourceRows.filter({ has: page.getByRole("link", { name, exact: true }) }).isVisible(), true);
+  }
+  await sourceInput.fill("paper no-such-source-zq019");
+  assert.equal(await sourceDetails.locator(".library-row:visible").count(), 0);
+  assert.equal(await sourceDetails.getByText("No matching sources. Try another material or style term.").isVisible(), true);
+  await sourceInput.fill("paper");
+  const expectedPaper = catalogue.filter((entry) =>
+    [entry.name, ...entry.kinds, entry.use_when || "", ...(entry.style_terms || [])]
+      .join(" ").toLowerCase().includes("paper"));
+  assert.ok(expectedPaper.length > 0);
+  assert.equal(await sourceDetails.locator(".library-row:visible").count(), expectedPaper.length);
+  await sourceInput.fill("");
+  assert.equal(await sourceDetails.locator(".library-row:visible").count(), catalogue.length);
+  assert.equal(await sourceDetails.getByText("No matching sources. Try another material or style term.").isVisible(), false);
   await page.route("**/api/resource-search", async (route) => {
     assert.deepEqual(route.request().postDataJSON(), {
       query: "fine paper grain",
@@ -630,6 +670,7 @@ try {
           "onboarding saved via UI",
           "brand approval via UI",
           "four actual media drafts",
+          "offline source filters, empty state and licence evidence",
           "desktop previews",
           "full video playback",
           "mobile overflow",

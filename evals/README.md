@@ -1,24 +1,29 @@
-# Paired behavioral evaluation
+# Retired SVG-only behavioral evaluation
 
-This offline harness compares baseline/candidate instruction snapshots on identical synthetic briefs. It produces actual editable SVG artifacts and captions, hashes them, rejects unsafe SVG, and prepares blinded independent review. It does **not** use JSON validity, keyword presence, or model self-grading as evidence of professional quality.
+**Legacy research only.** The owner prohibits all newly authored vector graphics in
+production, including rasterized vector and CSS/canvas-drawn substitutes. This harness
+is retained to inspect historical evidence, not to generate current brand artwork or
+establish production quality. `prepare` unconditionally refuses new vector-generation
+requests before any file I/O. There is no override, including for developers. Ingest,
+blind, salvage and reprocess remain available only to audit already saved evidence.
+The owner-curated study dataset is pending; do not replace it with synthetic fixtures
+or an internet dataset.
+
+The historical experiment compared baseline/candidate instruction snapshots on synthetic
+briefs. Existing artifacts and records remain auditable; parser validity and model scores
+are not evidence of professional quality.
 
 ## Scope and limits
 
 The three fixtures cover food, Arabic creative education, and B2B software with different visual identities. This is a constrained vector design/copy pilot. It does not exercise photography, asset retrieval/licensing, full skill tool execution, publishing, onboarding, approval workflows, or broad model/brand generalization. Each request supplies instructions directly to a model, not an agent runtime. No reference design is supplied, so fidelity to a specific professional sample is untested. One seed per pair provides directional observations, not statistical proof. Seeds may be unsupported by providers; the live runner must disclose that. System prompt budgets differ with instruction versions; capture tokens/costs in the runner.
 
-## Prepare (offline)
+## Audit existing runs only
 
-```sh
-python3 scripts/evaluate_models.py prepare \
-  --baseline /tmp/baseline/plugins/social-media-engine \
-  --candidate plugins/social-media-engine \
-  --models provider/model-one provider/model-two provider/model-three \
-  --brief-count 3 --out /tmp/sme-pilot
-```
-
-Default brief count 2 yields 12 requests; count 3 yields 18. Each JSONL record has `request_id`, `condition`, `brief_id`, `model`, `seed`, instruction/prompt SHA-256 and `messages`. Both conditions use a matched **limited production-only context**: SKILL.md, brand-quality.md, strategy-writing.md, creative-production.md, editorial-depth.md, review.md, and the optional design-patterns.md, producer-revision-loop.md and assets/design-patterns.json when present. Runtime, onboarding, publishing and unrelated references are excluded. A common system preamble declares the synthetic brief an approved evaluation fixture and directs production-only behavior without tools or real approval/publishing claims. Selected file paths and SHA-256 hashes are saved in instruction-manifest.json, including the candidate design-pattern JSON. This tests the selected context, not the full agent plugin. Snapshot after edits are frozen; do not re-prepare in the same output directory. Private run data belongs outside the source repository. All facts are synthetic fixture facts; no brand secrets are needed.
-
-The optional live runner is deliberately separate. It must explicitly opt into paid requests, fetch current model pricing before submitting, bound input plus maximum output cost against the remaining USD 2 pilot budget, record usage and provider identifiers, stop on missing/invalid prices, and never retry ambiguous timeouts automatically. It must keep credentials in memory only. Do not report an estimate as actual billed cost. If unknown billing occurs, stop paid calls until reconciled. Never truncate instruction snapshots silently.
+Use an existing frozen run directory containing request/instruction snapshots and saved
+responses. Keep originals unchanged. No command generates new model requests. Test-only
+inert metadata fixtures exercise auditing without sending prompts or creating artwork.
+Private run data belongs outside the source repository. Historical request hashes,
+provider metadata, failures and inspection results must remain traceable.
 
 ## Ingest each provider result (offline)
 
@@ -61,4 +66,4 @@ This strips only one complete `json` fence with no surrounding prose or other fe
 
 ## Uniform validator correction
 
-Use `reprocess --run ORIGINAL --out NEW_RUN --note 'Exact validator correction'` to revalidate every original raw result after fixing a validator defect. It copies frozen request/instruction snapshots unchanged, preserves original validity/errors in each new record, restores complete provider metadata when available, and records the validator source hash, request hash, change note and before/after counts. It makes no paid calls and performs no fence normalization. Keep original results and report the correction before judging outputs. The accessibility attributes `role`, `aria-label`, `aria-labelledby` and `aria-describedby` are inert permitted metadata; ID references must be local tokens. Event handlers and external links remain prohibited. Newly prepared pilots list the precise element/attribute allowlist in their common prompt; previously frozen pilots retain their original prompts.
+Use `reprocess --run ORIGINAL --out NEW_RUN --note 'Exact validator correction'` to revalidate every original raw result after fixing a validator defect. It copies frozen request/instruction snapshots unchanged, preserves original validity/errors in each new record, restores complete provider metadata when available, and records the validator source hash, request hash, change note and before/after counts. It makes no paid calls and performs no fence normalization. Keep original results and report the correction before judging outputs. The accessibility attributes `role`, `aria-label`, `aria-labelledby` and `aria-describedby` are inert permitted metadata; ID references must be local tokens. Event handlers and external links remain prohibited. Frozen pilots retain their original prompts; no new pilots may be prepared.

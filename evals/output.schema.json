@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Finished editable vector social post",
+  "title": "Legacy research-only editable vector social post",
+  "description": "Retired SVG benchmark contract for historical evidence. Prohibited as a current production workflow; not quality certification.",
   "type": "object",
   "required": ["caption", "alt_text", "design", "source_notes"],
   "properties": {

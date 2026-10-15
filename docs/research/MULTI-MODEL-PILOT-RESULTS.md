@@ -1,5 +1,11 @@
 # Multi-model design pilot — 2026-10-14
 
+> **Owner correction — 2026-10-15:** The owner rejected the displayed designs as
+> unacceptable. Earlier agent descriptions of them as “professionally usable” are
+> withdrawn as quality claims. Numerical scores remain historical observations, not
+> evidence of acceptance. The SVG-only experiment is retired; new vector creation is
+> prohibited. Future evaluation must be calibrated against the owner-provided references.
+
 ## What this experiment tests
 
 This is a small, paid OpenRouter experiment using three fictional briefs and a

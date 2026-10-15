@@ -3,6 +3,8 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import subprocess
+import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,6 +12,27 @@ spec = importlib.util.spec_from_file_location("evaluate_models", ROOT / "scripts
 evalmod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(evalmod)
 SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350"><rect width="1080" height="1350" fill="#fff"/><text x="50" y="90">Hello</text></svg>'
+
+
+def historical_fixture(args):
+    """Minimal inert saved-run metadata for audit tests; never provider prompts."""
+    out = Path(args.out)
+    out.mkdir()
+    briefs = json.loads(Path(args.briefs).read_text())[:args.brief_count]
+    evalmod.write_json(out / 'briefs.json', briefs)
+    evalmod.write_json(out / 'contract.json', {'fixture': 'historical audit metadata'})
+    evalmod.write_json(out / 'instruction-manifest.json', {'fixture': True})
+    requests = []
+    for condition in ('baseline', 'candidate'):
+        instruction = Path(getattr(args, condition)).read_text()
+        (out / (condition + '-instructions.txt')).write_text(instruction)
+        for brief in briefs:
+            for model in args.models:
+                requests.append({'request_id': evalmod.digest(json.dumps([condition, brief['id'], model, args.seed]))[:20],
+                                 'condition': condition, 'brief_id': brief['id'], 'model': model, 'seed': args.seed,
+                                 'instruction_sha256': evalmod.digest(instruction),
+                                 'prompt_sha256': evalmod.digest(brief['id']), 'messages': []})
+    (out / 'requests.jsonl').write_text(''.join(json.dumps(x) + '\n' for x in requests))
 
 
 class EvaluationTests(unittest.TestCase):
@@ -69,7 +92,7 @@ class EvaluationTests(unittest.TestCase):
             baseline.write_text('Baseline guidance')
             candidate.write_text('Candidate guidance')
             run, review = base / 'run', base / 'review'
-            evalmod.prepare(argparse.Namespace(out=str(run), briefs=str(ROOT / 'evals/fixtures/briefs.json'), brief_count=3, models=['model/a'], seed=41, baseline=str(baseline), candidate=str(candidate)))
+            historical_fixture(argparse.Namespace(out=str(run), briefs=str(ROOT / 'evals/fixtures/briefs.json'), brief_count=3, models=['model/a'], seed=41, baseline=str(baseline), candidate=str(candidate)))
             requests = list(map(json.loads, (run / 'requests.jsonl').read_text().splitlines()))
             self.assertEqual(len(requests), 6)
             for first, second in zip(requests[:3], requests[3:]):
@@ -96,19 +119,28 @@ class EvaluationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 evalmod.blind(argparse.Namespace(run=str(run), out=str(base / 'review2'), shuffle_seed=9))
 
-    def test_prepare_rejects_duplicate_ids_before_creating_output(self):
-        for duplicate in ('models', 'briefs'):
-            with self.subTest(duplicate=duplicate), tempfile.TemporaryDirectory() as folder:
-                base = Path(folder)
-                briefs = base / 'briefs.json'
-                briefs.write_text(json.dumps([{'id': 'one'}, {'id': 'one' if duplicate == 'briefs' else 'two'}]))
-                out = base / 'run'
-                args = argparse.Namespace(out=str(out), briefs=str(briefs), brief_count=2,
-                                          models=['model/a', 'model/a'] if duplicate == 'models' else ['model/a'],
-                                          seed=41, baseline='unused', candidate='unused')
-                with self.assertRaisesRegex(ValueError, 'Duplicate .* IDs'):
-                    evalmod.prepare(args)
-                self.assertFalse(out.exists())
+    def test_prepare_refuses_new_vector_runs_by_default_before_any_io(self):
+        with tempfile.TemporaryDirectory() as folder:
+            out = Path(folder) / 'run'
+            with self.assertRaisesRegex(ValueError, 'SVG-only evaluation is retired'):
+                evalmod.prepare(argparse.Namespace(out=str(out)))
+            self.assertFalse(out.exists())
+
+    def test_retired_prepare_cannot_be_bypassed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            out = Path(folder) / 'run'
+            with self.assertRaisesRegex(ValueError, 'No override is available'):
+                evalmod.prepare(argparse.Namespace(allow_legacy_vector_benchmark=True, out=str(out)))
+            self.assertFalse(out.exists())
+            command = [sys.executable, str(ROOT / 'scripts/evaluate_models.py'), 'prepare']
+            refused = subprocess.run(command, capture_output=True, text=True)
+            self.assertNotEqual(refused.returncode, 0)
+            self.assertIn('SVG-only evaluation is retired', refused.stderr)
+            bypass = subprocess.run(command + ['--allow-legacy-vector-benchmark'], capture_output=True, text=True)
+            self.assertEqual(bypass.returncode, 2)
+            self.assertIn('unrecognized arguments', bypass.stderr)
+            help_result = subprocess.run(command + ['--help'], capture_output=True, text=True, check=True)
+            self.assertNotIn('--allow-legacy-vector-benchmark', help_result.stdout)
 
     def test_blind_rejects_malformed_pairs_before_creating_output(self):
         cases = [('baseline',), ('baseline', 'candidate', 'candidate'),
@@ -139,7 +171,7 @@ class EvaluationTests(unittest.TestCase):
             instruction = base / 'instruction.md'
             instruction.write_text('Fixture')
             run, out = base / 'run', base / 'salvaged'
-            evalmod.prepare(argparse.Namespace(out=str(run), briefs=str(ROOT / 'evals/fixtures/briefs.json'), brief_count=1, models=['model/a'], seed=41, baseline=str(instruction), candidate=str(instruction)))
+            historical_fixture(argparse.Namespace(out=str(run), briefs=str(ROOT / 'evals/fixtures/briefs.json'), brief_count=1, models=['model/a'], seed=41, baseline=str(instruction), candidate=str(instruction)))
             requests = list(map(json.loads, (run / 'requests.jsonl').read_text().splitlines()))
             value = {'caption': 'Useful', 'alt_text': 'Description', 'source_notes': [], 'design': {'format': 'svg', 'width': 1080, 'height': 1350, 'svg': SVG}}
             raw = ('```json\n' + json.dumps(value) + '\n```').encode()

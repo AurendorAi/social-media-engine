@@ -18,6 +18,27 @@ description: Set up a brand-first social media workspace, collect brand guidelin
    Exploratory style previews are allowed during onboarding; label them as proposals.
    Partial answers must be saved before asking the next small group of questions.
 
+## Production boundary: no newly created vector graphics
+
+Never author or generate vector artwork, SVG paths, vector illustrations or icons,
+procedural shape drawings, or vectorizations. Do not bypass this by rasterizing
+model-authored vectors or drawing objects with CSS, canvas or other code. This applies
+regardless of tool or final export format. Do not create artwork automatically to
+replace the owner's rejected designs.
+
+Existing owner-supplied or legitimately sourced vectors may be ingredients: preserve
+provenance and license conditions for placement, transforms, cropping and recoloring.
+Raster image generation/editing, real photography, text layout, raster compositing and
+asset-based motion remain allowed. Canva, HyperFrames, Remotion, HTML/CSS and other
+layout tools may arrange text and existing media; they may not be used to generate
+prohibited code-drawn objects. Ordinary layout backgrounds and text containers are not
+an illustration workflow. Discover actual tools and obtain required asset/service rights.
+
+The owner will provide the curated study dataset. Do not substitute an internet dataset,
+claim it has arrived, or treat old synthetic fixtures as that dataset. Owner feedback
+that a design fails takes precedence over internal quality labels or rubric scores;
+those scores are judgments, never certification. Preserve historical evidence honestly.
+
 ## Working contract
 The host model does the reasoning and creation; the bundled Python runtime provides
 durable records and safety checks. Do not claim tools, skills, accounts, renderers, or

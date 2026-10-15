@@ -26,6 +26,21 @@ The runtime stores and checks the workflow. It does not generate media by itself
 Remote accounts, real publishing, analytics permissions, and inbox access require your
 own authorized providers. No provider or platform is silently connected.
 
+## Production materials and boundaries
+Never create new vector artwork, SVG illustrations, icons, procedural drawings or
+vectorizations, including code-drawn artwork later rasterized. Existing licensed or
+owner-supplied vectors are allowed ingredients. Use real sourced materials, raster image
+generation/editing, typography and composition with available tools.
+
+The searchable Design library directory contains 23 sources for free photography,
+textures, patterns, fonts, archival imagery and existing graphics. Each entry records
+free scope, terms and access limitations; mixed-license indexes require individual
+asset verification. Four native search adapters are included; other sources use the
+host's browser and explicit import. No third-party asset files are bundled.
+
+Study references will come from the owner-provided dataset, not a substitute internet
+dataset. Owner rejection overrides internal quality scores.
+
 ## Creative workflow
 Research the audience's actual situation, develop an argument and useful payoff, then
 choose a composition that demonstrates it. Discover available design/motion tools and

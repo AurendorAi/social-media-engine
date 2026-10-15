@@ -1,5 +1,8 @@
 # Review, revisions, and owner calibration
 
+Owner rejection is a failed creative outcome regardless of internal scores. Do not
+claim a score certifies quality or reuse rejected work as an approved direction.
+
 Quality depends on both the model and actual production tools. A score is a documented
 judgment, not a guarantee. Never populate passing reviews merely to unlock publishing.
 
