@@ -22,6 +22,8 @@ that a design fails takes precedence over internal quality labels or rubric scor
 those scores are judgments, never certification. Preserve historical evidence honestly.
 
 ## Direction before rendering
+Apply [creative defaults](creative-defaults.md) even when the user gives an ordinary
+production request. Select the idea and visual mechanism before choosing a surface style.
 Choose composition from the post's argument. For an established brand, reuse its approved
 visual vocabulary while varying imagery, hierarchy, storytelling and rhythm. For new or
 uncertain identity, use [style discovery](style-discovery.md) before production. Don't

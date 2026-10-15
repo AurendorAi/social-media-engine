@@ -31,6 +31,9 @@ recommendation or quality ranking. Read JSON directly if command execution is un
 After reading the approved brand context and evidence, write a short production note in
 the selected workspace (link it from the brief; do not add undocumented runtime fields):
 
+- **Concept choice:** apply [creative defaults](creative-defaults.md); retain the selected
+  idea, actual headline, image/copy relationship and brief rationale. For an established
+  series or narrow revision, reference its approved direction instead of restarting it.
 - **Audience moment and payoff:** what this particular viewer notices, understands or
   feels before any CTA; what evidence or meaningful scene supplies it.
 - **Pattern or original alternative:** one applicable pattern, its disqualifying condition,

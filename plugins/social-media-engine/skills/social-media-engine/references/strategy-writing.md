@@ -18,6 +18,9 @@ CTA, intended date, and expected audience response. Separate confirmed campaign 
 from proposals. Import the agreed plan; produce drafts linked to the plan ID.
 
 ## Writing quality
+For a new concept, use [creative defaults](creative-defaults.md) to develop the headline
+and visual together. The caption should add substance, not repeat the artwork. This is
+the normal production process; it does not require a special creativity request.
 Develop a substantive idea before writing a hook. Research factual claims using primary
 sources when available; retain URLs and relevant context. Do not fabricate statistics,
 quotes, testimonials, results, product features, prices, certifications, or urgency.

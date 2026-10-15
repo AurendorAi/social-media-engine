@@ -9,6 +9,10 @@ judgment, not a guarantee. Never populate passing reviews merely to unlock publi
 Before requesting review, complete the [producer revision loop](producer-revision-loop.md).
 A good score cannot override an observed hard failure, a missing payoff, or unseen media.
 Name the visible evidence for judgments and the concrete repair for each revise decision.
+Apply the [creative result checks](creative-defaults.md#judge-the-result-not-the-plan),
+including image/copy interaction, purposeful materials and brand-specific meaning.
+Technical correctness alone does not pass an interchangeable concept. Honest simplicity
+is appropriate when the message calls for it; do not reward decoration or complexity.
 
 ## Review roles
 Editorial and brand reviews are always required. Non-text content also requires visual

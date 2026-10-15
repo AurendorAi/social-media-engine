@@ -9,6 +9,13 @@ few relevant questions, can save 2–4 visual directions for you to compare, and
 to approve the brand brief before generating content. Later runs resume that brand's
 workspace. Use a separate brand identifier for each brand.
 
+## Creative direction is included
+An ordinary content request activates concept development, meaningful imagery, writing
+designed with the visual, and review of real native and phone-sized exports. You do not
+need an extra “be creative” prompt. The [shared workflow](skills/social-media-engine/references/creative-defaults.md)
+adapts to each brand and preserves approved directions for narrow revisions. It uses
+your host's actual tools; it does not guarantee equal results from every model.
+
 ## Requirements
 - Codex or Claude with local skill execution and access to your chosen working folder.
 - Python 3.10 or newer; `python3` on macOS/Linux, `python` on Windows.

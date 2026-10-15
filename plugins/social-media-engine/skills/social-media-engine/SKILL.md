@@ -50,6 +50,17 @@ For approved brands, load `context` and `snapshot` before planning.
 For an individual item, resolve context with `context --item-file FILE` so all
 platform/language-specific rules are present. Never reuse another brand's cached context.
 
+## Creative quality is the default
+For every new content concept, follow [creative defaults](references/creative-defaults.md)
+without waiting for the user to say “be creative” or “make it professional.” Develop
+distinct ideas, select one for this audience and brand, make imagery and writing work
+together, and inspect the actual output. A generic layout that merely fits the text is
+not the default deliverable. Use meaningful sourced materials or permitted raster
+generation; do not substitute decorative code-drawn artwork. For narrow revisions and
+approved series, preserve the established direction and apply the relevant checks.
+Keep concept selection within the authorized brief; it creates no extra approval pause.
+This is a working method, not a guarantee that every host model has equal design ability.
+
 ## Production sequence
 1. **Brief and plan.** Read [brand quality](references/brand-quality.md) and
    [strategy and writing](references/strategy-writing.md). Inspect the actual brand baseline,
@@ -64,7 +75,8 @@ platform/language-specific rules are present. Never reuse another brand's cached
    Use source materials and original composition alongside AI tools where appropriate.
    Read [creative production](references/creative-production.md) and select conditional
    [composition guidance](references/design-patterns.md) from the actual message and materials.
-   Write the compact composition contract before rendering; patterns do not override identity.
+   Apply the default concept-selection and image/copy process above, then write the compact
+   composition contract before rendering; patterns do not override identity.
    Make actual editable assets with available tools. Use imported brand assets correctly.
    Draft captions separately per platform and language, not one universal caption.
 3. **Critique and revise.** Read [review](references/review.md).
