@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Finished editable vector social post",
+  "type": "object",
+  "required": ["caption", "alt_text", "design", "source_notes"],
+  "properties": {
+    "caption": {"type": "string", "minLength": 1},
+    "alt_text": {"type": "string", "minLength": 1},
+    "source_notes": {"type": "array", "items": {"type": "string"}},
+    "design": {
+      "type": "object", "required": ["format", "width", "height", "svg"],
+      "properties": {
+        "format": {"const": "svg"}, "width": {"const": 1080}, "height": {"const": 1350},
+        "svg": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

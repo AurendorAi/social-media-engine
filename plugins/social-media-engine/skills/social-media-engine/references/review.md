@@ -3,6 +3,10 @@
 Quality depends on both the model and actual production tools. A score is a documented
 judgment, not a guarantee. Never populate passing reviews merely to unlock publishing.
 
+Before requesting review, complete the [producer revision loop](producer-revision-loop.md).
+A good score cannot override an observed hard failure, a missing payoff, or unseen media.
+Name the visible evidence for judgments and the concrete repair for each revise decision.
+
 ## Review roles
 Editorial and brand reviews are always required. Non-text content also requires visual
 review. Arabic non-text content additionally requires Arabic typography review.

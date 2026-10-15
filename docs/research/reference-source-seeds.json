@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-10-14",
+  "scope": "Discovery seeds only, not a completed annotated design corpus. Current-session counts only, excluding prior Canva research.",
+  "sources": [
+    {
+      "source_id": "crello",
+      "url": "https://huggingface.co/datasets/cyberagent/crello",
+      "creator": "CyberAgent (dataset curator); individual template creators require record-level attribution",
+      "kind": "structured_design_dataset",
+      "collection_status": "candidate_only",
+      "visually_reviewed_count": 0,
+      "license_declared": "CDLA-Permissive-2.0; verify pinned version and underlying assets",
+      "admitted_for_distribution": false
+    },
+    {
+      "source_id": "jkr-mozilla",
+      "url": "https://www.jkrglobal.com/work/mozilla",
+      "creator": "JKR",
+      "kind": "agency_case_study",
+      "collection_status": "source_page_verified",
+      "visually_reviewed_count": 0,
+      "license_declared": "No redistribution or training grant established in this study",
+      "admitted_for_distribution": false
+    },
+    {
+      "source_id": "pentagram-slack",
+      "url": "https://www.pentagram.com/work/slack",
+      "creator": "Pentagram",
+      "kind": "agency_case_study",
+      "collection_status": "source_page_verified",
+      "visually_reviewed_count": 0,
+      "license_declared": "No redistribution or training grant established in this study",
+      "admitted_for_distribution": false
+    },
+    {
+      "source_id": "collins-spotify",
+      "url": "https://wearecollins.com/case-studies/spotify/",
+      "creator": "COLLINS",
+      "kind": "agency_case_study",
+      "collection_status": "source_page_verified",
+      "visually_reviewed_count": 0,
+      "license_declared": "No redistribution or training grant established in this study",
+      "admitted_for_distribution": false
+    }
+  ]
+}

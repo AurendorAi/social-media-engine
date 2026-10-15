@@ -26,6 +26,22 @@ platform-aware writing, review, and controlled delivery.
 > posting bot. Planning and copy use your host's model. Actual media requires available
 > generation/rendering tools. Publishing and account data require your own integrations.
 
+## Development: design patterns and outcome evaluation
+
+The source now includes eight original, conditional composition patterns with brand-adaptation
+checks and a bounded render–inspect–repair workflow. These are working guidance, not copied
+professional templates or a trained model. Retrieve only relevant patterns through the bundled
+`design_patterns.py` helper or read its JSON directly.
+
+We also added a [paired evaluation harness](evals/README.md) that compares frozen instruction
+versions, validates editable vector outputs and prepares anonymous review packets. It keeps
+API/format failures separate from judgments about actual rendered quality. This experiment
+covers synthetic static posts, not full host installation, photo/video production or every model.
+See the [implementation study](docs/research/PROFESSIONAL-PLUGIN-RESEARCH.md) and
+[reference dataset plan](docs/research/REFERENCE-DATASET-PLAN.md), with measured limitations
+in the [multi-model pilot results](docs/research/MULTI-MODEL-PILOT-RESULTS.md). Published release version
+and experimental evidence must be reported separately; no universal-quality claim is made.
+
 ## New in version 2.2: a creative memory for every brand
 
 A familiar brand benefits from months of context and feedback. New brands need that

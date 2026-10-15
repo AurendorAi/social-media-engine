@@ -1,0 +1,276 @@
+{
+  "retrieved_on": "2026-10-14",
+  "scope": "Purposive implementation sample; adoption is not satisfaction or causal quality evidence. Source files inspected selectively, not full audits.",
+  "repositories": [
+    {
+      "full_name": "anthropics/skills",
+      "html_url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "stargazers_count": 181107,
+      "forks_count": 21432,
+      "open_issues_count": 1411,
+      "pushed_at": "2026-10-09T18:45:52Z",
+      "default_branch": "main",
+      "tree_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
+    },
+    {
+      "full_name": "vercel-labs/agent-skills",
+      "html_url": "https://github.com/vercel-labs/agent-skills",
+      "description": "Vercel's official collection of agent skills",
+      "stargazers_count": 32411,
+      "forks_count": 2830,
+      "open_issues_count": 181,
+      "pushed_at": "2026-10-14T17:58:45Z",
+      "default_branch": "main",
+      "tree_sha": "063bee94c3f4df8453406c830b0a7df0f2860278"
+    },
+    {
+      "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "html_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "stargazers_count": 135780,
+      "forks_count": 14432,
+      "open_issues_count": 93,
+      "pushed_at": "2026-10-12T11:08:03Z",
+      "default_branch": "main",
+      "tree_sha": "7246805992a42b7bba37d4cac83b01416f0c6c44"
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "html_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "stargazers_count": 49139,
+      "forks_count": 4406,
+      "open_issues_count": 30,
+      "pushed_at": "2026-10-12T09:43:31Z",
+      "default_branch": "main",
+      "tree_sha": "a1043ef544e3a100c28e70a736b6cf32554d0677"
+    },
+    {
+      "full_name": "trailofbits/skills",
+      "html_url": "https://github.com/trailofbits/skills",
+      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows",
+      "stargazers_count": 7535,
+      "forks_count": 645,
+      "open_issues_count": 54,
+      "pushed_at": "2026-10-14T17:50:07Z",
+      "default_branch": "main",
+      "tree_sha": "a12ea6a1afd751664540a48f83ba1c5654e9a238"
+    },
+    {
+      "full_name": "obra/superpowers",
+      "html_url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stargazers_count": 299066,
+      "forks_count": 26715,
+      "open_issues_count": 348,
+      "pushed_at": "2026-10-10T03:03:30Z",
+      "default_branch": "main",
+      "tree_sha": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+    },
+    {
+      "full_name": "microsoft/playwright-mcp",
+      "html_url": "https://github.com/microsoft/playwright-mcp",
+      "description": "Playwright MCP server",
+      "stargazers_count": 38140,
+      "forks_count": 3248,
+      "open_issues_count": 0,
+      "pushed_at": "2026-10-08T17:51:59Z",
+      "default_branch": "main",
+      "tree_sha": "b8b4183e099f136cbec0388a6088d4aa2f6b9685"
+    },
+    {
+      "full_name": "upstash/context7",
+      "html_url": "https://github.com/upstash/context7",
+      "description": "Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors",
+      "stargazers_count": 63041,
+      "forks_count": 3085,
+      "open_issues_count": 36,
+      "pushed_at": "2026-10-14T14:43:18Z",
+      "default_branch": "master",
+      "tree_sha": "ef472a4912d594fdd193a5f929fab4c62796e287"
+    }
+  ],
+  "files_retrieved": [
+    {
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design/SKILL.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/SKILL.md",
+      "bytes": 9390
+    },
+    {
+      "repo": "anthropics/skills",
+      "path": "skills/skill-creator/SKILL.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator/SKILL.md",
+      "bytes": 33168
+    },
+    {
+      "repo": "anthropics/skills",
+      "path": "skills/skill-creator/agents/comparator.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator/agents/comparator.md",
+      "bytes": 7287
+    },
+    {
+      "repo": "anthropics/skills",
+      "path": "skills/skill-creator/scripts/run_eval.py",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/skill-creator/scripts/run_eval.py",
+      "bytes": 11464
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": "skills/writing-skills/SKILL.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/writing-skills/SKILL.md",
+      "bytes": 26623
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": "skills/subagent-driven-development/SKILL.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/skills/subagent-driven-development/SKILL.md",
+      "bytes": 32577
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": "docs/testing.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/docs/testing.md",
+      "bytes": 3045
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": "tests/explicit-skill-requests/run-haiku-test.sh",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/tests/explicit-skill-requests/run-haiku-test.sh",
+      "bytes": 4042
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": ".codex-plugin/plugin.json",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/bb92a77741419a4ab5f06e711a283343f1ada0c3/.codex-plugin/plugin.json",
+      "bytes": 1730
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/react-best-practices/SKILL.md",
+      "url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices/SKILL.md",
+      "bytes": 7251
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/react-best-practices/rules/async-parallel.md",
+      "url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices/rules/async-parallel.md",
+      "bytes": 654
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "path": "packages/react-best-practices-build/src/extract-tests.ts",
+      "url": "https://raw.githubusercontent.com/vercel-labs/agent-skills/063bee94c3f4df8453406c830b0a7df0f2860278/packages/react-best-practices-build/src/extract-tests.ts",
+      "bytes": 2455
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/b8b4183e099f136cbec0388a6088d4aa2f6b9685/README.md",
+      "bytes": 66837
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "path": "tests/capabilities.spec.ts",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/b8b4183e099f136cbec0388a6088d4aa2f6b9685/tests/capabilities.spec.ts",
+      "bytes": 2542
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "path": "tests/fixtures.ts",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/b8b4183e099f136cbec0388a6088d4aa2f6b9685/tests/fixtures.ts",
+      "bytes": 9662
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "path": "package.json",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright-mcp/b8b4183e099f136cbec0388a6088d4aa2f6b9685/package.json",
+      "bytes": 1539
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/7246805992a42b7bba37d4cac83b01416f0c6c44/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "bytes": 15969
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": "src/ui-ux-pro-max/scripts/search.py",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/7246805992a42b7bba37d4cac83b01416f0c6c44/src/ui-ux-pro-max/scripts/search.py",
+      "bytes": 9373
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": "src/ui-ux-pro-max/scripts/design_system.py",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/7246805992a42b7bba37d4cac83b01416f0c6c44/src/ui-ux-pro-max/scripts/design_system.py",
+      "bytes": 71537
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": "src/ui-ux-pro-max/data/ui-reasoning.csv",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/7246805992a42b7bba37d4cac83b01416f0c6c44/src/ui-ux-pro-max/data/ui-reasoning.csv",
+      "bytes": 77360
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-thresholds.json",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/7246805992a42b7bba37d4cac83b01416f0c6c44/.claude/skills/ui-ux-pro-max/scripts/tests/fixtures/relevance-thresholds.json",
+      "bytes": 5079
+    },
+    {
+      "repo": "upstash/context7",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/upstash/context7/ef472a4912d594fdd193a5f929fab4c62796e287/README.md",
+      "bytes": 9731
+    },
+    {
+      "repo": "upstash/context7",
+      "path": "packages/mcp/src/index.ts",
+      "url": "https://raw.githubusercontent.com/upstash/context7/ef472a4912d594fdd193a5f929fab4c62796e287/packages/mcp/src/index.ts",
+      "bytes": 34160
+    },
+    {
+      "repo": "upstash/context7",
+      "path": "packages/cli/src/__tests__/plugin-manifests.test.ts",
+      "url": "https://raw.githubusercontent.com/upstash/context7/ef472a4912d594fdd193a5f929fab4c62796e287/packages/cli/src/__tests__/plugin-manifests.test.ts",
+      "bytes": 11310
+    },
+    {
+      "repo": "trailofbits/skills",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/trailofbits/skills/a12ea6a1afd751664540a48f83ba1c5654e9a238/README.md",
+      "bytes": 10269
+    },
+    {
+      "repo": "trailofbits/skills",
+      "path": "plugins/audit-context-building/skills/audit-context-building/SKILL.md",
+      "url": "https://raw.githubusercontent.com/trailofbits/skills/a12ea6a1afd751664540a48f83ba1c5654e9a238/plugins/audit-context-building/skills/audit-context-building/SKILL.md",
+      "bytes": 3991
+    },
+    {
+      "repo": "trailofbits/skills",
+      "path": "plugins/audit-context-building/evals/continuity-across-calls/case.yaml",
+      "url": "https://raw.githubusercontent.com/trailofbits/skills/a12ea6a1afd751664540a48f83ba1c5654e9a238/plugins/audit-context-building/evals/continuity-across-calls/case.yaml",
+      "bytes": 1698
+    },
+    {
+      "repo": "trailofbits/skills",
+      "path": "plugins/audit-context-building/evals/continuity-across-calls/graders/stays-in-context-building.md",
+      "url": "https://raw.githubusercontent.com/trailofbits/skills/a12ea6a1afd751664540a48f83ba1c5654e9a238/plugins/audit-context-building/evals/continuity-across-calls/graders/stays-in-context-building.md",
+      "bytes": 1266
+    },
+    {
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "path": "skills/scientific-visualization/SKILL.md",
+      "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/a1043ef544e3a100c28e70a736b6cf32554d0677/skills/scientific-visualization/SKILL.md",
+      "bytes": 15478
+    },
+    {
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "path": ".github/workflows/skill-tests.yml",
+      "url": "https://raw.githubusercontent.com/K-Dense-AI/scientific-agent-skills/a1043ef544e3a100c28e70a736b6cf32554d0677/.github/workflows/skill-tests.yml",
+      "bytes": 3503
+    }
+  ]
+}

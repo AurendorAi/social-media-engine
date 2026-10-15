@@ -41,11 +41,15 @@ platform/language-specific rules are present. Never reuse another brand's cached
    First follow [resource sourcing](references/resource-sourcing.md): find and inspect real
    imagery, icons, patterns, textures and typography that support the post’s direction.
    Use source materials and original composition alongside AI tools where appropriate.
-   Read [creative production](references/creative-production.md).
+   Read [creative production](references/creative-production.md) and select conditional
+   [composition guidance](references/design-patterns.md) from the actual message and materials.
+   Write the compact composition contract before rendering; patterns do not override identity.
    Make actual editable assets with available tools. Use imported brand assets correctly.
    Draft captions separately per platform and language, not one universal caption.
 3. **Critique and revise.** Read [review](references/review.md).
-   Review actual pixels and full video playback, not just source code or prompts.
+   Use the [producer revision loop](references/producer-revision-loop.md) to inspect and repair
+   actual pixels and full video playback, not just source code or prompts.
+   Producer inspection precedes, and does not replace, independent review.
    Record truthful observations. No fabricated independent reviewers, scores, or evidence.
 4. **Owner approval.** Open the dashboard or present exact copy and actual media.
    Approval must explicitly cover the current content hash. Changes invalidate approval.
