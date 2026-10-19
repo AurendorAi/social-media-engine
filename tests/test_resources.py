@@ -3,6 +3,8 @@ import copy
 import io
 import json
 import socket
+import tempfile
+from pathlib import Path
 import unittest
 from unittest.mock import patch, MagicMock
 from test_engine import RuntimeHarness, Workspace, EngineError, PROFILE
@@ -79,6 +81,10 @@ class ResourceTests(RuntimeHarness):
         with self.assertRaises(EngineError): self.ws.asset_bytes("other", a["id"])
         self.call("asset-import", "--file", file, "--role", "material", "--rights", "licensed", "--note", "Bypass attempt", "--actor", "tester", ok=False)
         self.assertTrue(self.call("resource-libraries", "--kind", "texture"))
+        selected = self.call("resource-libraries", "--id", "ambientcg")
+        self.assertEqual([row["id"] for row in selected], ["ambientcg"])
+        self.assertEqual(self.call("resource-libraries", "--id", "ambientcg", "--query", "NO-SUCH-TERM"), [])
+        self.call("resource-libraries", "--id", "no-such-source", ok=False)
 
     def test_used_material_bytes_and_provenance_bind_content(self):
         _, a = self.acquire()
@@ -133,6 +139,66 @@ class ResourceTests(RuntimeHarness):
         self.assertNotIn("rights_review", c)
         self.assertEqual(c["query"], "paper texture")
         with self.assertRaises(EngineError): resources.search(self.ws, "northstar", "iconify", "paper", "photo")
+
+
+class CatalogueTests(unittest.TestCase):
+    def test_catalogue_has_item_scope_evidence_and_usable_filters(self):
+        with patch.object(resources, "fetch", side_effect=AssertionError("Catalogue must remain offline")), patch.object(resources, "fetch_json", side_effect=AssertionError("Catalogue must remain offline")):
+            entries = resources.libraries()
+            self.assertGreaterEqual(len(entries), 20)
+            ids = [entry["id"] for entry in entries]
+            self.assertEqual(len(ids), len(set(ids)))
+            required = {"name", "url", "kinds", "access", "notes", "license_url", "free_scope", "commercial_use", "attribution", "restrictions", "access_notes", "search_method", "use_when", "style_terms", "formats", "verified_date", "evidence", "scope_type"}
+            for entry in entries:
+                with self.subTest(library=entry["id"]):
+                    self.assertTrue(required <= entry.keys(), required - entry.keys())
+                    self.assertTrue(entry["kinds"])
+                    self.assertLessEqual(set(entry["kinds"]), resources.KINDS)
+                    self.assertIn(entry["access"], {"api", "browse"})
+                    self.assertTrue(entry["url"].startswith("https://"))
+                    self.assertTrue(entry["license_url"].startswith("https://"))
+                    self.assertRegex(entry["verified_date"], r"^\d{4}-\d{2}-\d{2}$")
+                    self.assertIsInstance(entry["restrictions"], str)
+                    self.assertTrue(entry["evidence"])
+                    for evidence in entry["evidence"]:
+                        self.assertTrue(evidence["url"].startswith("https://"))
+                        self.assertTrue(evidence["observed"].strip())
+                    self.assertEqual(resources.libraries(library_id=entry["id"]), [entry])
+            self.assertEqual(resources.libraries(query="no-such-source-zq019"), [])
+            with self.assertRaises(EngineError):
+                resources.libraries(library_id="no-such-source")
+            with self.assertRaises(EngineError):
+                resources.libraries(kind="not-a-kind")
+
+    def test_common_category_words_find_expected_free_sources(self):
+        cases = {
+            "photography": {"pexels", "unsplash"},
+            "photos": {"pexels", "unsplash"},
+            "icons": {"lucide", "iconoir"},
+            "fonts": {"googlefonts", "fontshare", "collletttivo"},
+            "typography": {"googlefonts", "fontshare", "collletttivo"},
+        }
+        for query, expected in cases.items():
+            with self.subTest(query=query):
+                self.assertLessEqual(expected, {row["id"] for row in resources.libraries(query=query)})
+
+    def test_filter_intersects_words_kind_and_exact_id_without_network(self):
+        # Controlled examples distinguish AND from OR and casefold from lowercase.
+        fixture = [
+            {"id": "source-a", "name": "Straße Library", "kinds": ["texture"], "use_when": "Paper scenes", "style_terms": ["fine grain"]},
+            {"id": "source-b", "name": "Paper Library", "kinds": ["pattern"], "use_when": "Other backgrounds", "style_terms": ["fine grain"]},
+            {"id": "source-c", "name": "Other", "kinds": ["texture"], "use_when": "Paper scenes", "style_terms": ["bold"]},
+        ]
+        with tempfile.TemporaryDirectory() as folder:
+            catalog = Path(folder) / "catalog.json"
+            catalog.write_text(json.dumps(fixture))
+            with patch.object(resources, "CATALOG", catalog), patch.object(socket, "getaddrinfo", side_effect=AssertionError("No network for catalogue filtering")):
+                self.assertEqual(resources.libraries(query=" STRASSE  GRAIN "), [fixture[0]])
+                self.assertEqual(resources.libraries(kind="texture", query="paper grain"), [fixture[0]])
+                self.assertEqual(resources.libraries(library_id="source-b", query="paper"), [fixture[1]])
+                self.assertEqual(resources.libraries(library_id="source-b", kind="texture"), [])
+                self.assertEqual(resources.libraries(query="SOURCE-C"), [fixture[2]])
+                self.assertEqual(resources.libraries(query="   "), fixture)
 
 
 class NetworkBoundaryTests(unittest.TestCase):

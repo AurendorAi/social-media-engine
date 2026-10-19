@@ -1,3 +1,27 @@
+# Version 2.3.0 — 2026-10-19
+
+- First-content style discovery selects at least ten suitable styles from the existing
+  27 priorities, renders real posts and waits for the owner's choice before production.
+- Offline style catalogue, 10–27-option sample-bound boards, dashboard image previews,
+  saved selection in production context, and stale/tampered-sample rejection. Legacy
+  direction boards and existing brand work remain compatible.
+- Portable capability-based imagery routes for hosts without native generation: owner
+  media, licensed web/library sources, connected design services, available image APIs
+  and quality-checked raster/3D rendering. No new provider dependency or embedded keys.
+- Style selection remains separate from brand, post and publishing approval.
+
+# Version 2.2.1 — 2026-10-15
+
+- Creative concept development, meaningful image/copy relationships and substantive
+  visual critique now run by default from the shared Codex/Claude skill entry point.
+- Portable working examples transfer creative principles from an owner-liked local
+  demonstration without shipping private artwork, brand identities or fixed templates.
+- Preserve approved series and narrow revision scope; use existing creative metadata
+  and review/approval contracts without a runtime migration or new approval pause.
+- Includes the no-new-vector production policy and verified free-resource directory
+  developed since 2.2.0. The owner-provided study dataset remains pending.
+- Workflow guidance and packaging do not establish equal output quality across models.
+
 # Version 2.2.0 — 2026-10-14
 
 - Brand-scoped creative briefs with exact owner approval, source notes, good/avoid voice

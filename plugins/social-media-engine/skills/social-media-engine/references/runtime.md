@@ -170,25 +170,65 @@ Optional profile fields: identity_status (existing/partial/new), design_personal
 reference_notes, style_direction. They participate in the brand hash like other answers.
 Existing v1 profiles remain valid; no re-onboarding is required merely to upgrade.
 
-`style-propose --file directions.json --actor "Actual author"` saves 2–4 authored options.
-The brand may still be onboarding. Get `brand_hash` from `status.profile.hash`, not
-`context` (which requires approval). Each option has id, title, rationale, tradeoff and
-a profile containing colors (hex array), fonts (nonempty string array with licensing
-notes), logo_policy, visual_style, imagery_style and optionally motion_style and avoid.
-Only these visual fields are allowed. The outer object has id, brand_hash, options.
-Use a new board ID for a revision. No image generation occurs in this command.
+`style-catalog` reads all 27 exploration priorities from the installed catalogue without
+network access, ranking or a selected brand. `status.style_discovery` reports
+NEEDS_SAMPLES, AWAITING_CHOICE, SELECTED, EXISTING_DIRECTION or EXISTING_CONTENT. These
+are calibration cues, separate from brand approval. Inspect history for the latter two;
+a saved draft alone is not an owner-approved direction.
 
-`style-select --id BOARD --option OPTION --hash BOARD_HASH --actor "Owner"`
-records the owner's chosen profile fields. It checks the board and original brand hash,
+`style-propose --file directions.json --actor "Actual author"` saves authored options.
+The brand may still be onboarding. Use `status.profile.hash`, not unapproved `context`.
+Each option has id, title, rationale, tradeoff and a profile containing colors (hex array),
+fonts (nonempty string array with licensing notes), logo_policy, visual_style,
+imagery_style and optionally motion_style and avoid. Only these visual fields are allowed.
+
+- Default `mode: "directions"` (or omitted): 2–4 options, backward-compatible focused
+  proposals. Existing boards remain readable/selectable; no forced migration.
+- `mode: "first-content"`: 10–27 distinct options with catalogue IDs. Each needs
+  `sample_asset_ids`: 1–5 current-brand owned/licensed `output` assets, rendered as PNG,
+  JPEG or WebP. Sample bytes must be distinct across the board. The runtime records and
+  binds their hashes and verifies them again on selection. It validates file signatures
+  and hashes, not visual distinctiveness, decoding or aesthetic quality; inspect pixels.
+  The board also requires `use_case` and `selection_basis` describing why this shortlist
+  fits. The outer object always needs id, brand_hash and options.
+
+Example first-content option (repeat for at least ten distinct catalogue IDs):
+```json
+{"id":"tenebrism","title":"A focused reveal",
+ "rationale":"Selective light reveals this post's decisive object.",
+ "tradeoff":"Needs a coherent high-contrast source image.",
+ "profile":{"colors":["#142D29","#FFFFFF"],"fonts":["Actual licensed brand font"],
+ "logo_policy":"Preserve supplied logo","visual_style":"Selective light and clear type",
+ "imagery_style":"Relevant dramatic photography"},
+ "sample_asset_ids":["asset-import-result-id"]}
+```
+Preserve the actual brand identity; example fields are not defaults. Use a new board ID
+for revisions. No generation or source search happens inside `style-propose`.
+The dashboard displays bound sample images with original-size access and choice controls.
+An active first-content board blocks production `context` until the owner's choice;
+`status`/`snapshot`, asset imports and exploratory revisions remain available.
+
+`style-select --id BOARD --option OPTION --hash BOARD_HASH --actor "Owner"` records only
+an explicit owner choice. It checks board, sample bytes and original brand hash,
 preserves business/audience fields, and clears brand approval. Then show the updated
-brief and use normal brand approval. The dashboard offers the same selection.
+brief and use normal brand approval. Selection does not approve or publish posts.
+Later `context.selected_style` includes the exact board hash and selected option/samples;
+inspect them and continue that direction. Sample changes fail integrity checks.
 
 Optional plan-item `editorial` object: audience_situation, insight, useful_payoff,
 evidence_needed, visual_mechanism, production_dependencies, experiment. These are
 authored context, preserved without being certified as quality by the runtime.
 
 ## Design materials (v2.1)
-`resource-libraries [--kind texture]` lists bundled sources without a network call.
+`resource-libraries` lists bundled source metadata without a network call.
+Examples: `resource-libraries --query 'paper'`,
+`resource-libraries --kind font --query Arabic`, and
+`resource-libraries --id googlefonts`. These are local catalogue filters, not web/asset
+search or live availability checks. Only Openverse, Wikimedia Commons, Iconify and the
+Met have native `resource-search` adapters; other catalogue entries require host browsing
+and manual candidate recording/import. Default to source-first, zero asset acquisition
+cost materials; that does not promise free production tools or subscriptions. Follow
+[resource sourcing](resource-sourcing.md) for actual inspection, rights and composition.
 Kinds: photo/illustration/icon/texture/pattern/graphic/font.
 `resource-search --provider openverse --query "warm paper grain" --kind texture --limit 8`
 sends only the query to that service and saves candidates. Providers: openverse/commons/

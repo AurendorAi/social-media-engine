@@ -19,11 +19,19 @@ PROVIDERS = {"openverse", "commons", "iconify", "met"}
 CATALOG = Path(__file__).resolve().parents[1] / "assets/resource-libraries.json"
 
 
-def libraries(kind=None):
+def libraries(kind=None, query=None, library_id=None):
     if kind:
         require(kind in KINDS, "Unknown resource kind.")
     values = json.loads(CATALOG.read_text(encoding="utf-8"))
-    return [v for v in values if not kind or kind in v["kinds"]]
+    if library_id:
+        require(any(v["id"] == library_id for v in values), "Unknown resource library ID.")
+    words = (query or "").casefold().split()
+    def matches(value):
+        searchable = " ".join([value["id"], value["name"], *value["kinds"],
+                               value.get("use_when", ""), *value.get("style_terms", [])]).casefold()
+        return all(word in searchable for word in words)
+    return [v for v in values if (not kind or kind in v["kinds"])
+            and (not library_id or v["id"] == library_id) and matches(v)]
 
 
 def clean(value, limit=3000):

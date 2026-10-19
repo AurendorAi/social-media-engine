@@ -9,7 +9,7 @@
       "name": "social-media-engine",
       "source": "./plugins/social-media-engine",
       "description": "Everything social media, in one plugin.",
-      "version": "2.2.0"
+      "version": "2.3.0"
     }
   ],
   "metadata": {

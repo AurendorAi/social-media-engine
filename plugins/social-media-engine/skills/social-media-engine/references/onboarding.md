@@ -5,7 +5,10 @@ Explain that answers persist locally and can be updated later. Run `questionnair
 `status` to find actual remaining fields. Never repeat completed questions unnecessarily.
 
 For existing, partial or missing identity, read [style discovery](style-discovery.md).
-A reference folder is optional. The assistant can extract proposed answers from the
+On the first content request, show at least ten rendered styles from the 27-priority
+catalogue and ask which to follow before continuing the batch, unless the owner has
+already chosen a direction or explicitly narrows/skips discovery. Existing brand
+identity remains binding during these previews. A reference folder is optional. The assistant can extract proposed answers from the
 files the user selected, or develop a direction through a short conversation.
 
 ## Collect and confirm

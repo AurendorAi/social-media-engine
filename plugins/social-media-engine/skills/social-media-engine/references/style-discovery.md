@@ -28,44 +28,84 @@ Reuse answers already supplied. Save partial answers with `brand-update`, includ
 `identity_status` (`existing`, `partial`, `new`), `design_personality`, and `reference_notes`
 when known. Do not invent missing answers or require optional fields to be completed.
 
-## Offer a real choice
+## First content request: ten actual style samples
 
-Author 2–4 distinct directions for a new/partial identity. Give each a plain-language
-name, reason it fits this audience, and an honest tradeoff. Specify the palette, real
-font candidates with availability/licensing notes, logo treatment, composition,
-imagery, and motion when relevant. A warm photographic direction and a precise
-illustrated direction should differ in more than colors. Avoid a mandatory house style.
+Before creating a brand's first content batch, check `status.style_discovery`, `snapshot`,
+selected style and approved creative memory. Existing identity does not by itself tell
+us which social composition the owner prefers. Unless an owner-selected direction or
+established approved content already supplies it, create **at least 10 actual post
+samples in 10 distinct styles chosen from the 27**. Default to 10; an explicit request
+for more may use up to all 27. A request for five posts still starts with this style
+comparison, then the five requested posts follow the owner's choice. The owner may
+explicitly supply a direction or narrow/skip the exploration; record that instruction.
+Do not infer a waiver from a request for a full batch or private drafts.
 
-Use `style-propose` to save the board, following the schema in [runtime](runtime.md).
-The dashboard shows proposals with palette swatches and explanations. Swatches are not
-finished designs: use available rendering tools to show the same representative post in
-2–3 directions when that would help the owner choose. Keep these previews outside
-production records; label them exploratory. Brand approval is not needed to explore a
-prospective identity, but approval is required before actual campaign production.
+1. Run `style-catalog` (or read `assets/style-catalog.json` from the plugin root).
+   These are the 27 requested priorities, not the eight composition patterns and not a
+   list of proven best-performing designs. Assess all 27 against the actual use case:
+   audience and desired action, subject, identity constraints, language/script, channel,
+   available meaningful imagery, budget and ability to sustain future production.
+   Choose the best-fitting 10 with useful visual variety; do not always use the first
+   ten, select by industry stereotypes, or treat a model score as evidence of quality.
+   Save a short selection basis and a fit rationale/tradeoff for each selected style.
+2. Preserve existing logos, colors, type and exclusions unless a change was explicitly
+   requested. Adapt styles within those constraints; style exploration is not an
+   unsolicited rebrand. For a new identity, propose real usable fonts/palettes.
+3. Use one representative idea, truthful core message, language and target ratio across
+   the ten samples so the owner compares style. Adapt wording/structure as needed to
+   express the idea, with the same factual claim. Each option needs a visibly different
+   treatment of hierarchy, imagery, texture, density or composition; ten recolors of
+   one template do not qualify. Do not substitute ten prompts, swatches or moodboards.
+4. Discover capabilities and follow [image acquisition](image-acquisition.md). No native
+   image generator is required. Source, license and inspect suitable imagery, use an
+   available connected design service, or produce high-quality permitted raster assets.
+   Render each completed sample at the requested size and inspect original/mobile
+   pixels. A style that cannot be executed well should be replaced by another suitable
+   catalogue style. Do not count placeholders or failed renders toward ten.
+5. Keep the previews in the selected brand's private workspace, labeled exploratory.
+   Import each finished sample as `role=output` with truthful rights. Save a
+   `style-propose` board with `mode: "first-content"`, `use_case`, `selection_basis`,
+   current `brand_hash` and 10–27 options using catalogue IDs and `sample_asset_ids`.
+   See [runtime](runtime.md) for the complete contract. The runtime binds actual sample
+   bytes, rejects duplicates and never generates the images itself.
+6. Present **all ten actual images**, clearly labeled by style, in the dashboard or a
+   gallery/contact sheet with full-size access. Explain each fit/tradeoff briefly. Ask
+   which style to follow (or which qualities to combine) and wait for the owner's
+   answer before the requested production batch. This is a concrete choice after the
+   samples are complete, not a permission request before doing the work. Do not select
+   your own favorite on the owner's behalf. If no viewing surface works, deliver actual
+   image files; do not ask the owner to choose unseen styles.
 
-Only the owner's choice permits `style-select`. This updates visual profile fields and
-invalidates brand approval; it never approves the brand or posts. Show the resulting
-brand brief, get explicit approval, and use its exact hash. If context changes while the
-owner is choosing, refresh the board. A previous board must not silently overwrite it.
+If fewer than ten viable styles can be completed because capabilities, rights or the
+budget genuinely block them, keep the actual finished previews and explain the exact
+remaining gap. Offer a concrete sourcing/tool alternative or owner-agreed narrower
+scope. Do not claim the first-content comparison is complete or silently skip it.
 
-## Calibrate once, then remember
+Only the owner's choice permits `style-select`. It updates visual fields, preserves
+business/audience context and invalidates brand approval; it never approves posts or
+publishing. Show the resulting brand brief for the normal exact-hash approval. A stale
+board cannot overwrite changed identity. For a requested hybrid, render the combined
+sample and obtain the owner's choice of that concrete revision; the existing 2–4 option
+`directions` mode remains available for focused refinements. Do not falsely label a
+hybrid as an unchanged catalogue sample.
 
-Start with 1–3 representative finished pieces appropriate to the requested scope and
-available tools, before investing in a large batch. Include a sequence or motion sample
-only if that format is actually planned. Ask what feels right and what should change:
-idea, voice, typography, hierarchy, imagery, density, pacing. Revise at least one sample
-when feedback requests a change. Compare real exports, not a promise to improve later.
+## Continue with the chosen direction
 
-Record the selected direction in the profile and approved preferences as scoped rules.
-Keep actual sample files and reference analysis in the private brand workspace, linked
-from the creative record. Reload them on later runs. Do not re-onboard an unchanged
-approved brand or force a new direction for every campaign.
+Read `context.selected_style` and inspect its bound sample on later runs, alongside the
+current profile and approved creative brief/rules. Use the chosen treatment consistently,
+while varying composition to serve each post's meaning. Do not repeat the ten-style
+exploration for an unchanged selected brand or unrelated narrow revision. Retain earlier
+boards as history. A new exploration is appropriate when the owner requests a change,
+the use case substantially changes, or current samples conflict with revised identity.
 
-## Scope and brand-specific rigor
+For subsequent calibration within the selected style, use 1–3 representative finished
+pieces where helpful. Include sequence/motion samples only when that format is planned.
+Apply feedback to real exports and save approved reusable preferences. An explicit full
+private batch can proceed once the style is chosen, without an extra sample-only pause.
 
-Use [brand quality](brand-quality.md) for the actual-account baseline, creative brief,
-logo-swap test and per-format audit. The 1–3 sample cycle is the default; an explicit
-request for a full private proposal may proceed as unapproved exploratory drafts without
-an extra sample-only pause. This does not waive independent review, brand/content owner
-approval or publishing gates. Read [research findings](research-findings.md) for the
-limited evidence behind conditional style observations; no style guarantees quality.
+Legacy 2–4 direction boards and established approved content stay valid on upgrade; do
+not force existing customers to restart. `EXISTING_CONTENT` is a cue to inspect owner
+approval/history, not evidence that every saved draft was approved. Use [brand quality](brand-quality.md)
+for brand checks and [research findings](research-findings.md) for the limited historical
+evidence. The catalogue is not the pending owner-provided study dataset, and style names
+never guarantee quality.

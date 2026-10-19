@@ -60,6 +60,10 @@ class ReleaseTests(unittest.TestCase):
                 self.assertEqual(result.returncode == 0, success, result.stdout + result.stderr)
                 return json.loads(result.stdout or result.stderr)
 
+            catalog = cli("style-catalog")
+            self.assertEqual(len(catalog["styles"]), 27)
+            self.assertEqual(cli("status")["style_discovery"]["state"], "NEEDS_SAMPLES")
+
             # Reuse public fixture data only; the child process imports exclusively
             # from its extracted install, never the repository's runtime modules.
             from test_engine import PROFILE

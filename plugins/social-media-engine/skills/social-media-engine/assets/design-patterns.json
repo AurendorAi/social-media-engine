@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "kind": "original conditional production guidance",
+  "evidence_status": "Author-written synthesis; not an empirical design dataset, tested performance claim, trained model, or licensed asset library.",
+  "sources": [
+    {
+      "id": "subject-planning",
+      "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/SKILL.md",
+      "influence": "Subject-specific planning and critique; no copied design or universal aesthetic rules."
+    },
+    {
+      "id": "contrasting-examples",
+      "url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices/rules/async-parallel.md",
+      "influence": "Atomic conditional guidance with contrasting weak and better examples; examples here are original social scenarios."
+    },
+    {
+      "id": "local-retrieval",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/7246805992a42b7bba37d4cac83b01416f0c6c44/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "influence": "Locally retrievable structured guidance; no upstream palettes, font pairings, rankings or records copied."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "detail-carries-claim",
+      "intents": [
+        "reveal",
+        "explain"
+      ],
+      "formats": [
+        "image",
+        "carousel",
+        "video"
+      ],
+      "use_when": "A visible feature is the reason to care, and authorized imagery shows it.",
+      "avoid_when": "The claim concerns an invisible outcome or the detail is absent from available material.",
+      "composition": [
+        "Make the decisive detail large enough to recognize before reading the caption. Crop around its boundary, not through it.",
+        "Place one short observation beside the detail in a quiet area. Use an inset only when a wider view is needed for context.",
+        "In a sequence, move from whole subject to detail to consequence; avoid three identical product frames."
+      ],
+      "weak": "A small shoe photograph below “Engineered for everything” leaves its claimed advantage invisible.",
+      "better": "A real sole close-up identifies the actual tread geometry; the caption describes the visible feature without promising untested grip.",
+      "adapt": [
+        "For an audience unfamiliar with the object, include a whole-object view; experts may need measurement or material context.",
+        "For an expressive brand, allow a bold crop; for an archival brand, show an orderly detail plate. Preserve approved typography in both."
+      ],
+      "check": "Can the viewer point to the detail supporting the headline? Is any claimed benefit stronger than the supplied evidence?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "comparable-pair",
+      "intents": [
+        "compare",
+        "choose"
+      ],
+      "formats": [
+        "image",
+        "carousel",
+        "video"
+      ],
+      "use_when": "The audience must choose between real alternatives and the same comparison basis is available.",
+      "avoid_when": "Differences are unverified, unlike things are presented as equivalent, or one option is deliberately photographed worse.",
+      "composition": [
+        "Keep viewpoint, scale, labels and units consistent across alternatives.",
+        "Give the decisive difference visual emphasis; keep shared details subordinate.",
+        "If two columns become cramped on a phone, give each option its own slide and end with a concise decision rule."
+      ],
+      "weak": "Two unrelated room photos labeled “before” and “after” imply a result they do not establish.",
+      "better": "Two authorized images of the same bag show what fits in each size, with confirmed dimensions and identical object scale.",
+      "adapt": [
+        "A novice may need a familiar reference object; a specialist may need exact specifications.",
+        "An energetic identity can use an edge-to-edge split; a quiet identity can use aligned plates. Neither treatment changes the comparison evidence."
+      ],
+      "check": "Are scale and conditions fair, and can the audience tell which option suits their situation without assuming a universal winner?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "trace-the-change",
+      "intents": [
+        "explain",
+        "demonstrate"
+      ],
+      "formats": [
+        "carousel",
+        "video"
+      ],
+      "use_when": "A real sequence or clearly labeled demonstration shows how one state becomes another.",
+      "avoid_when": "Only final imagery is available, or a missing intermediate step would force an invented process.",
+      "composition": [
+        "Establish the starting state, keep a stable visual anchor, then isolate the action that changes it.",
+        "Use arrows or numbering only for actual causal or temporal order.",
+        "Hold the changed detail long enough to inspect; place qualifications at the relevant step rather than hiding them in the ending."
+      ],
+      "weak": "A software post replaces a messy screenshot with a pristine dashboard and claims the product removed all manual work.",
+      "better": "A consented screen recording follows one request through assignment, showing the automation and the remaining human review.",
+      "adapt": [
+        "New users need the initial problem named; experienced users need the exceptional step or constraint.",
+        "A craft brand can retain hands and material sounds; a software brand can retain the actual cursor and interface. Do not manufacture either."
+      ],
+      "check": "Does the sequence show the mechanism, including remaining work, rather than just asserting a transformation?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "one-scene-one-feeling",
+      "intents": [
+        "evoke",
+        "reveal"
+      ],
+      "formats": [
+        "image",
+        "video"
+      ],
+      "use_when": "A truthful sensory or emotional experience is itself the intended payoff.",
+      "avoid_when": "The brief needs detailed instructions, evidence of efficacy, or multiple competing offers.",
+      "composition": [
+        "Let one meaningful scene occupy the dominant area; position type using the actual light, movement and negative space.",
+        "Keep necessary product or event identification legible but secondary to the experience.",
+        "For video, use a subject-driven reveal or held moment; introduce cuts when attention or information changes, not at arbitrary fixed intervals."
+      ],
+      "weak": "A generic sunset and “Experience the extraordinary” could advertise any destination or product.",
+      "better": "An authorized close view of steam escaping the bakery’s actual morning loaf communicates warmth; confirmed availability belongs in the caption.",
+      "adapt": [
+        "Choose a sensory detail this audience values: texture, sound, scale, companionship or anticipation.",
+        "Translate mood through the brand’s existing photo treatment and pace; do not assign muted colors or slow motion to every premium brand."
+      ],
+      "check": "Is the scene specific to this offer, and is atmosphere being mistaken for proof of origin, quality or outcomes?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "artifact-with-context",
+      "intents": [
+        "prove",
+        "explain"
+      ],
+      "formats": [
+        "image",
+        "carousel"
+      ],
+      "use_when": "An authorized document, sample, quotation or measured observation can substantiate a narrow point.",
+      "avoid_when": "Permission, source, scope or relevant context is missing; a mockup would resemble authentic evidence.",
+      "composition": [
+        "Show the evidence-bearing portion at readable scale, with necessary context nearby.",
+        "Separate observation from interpretation using hierarchy or distinct regions, not decorative data widgets.",
+        "A carousel can show the artifact, explain the relevant detail, then state the limits or practical implication."
+      ],
+      "weak": "A giant “98%” with a decorative chart implies performance without a source or denominator.",
+      "better": "A permitted test sample identifies the observed measurement, conditions and source; the headline states only what that sample supports.",
+      "adapt": [
+        "Experts may need method and units on the artwork; general audiences may need a plain-language interpretation and accessible source in the caption.",
+        "Use the brand’s document or editorial vocabulary without adding fake seals, awards or institutional authority."
+      ],
+      "check": "Can a reviewer trace the claim to this exact artifact, and are scope, permission and uncertainty visible where needed?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "experience-and-logistics",
+      "intents": [
+        "invite",
+        "announce"
+      ],
+      "formats": [
+        "image",
+        "story",
+        "carousel",
+        "video"
+      ],
+      "use_when": "A real event or offer has both an experiential reason to attend and verified practical details.",
+      "avoid_when": "Date, venue, price or availability is uncertain and cannot be clearly marked as provisional.",
+      "composition": [
+        "Use an actual scene, performer or object to convey what is distinctive about the occasion.",
+        "Group what/when/where in a coherent readable block; give the next action a real destination.",
+        "For a carousel, establish the experience first, then practical details; ensure the first slide identifies the occasion when shared alone."
+      ],
+      "weak": "A poster buries the date in ornate texture while “You don’t want to miss this” dominates.",
+      "better": "A permitted rehearsal photograph carries the concert’s character; a clean adjacent block states the confirmed date, venue and booking route.",
+      "adapt": [
+        "A returning community may recognize the subject; newcomers need a plain description and access context.",
+        "An exuberant identity may use lively lettering around a clear logistics block; a restrained identity may let the scene carry expression."
+      ],
+      "check": "Can someone identify the occasion, time, place and next action at viewing size without interpreting decorative symbols?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "useful-decision-path",
+      "intents": [
+        "teach",
+        "choose"
+      ],
+      "formats": [
+        "carousel",
+        "story",
+        "image"
+      ],
+      "use_when": "A small set of supported conditions changes what the audience should do.",
+      "avoid_when": "Advice is high stakes without qualified support, or the conditions are speculative.",
+      "composition": [
+        "Lead with the audience’s actual situation; show the discriminating question before the options.",
+        "Use parallel branches only when choices really branch. Put one useful example at the point of ambiguity.",
+        "For a single image, reduce to one decision; use a carousel when explanation cannot remain readable."
+      ],
+      "weak": "Five generic tips repeat “choose what works for you” and end with an unrelated sales CTA.",
+      "better": "A verified garment size guide shows which measurement to take, how it maps to this maker’s chart, and what to do between sizes.",
+      "adapt": [
+        "A novice benefits from a demonstration; an experienced audience needs the unusual exception.",
+        "Use the owner’s instruction tone and illustration system. A playful voice can stay precise, and a formal voice can stay approachable."
+      ],
+      "check": "Could someone actually make the intended choice, and does every branch follow from available evidence?",
+      "provenance": "original-synthesis"
+    },
+    {
+      "id": "subject-led-editorial",
+      "intents": [
+        "tell-story",
+        "entertain"
+      ],
+      "formats": [
+        "carousel",
+        "image",
+        "video"
+      ],
+      "use_when": "A specific person, object or occasion has a truthful narrative or an explicitly fictional joke.",
+      "avoid_when": "The story requires invented testimonials, cultural stereotypes or false behind-the-scenes claims.",
+      "composition": [
+        "Open on the particular tension or surprising detail, not a generic manifesto.",
+        "Vary visual distance as the story develops: context, action, revealing detail, payoff. Reuse a visual anchor so variation remains coherent.",
+        "Let the ending resolve the opening. Add an action only if it follows naturally from the payoff."
+      ],
+      "weak": "A maker’s story uses anonymous stock hands and “Passion meets perfection” without saying anything particular.",
+      "better": "Authorized workshop photographs follow one real glaze trial, including an imperfect sample and the maker’s approved explanation of what changed.",
+      "adapt": [
+        "Match how much context the audience already has; an inside joke needs a community that understands it.",
+        "A dry brand may use a concise visual punchline; a warm brand may linger on human detail. Keep the story specific in either voice."
+      ],
+      "check": "Does the ending deliver something the opening promised, and can every factual scene or quotation be traced to permission and source?",
+      "provenance": "original-synthesis"
+    }
+  ]
+}

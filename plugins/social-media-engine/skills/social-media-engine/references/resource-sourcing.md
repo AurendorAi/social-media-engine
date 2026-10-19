@@ -1,8 +1,18 @@
 # Resource sourcing and art direction
 
-Use this workflow before creating visual content. Real photography, vectors, textures,
+Use only existing sourced or owner-supplied vectors under their licenses; never create
+new vector artwork or vectorize a raster. The [production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics)
+also prohibits rasterized model-authored vector or code-drawn substitutes.
+
+Use this workflow before creating visual content. When native generation is missing or
+a source fails, follow [image acquisition](image-acquisition.md) to select another
+available source/service/rendering route without weakening quality or rights checks. Real photography, vectors, textures,
 patterns and typography are production ingredients, alongside original composition and
-AI tools. Do not default to generating an entire flattened post. Do not add materials
+AI tools. Default to source-first materials with zero asset acquisition cost: reuse approved
+owner assets, then inspect suitable free licensed resources. “Free assets” does not mean
+free tools, subscriptions or model calls; discover costs and follow existing authorization.
+Do not force flat illustration or an icon as the hero when photography, texture, type or
+another permitted medium better serves the actual brand and message. Do not default to generating an entire flattened post. Do not add materials
 just to meet a quota: a strong typographic composition may need none.
 
 ## Start from the post, not a stock-image keyword
@@ -12,8 +22,9 @@ palette, lighting, surface/era, subject, crop/negative space, output size, langu
 exclusions and planned combination. Note when no external material would help.
 
 For example, a calm coffee tutorial might need a close crop of real brewing equipment
-and fine warm paper grain. A technology comparison might need one consistent outline
-icon family and an original diagram. Neither needs generic decorative confetti.
+and fine warm paper grain. A technology comparison might need an authorized product capture or a typographic
+comparison; existing licensed icons can help only when they add meaning. Neither needs
+generic decorative confetti or newly drawn vector objects.
 
 Translate the brief into focused searches, including material, composition and physical
 qualities: "warm uncoated paper fine grain", "pour over coffee hands overhead negative
@@ -23,9 +34,15 @@ profile, unpublished campaign or private reference images to a public search ser
 
 ## Find and inspect
 1. Reuse this brand's acquired library if the rights and intended use still fit.
-2. Run `resource-libraries --kind KIND` for sources. Built-in `resource-search` supports
-   Openverse, Wikimedia Commons, Iconify and the Met. It saves candidates, not cleared
-   production assets. `kind` records intent; image APIs do not reliably classify style.
+2. Filter the local source catalogue with `resource-libraries --query 'paper'`,
+   `resource-libraries --kind font --query Arabic`, or inspect one stable source with
+   `resource-libraries --id googlefonts`. These commands filter bundled source metadata
+   only: no web search, live asset inventory or licence clearance occurs. Combine `--kind`
+   and `--query` to narrow sources; then open the source and inspect actual assets.
+   Built-in `resource-search` has only four native adapters: Openverse, Wikimedia Commons,
+   Iconify and the Met. All other catalogue sources require browsing/manual sourcing.
+   Search saves candidates, not cleared production assets. `kind` records intent;
+   image APIs do not reliably classify style.
 3. Use the host's web/image search or browser for specialist libraries and other public
    sources. Search within a useful library, or use a focused `site:` query. Visit the
    original asset page, not only a search thumbnail. Discover available host tools;
@@ -80,7 +97,7 @@ inspect actual downloaded bytes again before composition.
 Use the selected materials as editable layers in the host's available design tools.
 Crop for meaning, control contrast and color, unify line weights, place type deliberately,
 and use textures at a scale/opacity that supports reading. Preserve a clear focal point.
-Keep product accuracy and brand identity intact. Use AI for a missing original element
+Keep product accuracy and brand identity intact. Use raster AI generation/editing for a missing original element
 or a justified edit when appropriate, with permission for external asset transmission.
 Never call downloading ingredients a finished design.
 

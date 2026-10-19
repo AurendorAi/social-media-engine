@@ -77,12 +77,15 @@ when continuing work; do not reconstruct it from a previous chat's vague memory.
 
 ## Calibrate with actual work
 
-Default to **1–3 finished representative samples**, including a sequence or motion only
+For first content without a selected style, complete the **ten-style comparison** in
+[style discovery](style-discovery.md) before the owner chooses. Within an already chosen
+style, default to **1–3 finished representative samples**, including a sequence or motion only
 when planned. Present actual media and complete captions; collect specific feedback on
 idea, payoff, voice, imagery, hierarchy and brand recognition. Revise the affected sample
 and compare actual exports. Save owner-approved preferences with their scope.
 
-The user may explicitly request a full proposal/batch instead of a sample-first cycle.
+After the style choice, the user may explicitly request a full proposal/batch instead
+of another sample-first cycle. A full-batch request alone does not waive initial discovery.
 Honor that scope: use one coherent proposed direction, deliver the authorized batch as
 unapproved drafts, state the uncalibrated assumptions, and gather feedback afterward.
 Do not create a new approval pause merely because the default suggests a small sample.

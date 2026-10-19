@@ -5,9 +5,17 @@
 Ask your agent: **"Use Social Media Engine to set up my brand."**
 
 Bring guidelines, a few references, or no visual identity at all. The first run asks a
-few relevant questions, can save 2–4 visual directions for you to compare, and asks you
-to approve the brand brief before generating content. Later runs resume that brand's
+few relevant questions. On the first content request, it creates ten rendered style
+samples from the 27-priority catalogue for your choice, then asks you to approve the
+brand brief before campaign production. Later runs resume that brand's
 workspace. Use a separate brand identifier for each brand.
+
+## Creative direction is included
+An ordinary content request activates concept development, meaningful imagery, writing
+designed with the visual, and review of real native and phone-sized exports. You do not
+need an extra “be creative” prompt. The [shared workflow](skills/social-media-engine/references/creative-defaults.md)
+adapts to each brand and preserves approved directions for narrow revisions. It uses
+your host's actual tools; it does not guarantee equal results from every model.
 
 ## Requirements
 - Codex or Claude with local skill execution and access to your chosen working folder.
@@ -26,10 +34,26 @@ The runtime stores and checks the workflow. It does not generate media by itself
 Remote accounts, real publishing, analytics permissions, and inbox access require your
 own authorized providers. No provider or platform is silently connected.
 
+## Production materials and boundaries
+Never create new vector artwork, SVG illustrations, icons, procedural drawings or
+vectorizations, including code-drawn artwork later rasterized. Existing licensed or
+owner-supplied vectors are allowed ingredients. Use real sourced materials, raster image
+generation/editing, quality-checked raster/3D rendering, typography and composition
+with available tools.
+
+The searchable Design library directory contains 23 sources for free photography,
+textures, patterns, fonts, archival imagery and existing graphics. Each entry records
+free scope, terms and access limitations; mixed-license indexes require individual
+asset verification. Four native search adapters are included; other sources use the
+host's browser and explicit import. No third-party asset files are bundled.
+
+Study references will come from the owner-provided dataset, not a substitute internet
+dataset. Owner rejection overrides internal quality scores.
+
 ## Creative workflow
 Research the audience's actual situation, develop an argument and useful payoff, then
 choose a composition that demonstrates it. Discover available design/motion tools and
-prove a small sample before scaling. Use owner feedback to revise actual exports and
+complete the first-use style choice, then prove the selected direction before scaling. Use owner feedback to revise actual exports and
 save approved preferences for the next run. No fixed palette, font, dialect or industry
 is imposed on your brand.
 
@@ -70,7 +94,7 @@ See [resource sourcing](skills/social-media-engine/references/resource-sourcing.
 ## Creative memory (2.2)
 
 Ask: “Study my existing content and audience. Propose a distinct creative brief and
-show me three actual samples before scaling.” Review the proposed direction with your
+show me ten actual style samples before choosing the direction.” Review the proposed direction with your
 assistant. Approved briefs and sample references persist separately for each brand;
 profile, feedback and sample changes can require a fresh review. Today and Brand & assets
 show the current status. New proposals never replace approved direction automatically.
@@ -82,3 +106,16 @@ ships original guidance, not Canva artwork or the author's private brand identit
 
 Other capable assistants can read `skills/social-media-engine/SKILL.md` and run the bundled
 Python runtime. Preserve the package folder structure; native plugin support is host-specific.
+
+## First content and image availability
+
+For a brand without a chosen direction, the assistant selects ten suitable styles from
+the 27-priority catalogue, creates an actual post in each, and presents the rendered
+comparison for your choice before continuing the requested batch. The saved direction
+and sample references carry forward. Existing choices are not reset on upgrade.
+
+A native image generator is optional. The assistant can source meaningful licensed
+images from the web/libraries, use connected Canva or other actual design capabilities,
+call an available authorized raster-image API, or use a capable raster/3D renderer.
+It checks the actual image and completed post, records provenance and credits, and
+changes route when a tool is missing. It never fabricates access, rights or success.

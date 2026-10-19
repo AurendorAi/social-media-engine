@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "purpose": "The 27 requested exploration priorities. Traits are production hypotheses, not performance evidence or licensed artwork. Brand constraints and actual material quality govern adaptation.",
+  "styles": [
+    {
+      "id": "anthropomorphic",
+      "title": "Anthropomorphic",
+      "traits": "Human traits in a relevant object or character; use licensed imagery or a well-rendered raster scene."
+    },
+    {
+      "id": "mixed-media",
+      "title": "Mixed Media",
+      "traits": "Combine photographs, scanned textures and type with a clear focal point."
+    },
+    {
+      "id": "bento-grid",
+      "title": "Bento grid",
+      "traits": "Modular content grouping for related evidence; avoid equal-weight clutter."
+    },
+    {
+      "id": "aurora",
+      "title": "Aurora",
+      "traits": "Luminous flowing color fields supporting a restrained subject and legible type."
+    },
+    {
+      "id": "ethereal",
+      "title": "Ethereal",
+      "traits": "Soft light, translucency and airy imagery; preserve contrast."
+    },
+    {
+      "id": "cybercore",
+      "title": "Cybercore",
+      "traits": "Dense digital and technological imagery with controlled hierarchy; avoid fake product proof."
+    },
+    {
+      "id": "neoclassical",
+      "title": "Neoclassical",
+      "traits": "Classical proportion and architectural or sculptural references with contemporary clarity."
+    },
+    {
+      "id": "bauhaus",
+      "title": "Bauhaus",
+      "traits": "Functional hierarchy, assertive type and balanced geometric source imagery."
+    },
+    {
+      "id": "pixel-art",
+      "title": "Pixel art (8-bit, bitmap)",
+      "traits": "Deliberately low-resolution raster imagery with crisp scaling and readable separate text."
+    },
+    {
+      "id": "farmhouse-cottage-core",
+      "title": "Farmhouse or cottage-core",
+      "traits": "Domestic craft, natural surfaces and intimate rural imagery when relevant."
+    },
+    {
+      "id": "japandi",
+      "title": "Japandi",
+      "traits": "Restrained natural materials, considered space and warm simplicity; avoid cultural caricature."
+    },
+    {
+      "id": "memphis",
+      "title": "Memphis",
+      "traits": "Playful rhythmic sourced patterns and energetic composition with a clear anchor."
+    },
+    {
+      "id": "kitsch",
+      "title": "Kitsch",
+      "traits": "Intentional exuberance, nostalgic novelty and playful excess for a receptive audience."
+    },
+    {
+      "id": "luxury-typography",
+      "title": "Luxury Typography",
+      "traits": "Expressive type proportions, careful spacing and restrained supporting imagery."
+    },
+    {
+      "id": "biomorphic",
+      "title": "Biomorphic",
+      "traits": "Organic forms and natural rhythms from suitable existing imagery or raster rendering."
+    },
+    {
+      "id": "brutalism",
+      "title": "Brutalism",
+      "traits": "Direct raw composition, forceful type and exposed structure without sacrificing readability."
+    },
+    {
+      "id": "chinoiserie",
+      "title": "Chinoiserie",
+      "traits": "Historically contextual decorative source material; verify provenance and cultural fit."
+    },
+    {
+      "id": "minimalism",
+      "title": "Minimalism",
+      "traits": "Remove competing elements around one meaningful subject or claim."
+    },
+    {
+      "id": "conceptual-sketch",
+      "title": "Conceptual sketch (doodle art)",
+      "traits": "Hand-drawn conceptual imagery sourced or rendered as raster, with real explanatory purpose."
+    },
+    {
+      "id": "risograph",
+      "title": "Risograph",
+      "traits": "Limited-ink print character and tactile grain from suitable raster materials."
+    },
+    {
+      "id": "rubberhose",
+      "title": "Rubberhose",
+      "traits": "Early cartoon-inspired elastic character imagery from licensed or permitted raster sources."
+    },
+    {
+      "id": "steampunk",
+      "title": "Steampunk",
+      "traits": "Mechanical material detail and alternative-era imagery where the concept warrants it."
+    },
+    {
+      "id": "synthwave",
+      "title": "Synthwave",
+      "traits": "Retro-futurist lighting and cinematic imagery with controlled high contrast."
+    },
+    {
+      "id": "tenebrism",
+      "title": "Tenebrism",
+      "traits": "Dramatic selective light against deep shadow to reveal a decisive subject."
+    },
+    {
+      "id": "type-collage",
+      "title": "Type-collage",
+      "traits": "Layered typographic fragments with an intentional reading order and intact script shaping."
+    },
+    {
+      "id": "vaporwave",
+      "title": "Vaporwave",
+      "traits": "Nostalgic digital surrealism with deliberate color and cultural context."
+    },
+    {
+      "id": "y2k",
+      "title": "Y2K design",
+      "traits": "Turn-of-millennium digital gloss and playful technology cues without illegible ornament."
+    }
+  ]
+}
