@@ -44,7 +44,19 @@ The previous SVG-only benchmark is retired and its professional-quality labels w
 rejected by the owner; [historical results](docs/research/MULTI-MODEL-PILOT-RESULTS.md)
 remain available as failure evidence. Agent scores do not overrule owner feedback.
 
-## New in version 2.2.1: creative direction by default
+## New in version 2.3.0: choose from ten rendered styles
+
+First content use now starts with ten actual posts in ten suitable styles selected from
+the 27-priority catalogue. Choose the direction in the dashboard; future content reloads
+that choice and its sample references. The runtime binds samples to the board and rejects
+changed or cross-brand assets. Existing chosen directions remain valid.
+
+Native image generation is optional: use licensed web/library media, connected design
+services, available authorized image APIs or quality-checked raster/3D rendering.
+The host discovers actual capabilities and inspects the output rather than assuming
+that any particular model can generate images.
+
+## Version 2.2.1: creative direction by default
 
 You do not need to append “be more creative” to a content request. The shared Codex and
 Claude workflow now develops distinct concepts, selects one for the audience and brand,
@@ -66,7 +78,7 @@ principles, content pillars, anti-patterns and success criteria.
 
 - Compare the brand's actual existing work, identify what should improve, and develop
   distinct ideas before choosing a style. Avoid interchangeable layouts and repetitive CTAs.
-- Review 1–3 actual samples and save their approved direction. Each brand keeps its own
+- Choose from ten tailored style samples on first content use; save that direction. Each brand keeps its own
   brief and sample references; future sessions reload the current approved version.
 - Profile, approved feedback or sample changes make affected creative memory stale.
   New proposals stay inactive until explicitly approved. Existing workspaces remain usable.
@@ -113,8 +125,8 @@ See the [sourcing workflow](plugins/social-media-engine/skills/social-media-engi
 
 - **Start with what you have.** Bring a complete identity, a few references, or no brand
   assets at all. A short conversation develops the missing pieces.
-- **Choose a direction.** Compare 2–4 saved proposals, see palette swatches and tradeoffs,
-  then choose one. Rendered sample designs help calibrate before a full batch.
+- **Choose a direction.** Compare ten actual rendered posts in ten tailored styles from the
+  27-priority catalogue, then choose the style to reuse for future content.
 - **More thoughtful content.** Research the audience situation, develop a useful argument,
   show evidence, and vary composition and pacing without losing brand recognition.
 - **A simpler studio.** Today, Review posts, Publishing, Results. Review one post at a
@@ -279,7 +291,8 @@ Existing identity / optional references / guided discovery
 3. **Approve the brief.** Review what the plugin learned before production begins.
 4. **Choose the tools.** Manual delivery is available without Postiz. Connect optional
    creative/social services through their authorized flows, never by sharing passwords.
-5. **Calibrate quality.** Ask for 1-3 samples in your planned formats, including motion only when tools
+5. **Choose a style.** Review ten tailored rendered samples before the first batch; then calibrate
+   within that direction in your planned formats, including motion only when tools
    permit. Review the actual files and give specific feedback.
 6. **Build a repeatable workflow.** Approve useful scoped rules, revise a sample, then
    move into monthly production.
@@ -406,3 +419,16 @@ A screen-recorded walkthrough will be linked when available.
 **Built by [Aurendor](https://www.instagram.com/aurendor/).**
 Contact: [mohammedj@aurendor.io](mailto:mohammedj@aurendor.io).
 Released under the [MIT licence](LICENSE).
+
+## First content and image availability
+
+For a brand without a chosen direction, the assistant selects ten suitable styles from
+the 27-priority catalogue, creates an actual post in each, and presents the rendered
+comparison for your choice before continuing the requested batch. The saved direction
+and sample references carry forward. Existing choices are not reset on upgrade.
+
+A native image generator is optional. The assistant can source meaningful licensed
+images from the web/libraries, use connected Canva or other actual design capabilities,
+call an available authorized raster-image API, or use a capable raster/3D renderer.
+It checks the actual image and completed post, records provenance and credits, and
+changes route when a tool is missing. It never fabricates access, rights or success.

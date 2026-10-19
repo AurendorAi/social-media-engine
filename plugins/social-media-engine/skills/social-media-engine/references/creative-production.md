@@ -10,7 +10,8 @@ replace the owner's rejected designs.
 
 Existing owner-supplied or legitimately sourced vectors may be ingredients: preserve
 provenance and license conditions for placement, transforms, cropping and recoloring.
-Raster image generation/editing, real photography, text layout, raster compositing and
+Raster image generation/editing, genuine raster/3D rendering (including code), real
+photography, text layout, raster compositing and
 asset-based motion remain allowed. Canva, HyperFrames, Remotion, HTML/CSS and other
 layout tools may arrange text and existing media; they may not be used to generate
 prohibited code-drawn objects. Ordinary layout backgrounds and text containers are not
@@ -20,6 +21,9 @@ The owner will provide the curated study dataset. Do not substitute an internet 
 claim it has arrived, or treat old synthetic fixtures as that dataset. Owner feedback
 that a design fails takes precedence over internal quality labels or rubric scores;
 those scores are judgments, never certification. Preserve historical evidence honestly.
+
+Use [image acquisition](image-acquisition.md) when selecting imagery or when native
+generation is unavailable. A sourced or rendered image must support the specific idea.
 
 ## Direction before rendering
 Apply [creative defaults](creative-defaults.md) even when the user gives an ordinary

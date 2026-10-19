@@ -4,7 +4,9 @@ Use only existing sourced or owner-supplied vectors under their licenses; never 
 new vector artwork or vectorize a raster. The [production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics)
 also prohibits rasterized model-authored vector or code-drawn substitutes.
 
-Use this workflow before creating visual content. Real photography, vectors, textures,
+Use this workflow before creating visual content. When native generation is missing or
+a source fails, follow [image acquisition](image-acquisition.md) to select another
+available source/service/rendering route without weakening quality or rights checks. Real photography, vectors, textures,
 patterns and typography are production ingredients, alongside original composition and
 AI tools. Default to source-first materials with zero asset acquisition cost: reuse approved
 owner assets, then inspect suitable free licensed resources. “Free assets” does not mean

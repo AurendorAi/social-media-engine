@@ -1,3 +1,15 @@
+# Version 2.3.0 — 2026-10-19
+
+- First-content style discovery selects at least ten suitable styles from the existing
+  27 priorities, renders real posts and waits for the owner's choice before production.
+- Offline style catalogue, 10–27-option sample-bound boards, dashboard image previews,
+  saved selection in production context, and stale/tampered-sample rejection. Legacy
+  direction boards and existing brand work remain compatible.
+- Portable capability-based imagery routes for hosts without native generation: owner
+  media, licensed web/library sources, connected design services, available image APIs
+  and quality-checked raster/3D rendering. No new provider dependency or embedded keys.
+- Style selection remains separate from brand, post and publishing approval.
+
 # Version 2.2.1 — 2026-10-15
 
 - Creative concept development, meaningful image/copy relationships and substantive

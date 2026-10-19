@@ -6,7 +6,8 @@ before promising a medium. Read the relevant installed tool/skill instructions.
 
 All methods follow the [no-new-vector production boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics).
 Layout and compositing tools remain available for text and existing assets; none is an
-exception permitting model-authored vector art, code-drawn objects or rasterized vectors.
+exception permitting model-authored vector art, code-drawn shape illustrations or rasterized vectors.
+Genuine high-quality raster/3D rendering is allowed; inspect the actual result.
 
 ## Capability check
 
@@ -31,6 +32,14 @@ when a specific missing capability is the cause. Propose a feasible alternative.
 These are examples, not mandatory providers. Text/media composition in code must respect the production boundary; generation alone
 does not establish quality. Encoding a
 slideshow does not automatically create a well-directed film.
+
+## Hosts without native image generation
+
+Follow [image acquisition](image-acquisition.md) before abandoning an image-bearing idea.
+Use relevant licensed web/library media, connected Canva or other available design tools,
+an authorized external raster model/API, or a capable local raster/3D workflow. Route by
+actual capability and image quality, not the host name. Compose and inspect a finished
+post; a found image URL or an unavailable native model is not the final result.
 
 ## Prove one piece before scaling
 

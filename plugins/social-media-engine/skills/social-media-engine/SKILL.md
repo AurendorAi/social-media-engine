@@ -28,7 +28,7 @@ replace the owner's rejected designs.
 
 Existing owner-supplied or legitimately sourced vectors may be ingredients: preserve
 provenance and license conditions for placement, transforms, cropping and recoloring.
-Raster image generation/editing, real photography, text layout, raster compositing and
+Raster image generation/editing, genuine raster/3D rendering (including code), real photography, text layout, raster compositing and
 asset-based motion remain allowed. Canva, HyperFrames, Remotion, HTML/CSS and other
 layout tools may arrange text and existing media; they may not be used to generate
 prohibited code-drawn objects. Ordinary layout backgrounds and text containers are not
@@ -68,8 +68,11 @@ This is a working method, not a guarantee that every host model has equal design
    Tie audience situation, evidence, payoff, voice examples and meaningful imagery to
    the owner's constraints. Present the concrete brief for agreement before production.
    For an explicitly requested full private proposal, honor that scope as unapproved
-   exploratory work; do not force an extra sample-only pause.
-2. **Produce.** Discover the actual capabilities using [production toolkit](references/production-toolkit.md).
+   exploratory work after the first-use style choice; do not force another sample-only pause.
+2. **Produce.** On first content use, complete the ten-style comparison below and wait for
+   the owner’s style choice before the requested batch. Discover actual capabilities using
+   [production toolkit](references/production-toolkit.md) and route imagery through
+   [image acquisition](references/image-acquisition.md), including hosts without native image generation.
    First follow [resource sourcing](references/resource-sourcing.md): find and inspect real
    imagery, icons, patterns, textures and typography that support the post’s direction.
    Use source materials and original composition alongside AI tools where appropriate.
@@ -93,10 +96,12 @@ This is a working method, not a guarantee that every host model has equal design
    Use real evidence, distinguish unavailable from zero, propose scoped rules, and obtain
    owner approval before making them persistent.
 
-For first content calibration, follow [style discovery](references/style-discovery.md).
-Start with a small representative sample, apply owner feedback to the actual output,
-and save approved reusable preferences. Scale after the direction works, unless the user
-explicitly scopes a full draft proposal.
+For a brand's first content request without an owner-selected direction, follow
+[style discovery](references/style-discovery.md): choose the best-fitting **10 of the 27**
+styles, render ten actual posts, present them together and ask which style to follow.
+Save the owner's choice and reuse it for subsequent content. Palette swatches, prompts
+and a self-selected favorite do not satisfy this step. Existing chosen styles continue
+without repeating discovery; an explicit owner instruction can narrow or skip it.
 Use [research findings](references/research-findings.md) only when choosing or evaluating
 visual traits: the study is incomplete, its principles conditional, and it trained no model.
 Run the logo-swap and per-format checks in [brand quality](references/brand-quality.md).

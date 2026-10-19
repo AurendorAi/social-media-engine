@@ -52,7 +52,9 @@ expressive imagery, never proof of a real product, location, feature or result.
 
 The [no-new-vector boundary](../SKILL.md#production-boundary-no-newly-created-vector-graphics)
 applies throughout. Never fall back to code-drawn objects when a source or image tool is
-missing. Discover a permitted alternative or state the specific production limitation.
+missing. Follow [image acquisition](image-acquisition.md): source suitable licensed
+media, use connected design services or available image APIs, or produce quality-checked
+raster/3D renders. State a limitation only after checking feasible available routes.
 Prefer separately typeset, editable text where it improves accuracy and control. Proof
 the actual script and export; generated lettering is not assumed correct.
 

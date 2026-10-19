@@ -576,13 +576,20 @@ function styleOptions() {
     node("h2", "Find your direction"),
     node(
       "p",
-      "These are creative proposals. Choosing one updates your saved brand; it still needs your review. Ask your assistant for rendered samples before a full batch.",
+      "Compare the rendered posts and choose the style to follow. Choosing a direction saves it for future work; brand and post approval remain separate.",
     ),
   );
   boards.forEach((board) => {
+    if (board.mode === "first-content") {
+      root.append(node("p", board.use_case), node("p", board.selection_basis, "meta"));
+    }
     const grid = node("div", undefined, "direction-grid");
     board.options.forEach((o) => {
       const c = card(o.title, o.rationale);
+      for (const id of o.sample_asset_ids || []) {
+        const asset = state.assets.find((a) => a.id === id);
+        if (asset) preview(asset, c, o.title + " — rendered style sample");
+      }
       const palette = node("canvas");
       palette.width = 240;
       palette.height = 40;

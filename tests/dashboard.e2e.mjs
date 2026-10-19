@@ -143,29 +143,47 @@ try {
     visual_style: "Clear editorial hierarchy.",
     imagery_style: "Reviewed sourced product photography, tactile materials and useful diagrams when appropriate.",
   };
+  // Ten distinct rendered files exercise the choice UI; these are typography-only
+  // test fixtures, not claims about the aesthetic quality of the catalogue styles.
+  const samplePage = await browser.newPage();
+  await samplePage.setViewportSize({ width: 540, height: 675 });
+  const styles = command("style-catalog").styles.slice(0, 10);
+  const options = [];
+  for (let i = 0; i < styles.length; i++) {
+    const title = i === 0 ? "Quiet expertise" : styles[i].title;
+    await samplePage.setContent(`<html><body style="background:#f6eedf;color:#173c34;font:32px Georgia;padding:32px"><p>Fictional style fixture ${i + 1}</p><h1>${title}</h1><p>Change one brewing variable at a time.</p></body></html>`);
+    const file = path.join(workspace, `style-sample-${i}.png`);
+    await samplePage.screenshot({ path: file });
+    const asset = command("asset-import", ["--file", file, "--role", "output", "--rights", "owned", "--note", "Original browser fixture", "--actor", "Fixture author"]);
+    options.push({ id: styles[i].id, title, rationale: "Authored use-case fit.",
+      tradeoff: "Requires relevant imagery.", profile: visual, sample_asset_ids: [asset.id] });
+  }
+  await samplePage.close();
   command("style-propose", ["--actor", "Demo Designer"], {
-    id: "calibration-directions",
-    brand_hash: currentBrand.hash,
-    options: [
-      {
-        id: "quiet",
-        title: "Quiet expertise",
-        rationale: "Leaves room for the brewing lesson.",
-        tradeoff: "Needs strong original imagery.",
-        profile: visual,
-      },
-      {
-        id: "bold",
-        title: "Bold instruction",
-        rationale: "Makes the decisive step prominent.",
-        tradeoff: "Needs restraint.",
-        profile: { ...visual, colors: ["#192B52", "#E7B33C"] },
-      },
-    ],
+    id: "calibration-directions", mode: "first-content",
+    use_case: "Fictional brewing education", selection_basis: "Audience, identity, materials and useful variety",
+    brand_hash: currentBrand.hash, options,
   });
   await page.reload();
   await page.locator("#more-tools").evaluate((n) => (n.open = true));
   await page.getByRole("button", { name: /Brand.*assets/i }).click();
+  await page.waitForFunction(() => {
+    const images = [...document.querySelectorAll(".direction-grid img")];
+    return images.length === 10 && images.every(i => i.complete && i.naturalWidth > 0);
+  });
+  assert.equal(await page.locator(".direction-grid a[title='Open original-size image']").count(), 10);
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 1000 });
+    const bounds = await page.locator(".direction-grid img").evaluateAll(images => images.map(image => {
+      const box = image.getBoundingClientRect(), card = image.closest(".card").getBoundingClientRect();
+      return box.left >= card.left && box.right <= card.right && box.width <= innerWidth
+        && Math.abs(box.width / box.height - image.naturalWidth / image.naturalHeight) < 0.01;
+    }));
+    assert.ok(bounds.every(Boolean), `Style images fit their cards at ${width}px`);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No style-board horizontal overflow at ${width}px`);
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.screenshot({ path: path.join(workspace, "ten-style-board.png"), fullPage: true, animations: "disabled" });
   await page
     .getByRole("button", { name: "Choose Quiet expertise", exact: true })
     .click();
@@ -175,7 +193,7 @@ try {
     .waitFor();
   assert.equal(
     command("status").profile.answers.style_direction,
-    "calibration-directions/quiet: Quiet expertise",
+    "calibration-directions/anthropomorphic: Quiet expertise",
   );
   assert.equal(command("status").profile.approved, false);
   await page

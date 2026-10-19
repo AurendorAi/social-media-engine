@@ -57,3 +57,24 @@ These checks establish working search and acquisition at the test time. They do 
 certify third-party uptime or legal clearance of future materials. The host performs
 source/style inspection and actual composition; paid/login libraries need authorized
 browsing or manual import. Subjective production quality still needs owner calibration.
+
+## Version 2.3 first-content and capability scenarios — 2026-10-19
+
+The initial 2–4-direction scenario above is historical. New first-content use defaults
+to ten rendered styles from the 27-priority catalogue before the owner's choice.
+
+| Scenario | Expected behavior |
+| --- | --- |
+| First request asks for five posts, no chosen style | Assess all 27, render ten suitable styles using one representative idea, present all ten and wait for the choice before the five-post batch |
+| Brand already has selected samples | Reload selected direction/sample evidence; continue without another ten-style cycle |
+| Existing identity but no social direction | Preserve fixed colors/type/logo; vary suitable composition and imagery across ten styles |
+| No native generator, public sourcing available | Acquire relevant licensed imagery through existing resource workflow, inspect actual pixels and compose completed posts |
+| No native generator, Canva connected | Discover actual connected capabilities and permitted media/export; do not invent stock search access |
+| Only external generation API or capable raster/3D renderer | Use actual authorized tool, inspect quality, record provenance; no vector-art workaround |
+| No adequate image route or budget | Retain completed work, explain exact gap and offer a concrete alternative; do not call prompts/placeholders finished posts |
+| Changed, duplicated or cross-brand preview files | Reject the board or choice without changing brand approval |
+
+107 offline runtime/API/release tests passed for this update. Chromium exercises all ten
+rendered preview files, original-size links, saved selection and unchanged approval
+separation; tests use fictional typography fixtures, not aesthetic style benchmarks.
+The image routing guidance does not add a provider or prove live Canva/API capability.

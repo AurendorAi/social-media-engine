@@ -47,8 +47,10 @@ Content approval is NOT permission to publish. Exact destination/time confirmati
 a separate publishing step.
 
 ## First-run quality calibration
-Start with 1–3 representative pieces appropriate to the requested scope and tools,
-following [style discovery](style-discovery.md). Include motion only when planned.
+For first content without a chosen style, inspect all ten actual style samples and
+obtain the owner’s choice as described in [style discovery](style-discovery.md). After
+selection, use 1–3 representative pieces within that direction when useful. Include
+motion only when planned.
 Collect 1-5 ratings for writing, visuals, brand accuracy, creativity, and motion plus
 concrete comments. Distinguish one-post changes from reusable preferences.
 Propose rules with explicit scopes and approve only what the owner confirms.
@@ -69,8 +71,8 @@ final approval. Do not invent scores from a simple "looks good".
 ## Scope and brand-specific rigor
 
 Use [brand quality](brand-quality.md) for the actual-account baseline, creative brief,
-logo-swap test and per-format audit. The 1–3 sample cycle is the default; an explicit
+logo-swap test and per-format audit. Once the initial style is chosen, an explicit
 request for a full private proposal may proceed as unapproved exploratory drafts without
-an extra sample-only pause. This does not waive independent review, brand/content owner
+an extra sample-only pause. A batch request alone does not waive the ten-style choice. This does not waive independent review, brand/content owner
 approval or publishing gates. Read [research findings](research-findings.md) for the
 limited evidence behind conditional style observations; no style guarantees quality.

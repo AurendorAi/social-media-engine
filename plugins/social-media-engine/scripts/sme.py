@@ -16,6 +16,7 @@ def parser():
     sub.add_parser("brands", help="List brands; no implicit brand selection")
     sub.add_parser("status", help="Get onboarding progress and next missing fields")
     sub.add_parser("questionnaire", help="List questionnaire groups")
+    sub.add_parser("style-catalog", help="Read the 27 exploration styles; no network or automatic ranking")
     sub.add_parser("snapshot", help="All selected-brand plans, content, reviews, and receipts")
     for command in ["brand-update", "plan-import", "item-save", "feedback", "metrics-import", "style-propose"]:
         c = sub.add_parser(command)
@@ -121,6 +122,9 @@ def main(argv=None):
         elif cmd == "resource-libraries":
             import resources
             result = resources.libraries(args.kind, args.query, args.id)
+        elif cmd == "style-catalog":
+            from style_catalog import catalogue
+            result = catalogue()
         elif cmd == "questionnaire":
             result = FIELD_GROUPS
         else:

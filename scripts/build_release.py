@@ -74,6 +74,8 @@ def build():
                 "skills/social-media-engine/SKILL.md", "scripts/sme.py",
                 "scripts/engine.py", "scripts/creative_memory.py", "scripts/providers.py", "scripts/dashboard.py",
                 "scripts/resources.py", "scripts/resource_http.py", "assets/resource-libraries.json",
+                "scripts/style_catalog.py", "assets/style-catalog.json",
+                "skills/social-media-engine/references/image-acquisition.md",
                 "skills/social-media-engine/references/resource-sourcing.md",
                 "assets/dashboard.html", "assets/dashboard.js", "assets/dashboard.css", "LICENSE"}
     if not required <= names:
